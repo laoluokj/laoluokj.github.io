@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>必修二 07 立体几何复习小结 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">必修二 07 立体几何复习小结</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 15, 2025&nbsp;&nbsp;19:00:51</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="必修二-07-立体几何复习小结"><a href="#必修二-07-立体几何复习小结" class="headerlink" title="必修二 07 立体几何复习小结"></a>必修二 07 立体几何复习小结</h2><h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>通过填空题、命题判断等复习内容，发展直观想象（空间图形的构建与分析）、逻辑推理（命题真假的严谨论证）、数学抽象（提炼线面&#x2F;面面位置关系本质）核心素养；掌握线线、线面、面面平行与垂直的判定及性质定理，能准确应用解决基础问题，提升空间思维的严谨性与准确性。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>内容以填空题（数量关系）、异面直线问题、命题判断为载体，覆盖立体几何核心定理，注重概念辨析与定理应用，是复习小结的基础巩固型内容，聚焦知识点的准确掌握。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生，空间直观想象较弱，定理条件易遗漏（如面面平行需相交直线），对异面直线与平面的位置关系理解模糊，需直观引导与反复辨析。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>线面、面面平行与垂直定理的准确应用；2. 命题真假的辨析方法。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>异面直线与平面位置关系的分析；2. 定理条件完整性的把握（如面面平行需相交直线）。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用问题引导法，结合立体模型直观演示，讲练结合，突出定理条件辨析。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主完成基础题，小组讨论命题判断，总结易错点，画图强化空间想象。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>立体几何模型（正方体、四面体）、多媒体课件、印发学案。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>线面平行判定定理的关键条件是什么？</li>
+<li>判断命题真假时，如何构造反例？</li>
+<li>过异面直线b作平面与a平行的情况有何规律？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过基础填空题巩固了定理应用，用立体模型直观演示帮助学生理解空间关系，讲练结合提升了课堂参与度。<strong>不足之处</strong>：对异面直线的平面问题（如第2题）讲解不够细致，部分学生仍未掌握作平面的方法；命题反例讲解过快，学生反应不及。<strong>改进设想</strong>：增加异面直线的动画演示（如GeoGebra展示平面旋转过程），放慢反例讲解节奏，让学生参与举反例，强化对定理条件的记忆。</p>
+<h1 id="《立体几何复习小结》教学设计"><a href="#《立体几何复习小结》教学设计" class="headerlink" title="《立体几何复习小结》教学设计"></a>《立体几何复习小结》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，生活中高楼大厦的建筑结构、魔方的立体形状都蕴含着立体几何知识，今天我们一起复习。</p>
+<ul>
+<li><strong>教师活动</strong>：展示高楼大厦、魔方等立体物体的图片，引导学生观察并思考其中的几何元素。</li>
+<li><strong>学生活动</strong>：观察图片，思考图片中涉及的立体几何知识。</li>
+<li><strong>设计意图</strong>：从生活实例引入，激发学生的学习兴趣，让学生感受到立体几何在生活中的广泛应用，为复习课营造良好的氛围。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：回顾基本概念与性质"><a href="#探究活动一：回顾基本概念与性质" class="headerlink" title="探究活动一：回顾基本概念与性质"></a>探究活动一：回顾基本概念与性质</h3><ul>
+<li>教师引导学生回顾直线与直线、直线与平面、平面与平面的位置关系，以及平行和垂直的判定定理与性质定理。</li>
+<li>教师活动：通过提问、板书等方式，引导学生回顾相关概念和定理，如提问“直线与平面平行的判定定理是什么？”</li>
+<li>学生活动：积极回答问题，回忆并表述所学的概念和定理。</li>
+<li>设计意图：帮助学生巩固立体几何的基础知识，为后续的练习和应用做好铺垫。</li>
+</ul>
+<h3 id="探究活动二：分析填空题"><a href="#探究活动二：分析填空题" class="headerlink" title="探究活动二：分析填空题"></a>探究活动二：分析填空题</h3><ul>
+<li>呈现填空题：<ol>
+<li>过直线外一点，可以作$1$条直线与已知直线平行；</li>
+<li>过直线外一点，可以作无数条直线与已知直线垂直；</li>
+<li>过平面外一点，可以作$1$个平面与已知平面平行；</li>
+<li>过平面外一点，可以作无数个平面与已知平面垂直；</li>
+<li>过平面外一条直线，可以作$0$个或$1$个平面与该平面平行；</li>
+<li>过平面外一条直线，可以作无数个平面与该平面垂直。</li>
+</ol>
+</li>
+<li>教师活动：让学生思考并回答填空题，对学生的回答进行点评和讲解，通过画图等方式帮助学生理解。</li>
+<li>学生活动：独立思考并回答问题，倾听教师的讲解，理解每道题的答案。</li>
+<li>设计意图：通过填空题，考查学生对基本概念的理解和运用能力，加深学生对直线与直线、直线与平面位置关系的认识。</li>
+</ul>
+<h3 id="探究活动三：分析选择题"><a href="#探究活动三：分析选择题" class="headerlink" title="探究活动三：分析选择题"></a>探究活动三：分析选择题</h3><ul>
+<li>呈现选择题：<ul>
+<li>已知直线$a$，$b$异面，下列判断正确的是（ ），并画图说明。<br>A. 过$b$的平面不可能与$a$平行<br>B. 过$b$的平面不可能与$a$垂直<br>C. 过$b$的平面有且仅有一个与$a$平行<br>D. 过$b$的平面有且仅有一个与$a$垂直</li>
+<li>已知下列四个命题：<ol>
+<li>直线与平面没有公共点，则直线与平面平行；</li>
+<li>直线上有两个点到平面的距离（不为$0$）相等，则直线与平面平行；</li>
+<li>直线与平面上任意一条直线不相交，则直线与平面平行；</li>
+<li>直线与平面内的无数条直线不相交，则直线与平面平行。</li>
+</ol>
+</li>
+<li>下列命题正确的是（ ），并说明理由。<br>A. 一直线与一个平面内的无数条直线垂直，则此直线与平面垂直<br>B. 两条异面直线不能同时垂直于一个平面<br>C. 不存在四个面都是直角三角形的四面体<br>D. 若两条斜线段在同一个平面上的投影相等，则这两条斜线段的长也相等</li>
+</ul>
+</li>
+<li>教师活动：给出选择题，让学生先独立思考，然后小组讨论。巡视各小组的讨论情况，适时给予指导。请小组代表发言，讲解选择的答案和理由，教师进行点评和总结。</li>
+<li>学生活动：独立思考选择题，然后参与小组讨论，分享自己的观点和思路。小组代表发言，阐述小组的讨论结果。</li>
+<li>设计意图：培养学生的逻辑思维能力和分析问题的能力，通过小组讨论促进学生之间的交流与合作，加深学生对立体几何中各种命题的理解。</li>
+</ul>
+<h3 id="探究活动四：分析判断题"><a href="#探究活动四：分析判断题" class="headerlink" title="探究活动四：分析判断题"></a>探究活动四：分析判断题</h3><ul>
+<li>呈现判断题：<ul>
+<li>设$\alpha$，$\beta$，$\gamma$为两两不重合的平面，$l$，$m$，$n$为两两不重合的直线，判断下列命题的正误，并画图说明理由：<ol>
+<li>若$\alpha\perp\gamma$，$\beta\perp\gamma$，则$\alpha\parallel\beta$；</li>
+<li>若$m\subset\alpha$，$n\subset\alpha$，$m\parallel\beta$，$n\parallel\beta$，则$\alpha\parallel\beta$；</li>
+<li>若$\alpha\parallel\beta$，$l\subset\alpha$，则$l\parallel\beta$；</li>
+<li>若$\alpha\cap\gamma &#x3D; l$，$\beta\cap\gamma &#x3D; m$，$\gamma\cap\beta &#x3D; n$，$l\parallel\beta$，则$m\parallel n$。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>教师活动：让学生判断命题的正误，要求学生画图说明理由。巡视学生的解答情况，进行个别指导。请学生上台展示自己的画图和推理过程，教师进行点评和总结。</li>
+<li>学生活动：判断命题的正误，画出相应的图形，进行推理和证明。上台展示自己的解答过程，倾听教师和其他同学的意见。</li>
+<li>设计意图：提高学生的空间想象能力和逻辑推理能力，让学生通过画图和证明，更加深入地理解平面与平面、直线与平面之间的位置关系。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ul>
+<li><strong>教师活动</strong>：给出一些类似的练习题，如“已知直线$a\parallel$平面$\alpha$，直线$b\subset\alpha$，则直线$a$与直线$b$的位置关系是（ ）”等，巡视学生的做题情况，及时给予指导和纠正。</li>
+<li><strong>学生活动</strong>：独立完成练习题，遇到问题可以向教师或同学请教。</li>
+<li><strong>设计意图</strong>：通过课堂练习，及时巩固学生所学的知识，检验学生对复习内容的掌握程度，发现学生存在的问题并及时解决。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ul>
+<li>完成课本上相关的复习题，如判断直线与平面、平面与平面的位置关系等题目。</li>
+<li>思考拓展题：在一个正方体中，找出所有与某一条棱平行、垂直的棱和面。</li>
+<li><strong>教师活动</strong>：布置课后作业，提醒学生认真完成，并要求学生对作业中的问题进行总结和反思。</li>
+<li><strong>学生活动</strong>：按时完成课后作业，对作业中的问题进行思考和总结。</li>
+<li><strong>设计意图</strong>：让学生在课后进一步巩固课堂所学知识，培养学生的自主学习能力和总结归纳能力。通过拓展题，激发学生的探究欲望，提高学生的空间想象能力和综合运用知识的能力。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/15/%E5%BF%85%E4%BF%AE%E4%BA%8C%2008%20%E5%A4%8D%E6%95%B0%E5%A4%8D%E4%B9%A0%E5%B0%8F%E7%BB%93/">必修二 08 复数复习小结</a>
+            
+            
+            <a class="next" rel="next" href="/2025/10/15/%E5%BF%85%E4%BF%AE%E4%BA%8C%2006%20%E5%90%91%E9%87%8F%E5%A4%8D%E4%B9%A0%E5%B0%8F%E7%BB%93/">必修二 06 向量复习小结</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

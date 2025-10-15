@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>必修二 08 复数复习小结 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">必修二 08 复数复习小结</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 15, 2025&nbsp;&nbsp;19:00:51</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="必修二-08-复数复习小结"><a href="#必修二-08-复数复习小结" class="headerlink" title="必修二 08 复数复习小结"></a>必修二 08 复数复习小结</h2><h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以高中数学核心素养为引领，通过复数复习：<strong>数学运算</strong>上，掌握复数四则运算（尤其是除法分母实数化），提升运算准确性；<strong>逻辑推理</strong>上，能通过复数模与方程条件推导解，发展演绎推理能力；<strong>直观想象</strong>上，深化复数模的几何意义（两点间距离）的应用；<strong>数学抽象</strong>上，通过数系扩展与向量运算的比较，概括复数运算的本质规律，形成结构化知识体系。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版教材B组侧重复数运算（除法为核心）与几何意义（模的应用），C组延伸至复数方程证明、几何问题解决及数系梳理，体现“基础巩固—能力提升—抽象概括”的复习梯度，符合复习课“温故而知新”的功能，衔接复数与向量、数系扩展的联系。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生对复数运算的熟练度不足，几何意义与模的应用易混淆，抽象概括（如数系异同、向量比较）能力有待提高，需从基础运算入手，逐步渗透逻辑推理与抽象思维。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>复数除法的分母实数化运算；</li>
+<li>复数模的几何意义及应用；</li>
+<li>复数四则运算的巩固。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>复数方程的逻辑推导；</li>
+<li>复数与平面向量运算的异同比较；</li>
+<li>数系扩展的运算规律梳理。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用讲练结合法、问题引导法，辅以小组讨论，兼顾基础巩固与难点突破，落实“以练促学、以问促思”。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主练习巩固运算技能，合作探究突破抽象难点，归纳总结梳理知识体系，实现“从做中学、从议中悟”。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含运算示例、几何图示）；学生练习纸（B组运算题）；小组探究任务单。</p>
+<h3 id="9-课堂小结关键问题"><a href="#9-课堂小结关键问题" class="headerlink" title="9. 课堂小结关键问题"></a>9. 课堂小结关键问题</h3><ol>
+<li>复数除法运算的核心步骤是什么？</li>
+<li>复数的模在几何上表示什么？如何用模解决问题？</li>
+<li>数系从实数扩展到复数后，运算规则有哪些保持或变化？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过讲练结合夯实了复数运算基础，小组讨论深化了复数与向量异同的理解，学生参与度较高。<strong>不足之处</strong>：部分学生对复数方程的逻辑推理仍显吃力，数系梳理的抽象概括深度不足。<strong>改进设想</strong>：后续复习中增加复数方程的“分步引导”（如先设z&#x3D;a+bi，再代入条件推导）；提前布置数系梳理的预习任务（让学生先自主整理数系运算异同），课堂聚焦深化与修正，提升抽象概括能力。</p>
+<h1 id="《复数复习小结教学设计》"><a href="#《复数复习小结教学设计》" class="headerlink" title="《复数复习小结教学设计》"></a>《复数复习小结教学设计》</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，在科技领域，复数能用于信号处理。比如手机信号传输，用复数能精准分析处理，让我们开启复习！</p>
+<ul>
+<li><strong>教师活动</strong>：展示手机信号处理的图片或视频，引出复数在其中的应用，提出复习复数的主题。</li>
+<li><strong>学生活动</strong>：观看展示，思考复数在信号处理中的作用，进入学习状态。</li>
+<li><strong>设计意图</strong>：通过科技实例，激发学生兴趣，自然引入复数复习。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：复数基本运算回顾"><a href="#探究活动一：复数基本运算回顾" class="headerlink" title="探究活动一：复数基本运算回顾"></a>探究活动一：复数基本运算回顾</h3><ul>
+<li><strong>教师活动</strong>：在黑板上写出B组第1题的部分式子，如$\frac{4 + i}{3 - i}$、$\frac{2 - i}{2 + i}$等，引导学生回顾复数的四则运算法则，提问学生计算思路。</li>
+<li><strong>学生活动</strong>：思考老师提出的问题，回答计算时要利用复数乘法法则以及分母有理化等方法。</li>
+<li><strong>设计意图</strong>：唤起学生对复数基本运算的记忆，为后续解题做铺垫。</li>
+</ul>
+<h3 id="探究活动二：复数方程与性质探究"><a href="#探究活动二：复数方程与性质探究" class="headerlink" title="探究活动二：复数方程与性质探究"></a>探究活动二：复数方程与性质探究</h3><ul>
+<li><strong>教师活动</strong>：讲解B组第4题“已知复数$z$满足$|z| &#x3D; 1 + 3i - z$”，引导学生设$z &#x3D; a + bi$（$a,b\in R$），将其代入方程，分析等式两边实部与虚部的关系，同时结合C组第1题“求证：在复数范围内，方程$|z| + (1 - i) &#x3D; (1 + i)$无解”，引导学生通过设未知数和复数模的定义来求解和证明。</li>
+<li><strong>学生活动</strong>：按照老师的引导设出复数$z$，进行代入计算，尝试找出方程的解或证明无解的方法，积极参与讨论。</li>
+<li><strong>设计意图</strong>：加深学生对复数方程的理解和求解能力，强化对复数性质的运用。</li>
+</ul>
+<h3 id="探究活动三：复数与几何、其他数系的联系"><a href="#探究活动三：复数与几何、其他数系的联系" class="headerlink" title="探究活动三：复数与几何、其他数系的联系"></a>探究活动三：复数与几何、其他数系的联系</h3><ul>
+<li><strong>教师活动</strong>：针对C组第2题“图中四边形$ABCD$、$DCEF$、$FEGH$都是正方形，用复数方法证明：$\angle DBC + \angle FBE + \cdots &#x3D; \angle HBG$”，引导学生建立复平面，将几何图形中的点用复数表示，分析复数的辐角与角度的关系。同时，引导学生完成C组第3题“请梳理自然数、整数、有理数、实数、复数在运算法则方面的异同”，通过列表对比等方式进行总结。</li>
+<li><strong>学生活动</strong>：建立复平面，尝试用复数表示点，思考如何通过复数运算来证明角度关系。积极参与数系运算法则异同的梳理，与同学交流讨论。</li>
+<li><strong>设计意图</strong>：让学生理解复数与几何的联系，拓宽解题思路，同时清晰不同数系运算法则的区别与联系。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>从B组和C组题目中选取部分题目，如B组第2题“当$x &#x3D; 2 + i$时，计算”（补充完整题目内容）、C组第1题等，让学生在规定时间内完成。</li>
+<li>巡视学生做题情况，及时给予指导和纠错。</li>
+<li>请几位学生上台讲解自己的解题思路和过程。</li>
+</ul>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成老师布置的练习题，遇到问题积极思考或向老师和同学请教。</li>
+<li>上台的学生清晰地讲解自己的解题过程，接受其他同学的提问和质疑。</li>
+</ul>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>通过课堂练习，及时巩固所学的复数知识和解题方法。</li>
+<li>让学生上台讲解，锻炼其表达能力和逻辑思维能力，同时促进学生之间的交流和学习。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><h3 id="B组"><a href="#B组" class="headerlink" title="B组"></a>B组</h3><ol>
+<li>计算：<ul>
+<li>(1) $\frac{4 + i}{3 - i}$</li>
+<li>(2) $\frac{2 - i}{2 + i}$</li>
+<li>(3) $\frac{5 + 3i}{3 + 5i}$</li>
+<li>(4) $\frac{1 - 2i}{2i - 3}$</li>
+<li>(5) $\frac{1 + i}{2i}$</li>
+<li>(6) $\frac{5 - 3i}{3 - 5i}$</li>
+<li>(7) $\frac{z - 4}{z + 8}$</li>
+</ul>
+</li>
+<li>当$x &#x3D; 2 + i$时，计算（补充完整题目内容）</li>
+<li>求一个复数$z$，使得$x +$（补充完整内容）为实数，且$|z - 2| &#x3D; 2$</li>
+<li>已知复数$z$满足$|z| &#x3D; 1 + 3i - z$，求</li>
+<li>试比较复数运算与平面向量运算的异同，谈谈你的感受。</li>
+</ol>
+<h3 id="C组"><a href="#C组" class="headerlink" title="C组"></a>C组</h3><ol>
+<li>求证：在复数范围内，方程$|z| + (1 - i) &#x3D; (1 + i)$无解。</li>
+<li>图中四边形$ABCD$、$DCEF$、$FEGH$都是正方形，用复数方法证明：$\angle DBC + \angle FBE + \cdots &#x3D; \angle HBG$</li>
+<li>请梳理自然数、整数、有理数、实数、复数在运算法则方面的异同。</li>
+<li>请你写一篇关于复数的小论文。</li>
+</ol>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>布置课后作业，强调作业的要求和完成时间。</li>
+<li>批改作业后，针对学生普遍存在的问题进行集中讲解。</li>
+</ul>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成课后作业，独立思考，遇到难题可查阅资料或与同学讨论。</li>
+<li>认真听取老师对作业的讲解，改正错误，总结经验。</li>
+</ul>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>让学生通过课后作业进一步巩固课堂所学知识，提高解题能力和综合运用能力。</li>
+<li>老师通过批改作业了解学生的学习情况，进行有针对性的辅导和教学改进。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/15/%E5%BF%85%E9%A1%BB%E4%BA%8C%2009%20%E4%B8%89%E8%A7%92%E6%81%92%E7%AD%89%E5%8F%98%E5%BD%A2/">必须二 09 三角恒等变形</a>
+            
+            
+            <a class="next" rel="next" href="/2025/10/15/%E5%BF%85%E4%BF%AE%E4%BA%8C%2007%20%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%A4%8D%E4%B9%A0%E5%B0%8F%E7%BB%93/">必修二 07 立体几何复习小结</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>必修二 02 简单几何体再认识 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">必修二 02 简单几何体再认识</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 15, 2025&nbsp;&nbsp;19:00:51</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="简单几何体再认识"><a href="#简单几何体再认识" class="headerlink" title="简单几何体再认识"></a>简单几何体再认识</h2><h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>通过观察柱、锥、台的侧面展开图，发展直观想象素养，建立空间几何体与平面图形的映射关系；经历侧面积公式推导，从矩形、扇形等平面图形面积抽象出几何体侧面积公式，提升数学抽象与逻辑推理能力；能准确运用母线、斜高、底面周长等参数计算面积，解决锅炉表面积等实际问题，强化数学运算素养；对比公式结构，体会“棱台→棱柱（上底全等）”“棱台→棱锥（上底缩点）”的转化，深化对空间结构统一性的理解。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版教材本节是“几何体特征认识”的延伸，以“侧面展开”为核心方法，将空间侧面积转化为平面图形面积，体现“空间→平面”转化思想；公式推导基于已学平面图形面积，例习题贴近生活，注重应用；“思考交流”引导公式联系，渗透几何体转化思想，是几何从“定性”到“定量”的关键环节。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已认识柱锥台，但空间想象能力不足，对“展开图与原侧面”的对应易混淆；对“母线”“斜高”“高”等参数区别模糊，公式应用易张冠李戴；需直观模型与动画降低难度，分步引导强化理解。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>①柱、锥、台侧面展开图的形状及对应关系；②侧面积公式的推导与正确应用。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>①展开图与原几何体的空间结构对应（如扇环对应圆台）；②直棱柱、正棱锥、正棱台公式的内在联系与转化。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用直观演示法（模型、动画展开展开过程）、问题串引导法（分步推导公式）、类比教学法（对比公式结构）。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主观察展开图，合作探究公式推导，类比迁移理解联系，练习巩固运算能力。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含展开动画）、柱锥台模型、作业纸。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><p>①柱、锥、台的侧面展开图分别对应什么平面图形？侧面积与展开图面积有何关系？②直棱柱、正棱锥、正棱台的侧面积公式，如何通过“上底面变化”实现转化？③应用公式时，“母线”“斜高”“高”的适用场景有何不同？</p>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：直观演示展开过程，突破“空间→平面”转化难点，多数学生能识别展开图；例题联系生活，激发应用意识，运算正确率较高。<strong>不足之处</strong>：公式转化讲解不深入，部分学生未理解“上底变化”对公式的影响；例3斜高推导过快，部分学生未掌握。<strong>改进设想</strong>：用几何画板动态演示“棱台→棱柱→棱锥”的转化，同步对比公式；先复习正三角形内切圆半径，再分步推导斜高，突破难点。</p>
+<h1 id="6-简单几何体的再认识"><a href="#6-简单几何体的再认识" class="headerlink" title="6 简单几何体的再认识"></a>6 简单几何体的再认识</h1><h2 id="情景引入"><a href="#情景引入" class="headerlink" title="情景引入"></a>情景引入</h2><p>教师活动：同学们，生活中像薯片桶、圣诞帽、灯罩这些物品，它们的制作面积该如何计算呢？<br>学生活动：思考这些物品与数学知识的联系。<br>设计意图：从生活实例出发，引发学生兴趣，自然引入柱、锥、台侧面积的学习。</p>
+<h2 id="新知探究"><a href="#新知探究" class="headerlink" title="新知探究"></a>新知探究</h2><h3 id="探究活动一：侧面积定义"><a href="#探究活动一：侧面积定义" class="headerlink" title="探究活动一：侧面积定义"></a>探究活动一：侧面积定义</h3><p>教师活动：展示柱、锥、台模型，将它们的侧面沿着一条侧棱或母线剪开并展开在黑板上，引导学生观察。提问：展开图的面积和几何体有什么关系？<br>学生活动：观察展开过程，思考并回答展开图的面积就是柱、锥、台的侧面积。<br>设计意图：通过直观演示，让学生清晰理解侧面积的定义。</p>
+<h3 id="探究活动二：圆柱、圆锥、圆台的侧面展开图与侧面积公式"><a href="#探究活动二：圆柱、圆锥、圆台的侧面展开图与侧面积公式" class="headerlink" title="探究活动二：圆柱、圆锥、圆台的侧面展开图与侧面积公式"></a>探究活动二：圆柱、圆锥、圆台的侧面展开图与侧面积公式</h3><p>教师活动：分别拿出圆柱、圆锥、圆台模型，再次展开，引导学生观察展开图形状，结合矩形、扇形面积公式推导侧面积公式。<br>学生活动：观察展开图，推导得出：</p>
+<ul>
+<li>圆柱侧面积：$S_{\text{圆柱侧}} &#x3D; 2\pi r l$（其中$r$为圆柱底面半径，$l$为母线长）</li>
+<li>圆锥侧面积：$S_{\text{圆锥侧}} &#x3D; \pi r l$（其中$r$为圆锥底面半径，$l$为母线长）</li>
+<li>圆台侧面积：$S_{\text{圆台侧}} &#x3D; \pi (r_1 + r) l$（其中$r_1, r$分别为圆台上、下底面半径，$l$为母线长）<br>设计意图：培养学生的观察和推导能力，理解公式的由来。</li>
+</ul>
+<h3 id="探究活动三：直棱柱、正棱锥、正棱台的侧面展开图与侧面积公式"><a href="#探究活动三：直棱柱、正棱锥、正棱台的侧面展开图与侧面积公式" class="headerlink" title="探究活动三：直棱柱、正棱锥、正棱台的侧面展开图与侧面积公式"></a>探究活动三：直棱柱、正棱锥、正棱台的侧面展开图与侧面积公式</h3><p>教师活动：展示直棱柱、正棱锥、正棱台的侧面展开图（图6 - 94至图6 - 96），引导学生根据矩形、三角形、梯形面积公式推导侧面积公式。<br>学生活动：推导得出：</p>
+<ul>
+<li>直棱柱侧面积：$S_{\text{直棱柱侧}} &#x3D; c h$（其中$c$为底面周长，$h$为高）</li>
+<li>正棱锥侧面积：$S_{\text{正棱锥侧}} &#x3D; \frac{1}{2} c l$（其中$c$为底面周长，$l$为斜高）</li>
+<li>正棱台侧面积：$S_{\text{正棱台侧}} &#x3D; \frac{1}{2} (c_1 + c_2) l$（其中$c_1, c_2$分别为上、下底面周长，$l$为斜高）<br>设计意图：进一步提升学生的推导能力，掌握不同几何体侧面积公式。</li>
+</ul>
+<h3 id="探究活动四：思考交流"><a href="#探究活动四：思考交流" class="headerlink" title="探究活动四：思考交流"></a>探究活动四：思考交流</h3><p>教师活动：提出问题“直棱柱、正棱锥、正棱台的侧面积公式进行对比，能发现它们的联系和区别吗？”组织学生小组讨论。<br>学生活动：分组讨论，总结联系与区别，如正棱台侧面积公式在$c_1 &#x3D; c_2$时可转化为直棱柱侧面积公式等。<br>设计意图：培养学生的归纳总结和逻辑思维能力。</p>
+<h2 id="课堂练习"><a href="#课堂练习" class="headerlink" title="课堂练习"></a>课堂练习</h2><p>教师活动：给出以下练习题，巡视学生做题情况，适时指导。</p>
+<ol>
+<li>一个圆柱底面半径为$3\ cm$，母线长为$5\ cm$，求其侧面积。</li>
+<li>圆锥底面半径为$4\ cm$，母线长为$6\ cm$，求侧面积。</li>
+<li>圆台上、下底面半径分别为$2\ cm$和$4\ cm$，母线长为$3\ cm$，求侧面积。</li>
+</ol>
+<p>学生活动：独立完成练习题，做完后同桌之间交流答案。<br>设计意图：及时巩固所学的圆柱、圆锥、圆台侧面积公式。</p>
+<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ol>
+<li>一个圆柱形通风管，底面直径为$0.6\ m$，长$1.5\ m$，制作这个通风管至少需要多少平方米的铁皮？</li>
+<li>正四棱锥底面边长为$6\ cm$，斜高为$5\ cm$，求侧面积。</li>
+<li>正三棱台上下底面边长分别为$3\ cm$和$6\ cm$，高为$2\ cm$，求侧面积。</li>
+</ol>
+<p>教师活动：布置作业，强调作业要求和完成时间，批改作业并反馈。<br>学生活动：认真完成作业，巩固课堂所学知识。<br>设计意图：加深学生对柱、锥、台侧面积公式的理解和应用，提高解题能力。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/15/%E5%BF%85%E4%BF%AE%E4%BA%8C%2003%20%E7%AE%80%E5%8D%95%E5%87%A0%E4%BD%95%E4%BD%93%E5%86%8D%E8%AE%A4%E8%AF%86/">必修二 03 简单几何体再认识</a>
+            
+            
+            <a class="next" rel="next" href="/2025/10/15/%E5%BF%85%E4%BF%AE%E4%BA%8C%2001%20%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%9E%82%E7%9B%B4%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0/">必修二 01 立体几何垂直综合练习</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
