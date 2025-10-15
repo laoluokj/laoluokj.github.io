@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>1.1 椭圆及其标准方程 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">1.1 椭圆及其标准方程</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 15, 2025&nbsp;&nbsp;14:13:09</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1、教学目标"><a href="#1、教学目标" class="headerlink" title="1、教学目标"></a>1、教学目标</h3><p>结合数学抽象、直观想象、数学运算核心素养，通过“行星轨道”“绳画椭圆”等情境抽象椭圆定义，培养从具体到抽象的数学抽象能力；借助直观演示理解“定长＞两焦点间距”的本质，发展直观想象；经历“建系—设点—列式—化简”推导标准方程的过程，提升数学运算严谨性；体会“代数法研究几何”的数形结合思想，树立用坐标法解决曲线问题的意识。</p>
+<h3 id="2、教材分析"><a href="#2、教材分析" class="headerlink" title="2、教材分析"></a>2、教材分析</h3><p>新版北师大版教材中，本节是圆锥曲线起始课，承接“圆的方程”，开启椭圆、双曲线、抛物线的系统学习，核心是渗透“坐标法”研究几何的范式，为后续曲线学习提供方法模板，是几何直观与代数运算的关键衔接点。</p>
+<h3 id="3、学情分析"><a href="#3、学情分析" class="headerlink" title="3、学情分析"></a>3、学情分析</h3><p>普通高中普通班学生，已掌握圆的定义与方程，有一定几何直观和代数基础，但对抽象定义的本质（如椭圆定义的限制条件）、方程推导的化简严谨性（如平方处理）存在困难，需直观情境和分层引导降低认知难度。</p>
+<h3 id="4、教学重点"><a href="#4、教学重点" class="headerlink" title="4、教学重点"></a>4、教学重点</h3><p>① 椭圆的定义及“定长大于两焦点间距离”的核心条件；② 椭圆标准方程的推导过程（坐标法的应用）；③ 标准方程的形式特征（焦点位置、a,b,c的关系）。</p>
+<h3 id="5、教学难点"><a href="#5、教学难点" class="headerlink" title="5、教学难点"></a>5、教学难点</h3><p>① 理解“定长＞两焦点间距”的必要性（避免退化为线段或无轨迹）；② 标准方程推导中的代数化简（如两次平方、b²的引入意义）；③ 坐标法“用代数研究几何”的思想渗透。</p>
+<h3 id="6、教法"><a href="#6、教法" class="headerlink" title="6、教法"></a>6、教法</h3><p>情境引入法、直观演示法、问题串引导法、讲练结合法。</p>
+<h3 id="7、学法"><a href="#7、学法" class="headerlink" title="7、学法"></a>7、学法</h3><p>自主观察探究、合作交流讨论、练习巩固内化、总结反思提升。</p>
+<h3 id="8、教学准备"><a href="#8、教学准备" class="headerlink" title="8、教学准备"></a>8、教学准备</h3><p>多媒体课件、细绳+图钉（椭圆绘制工具）、坐标纸、预习导学案。</p>
+<h3 id="课堂小结"><a href="#课堂小结" class="headerlink" title="课堂小结"></a>课堂小结</h3><p>本节课主要学习了椭圆的定义，即平面内与两个定点(F_1,F_2)的距离之和等于常数（大于(|F_1F_2|)）的点的轨迹。推导并掌握了椭圆的标准方程，能根据方程判断椭圆焦点位置，还学会用定义和方程解决简单问题。</p>
+<h3 id="教学反思"><a href="#教学反思" class="headerlink" title="教学反思"></a>教学反思</h3><h4 id="成功之处"><a href="#成功之处" class="headerlink" title="成功之处"></a>成功之处</h4><p>在教学过程中，通过直观的动画演示椭圆的形成过程，帮助学生较好地理解了椭圆的定义，激发了学生的学习兴趣。在推导椭圆标准方程时，逐步引导学生分析、化简，让学生参与到知识的形成过程中，培养了学生的逻辑思维能力。通过例题和练习，学生对椭圆标准方程的应用有了一定的掌握。</p>
+<h4 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h4><p>在方程推导过程中，对于基础较弱的学生，理解起来仍有困难，部分学生跟不上节奏。课堂练习时间略显紧张，部分学生没有足够时间完成练习并巩固知识。</p>
+<h4 id="改进思考"><a href="#改进思考" class="headerlink" title="改进思考"></a>改进思考</h4><p>在今后教学中，对于较难的推导部分，增加分步讲解和针对性辅导，关注基础薄弱学生。合理安排教学时间，给学生留出更充足的练习和反馈时间，及时解决学生存在的问题。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/15/1-2-%E6%A4%AD%E5%9C%86%E7%9A%84%E7%AE%80%E5%8D%95%E5%87%A0%E4%BD%95%E6%80%A7%E8%B4%A8/">1.2 椭圆的简单几何性质</a>
+            
+            
+            <a class="next" rel="next" href="/2025/10/15/1-3-%E6%A4%AD%E5%9C%86%E7%9A%84%E6%A0%87%E5%87%86%E6%96%B9%E7%A8%8B%E4%B9%A0%E9%A2%98%E8%AF%BE--2/">1.3 椭圆的标准方程习题课 (2)</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

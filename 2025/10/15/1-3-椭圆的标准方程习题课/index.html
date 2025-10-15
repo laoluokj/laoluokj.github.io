@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>1.3 椭圆的标准方程习题课 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">1.3 椭圆的标准方程习题课</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 15, 2025&nbsp;&nbsp;14:13:09</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="1-3-椭圆的标准方程习题课"><a href="#1-3-椭圆的标准方程习题课" class="headerlink" title="1.3 椭圆的标准方程习题课"></a>1.3 椭圆的标准方程习题课</h2><h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以椭圆定义、标准方程为核心，通过习题训练发展逻辑推理素养（将“距离和”“焦点位置”等几何条件转化为a、b、c的代数关系）；提升数学运算素养（准确求解a、b、c及标准方程）；强化直观想象素养（结合图形理解定义与方程的对应性）；渗透数学建模素养（将卫星轨道等实际问题抽象为椭圆模型）。让学生掌握椭圆标准方程的两类求法（定义法、待定系数法）、离心率的计算逻辑，体会“数形结合”“化归”思想，形成用定义解决问题的意识。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版A组题覆盖椭圆核心知识点：题1、7紧扣定义本质，题2-4、8-9聚焦标准方程求解（含焦点位置、几何条件转化），题5-6强化离心率计算，题9联系实际。梯度从基础（定义直接应用）到综合（多条件结合），注重“几何意义—代数表达”的转化，体现数学的实用性与逻辑性。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生对椭圆定义的理解停留在“记忆”层面，灵活应用（如用定义求方程）能力不足；运算中易混淆a、b、c的平方关系，根式化简、分式运算准确率低；对“图形特征—代数条件”的联系缺乏敏感度，实际问题建模困难。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>①椭圆定义的灵活应用；②标准方程的求解方法（定义法、待定系数法）；③离心率的计算逻辑。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>①几何条件（如“焦点是长轴三等分点”）向a、b、c关系的转化；②实际问题的数学建模（如卫星轨道）；③复杂运算的准确性（如根式、分式混合计算）。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用“讲练结合+启发引导”法：基础题教师示范“条件分析—公式代入”流程，综合题引导学生小组讨论“几何条件转化”，针对性点评易错点。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主完成基础题（巩固定义与方程），合作探究综合题（突破条件转化），归纳“求标准方程的步骤”“离心率的常用表达式”，提升知识迁移能力。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>椭圆轨迹动态演示PPT、几何画板（展示短轴与焦点的位置关系）、习题纸（提前印好A组题）。</p>
+<h3 id="9-课堂小结关键问题"><a href="#9-课堂小结关键问题" class="headerlink" title="9. 课堂小结关键问题"></a>9. 课堂小结关键问题</h3><p>①椭圆定义在求解标准方程时的核心作用是什么？②求椭圆标准方程的第一步需要确定什么？为什么？③离心率e&#x3D;c&#x2F;a反映了椭圆的什么几何特征？如何通过e判断椭圆的“扁圆程度”？</p>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过“定义—方程—离心率—实际应用”的分层习题，落实了核心知识点；用几何画板动态展示“短轴端点与焦点构成正方形”（题4），突破了图形直观难点；题9的“卫星轨道”问题激发了学生的应用兴趣。<strong>不足之处</strong>：对学生运算中的细节（如√(a²-c²)的化简、焦点在y轴时的方程形式）指导不够，部分学生因运算错误导致结果偏差；小组讨论时，少数学生参与度低。<strong>改进设想</strong>：增加“运算技巧微专题”（如a、b、c的平方关系记忆口诀、根式化简步骤）；分组时采用“优生带困生”的异质分组，加强对弱势学生的关注；课后布置“运算错题本”，针对性巩固易错点。</p>
+<h3 id="1-情景引入"><a href="#1-情景引入" class="headerlink" title="1. 情景引入"></a>1. 情景引入</h3><p>教师活动：展示人造地球卫星绕地球运行的动态图，提问：卫星的运行轨道近似椭圆，那如何确定椭圆的方程呢？<br>学生活动：观察图片，思考老师提出的问题。<br>设计意图：通过新颖的实例，引发学生的好奇心和求知欲，自然地引入椭圆标准方程的习题课。</p>
+<h3 id="2-新知探究"><a href="#2-新知探究" class="headerlink" title="2. 新知探究"></a>2. 新知探究</h3><h4 id="探究活动一：椭圆定义与标准方程的基础应用"><a href="#探究活动一：椭圆定义与标准方程的基础应用" class="headerlink" title="探究活动一：椭圆定义与标准方程的基础应用"></a>探究活动一：椭圆定义与标准方程的基础应用</h4><p>教师活动：给出题目“已知平面内两个定点的距离为 6，一动点 P 到两定点的距离之和为 10，建立适当的平面直角坐标系，求动点 P 的轨迹方程，并画出轨迹图形”，引导学生回顾椭圆的定义，分析题目条件，确定坐标系的建立方法，然后让学生自主求解。<br>学生活动：根据椭圆定义判断轨迹为椭圆，建立合适的直角坐标系，设出椭圆标准方程，利用已知条件求出方程中的参数，画出轨迹图形。<br>设计意图：巩固椭圆的定义和标准方程的求法，培养学生运用定义解决问题的能力。</p>
+<h4 id="探究活动二：根据不同条件求椭圆的标准方程"><a href="#探究活动二：根据不同条件求椭圆的标准方程" class="headerlink" title="探究活动二：根据不同条件求椭圆的标准方程"></a>探究活动二：根据不同条件求椭圆的标准方程</h4><p>教师活动：呈现题目“求适合下列条件的椭圆的标准方程，并画出草图：(1) 长轴长为 6，离心率为 2&#x2F;3，焦点在 x 轴上；(2) 短轴长为 2，离心率为 1&#x2F;2，焦点在 y 轴上；(3) 焦点是长轴的三等分点，短轴长为 4√2”，引导学生分析每个条件与椭圆标准方程中参数 a、b、c 的关系，让学生分组讨论求解。<br>学生活动：分组讨论，根据条件确定 a、b、c 的值，代入相应的椭圆标准方程，画出草图。<br>设计意图：加深学生对椭圆标准方程中参数的理解，提高学生根据不同条件求解椭圆标准方程的能力，培养学生的合作交流能力。</p>
+<h4 id="探究活动三：椭圆离心率的求解"><a href="#探究活动三：椭圆离心率的求解" class="headerlink" title="探究活动三：椭圆离心率的求解"></a>探究活动三：椭圆离心率的求解</h4><p>教师活动：给出题目“根据下列条件，求椭圆的离心率：(1) 焦距和短轴长相等；(2) 长轴长是焦距的 2 倍；(3) 焦距等于椭圆相邻两个顶点间的距离；(4) 经过一个焦点，且与长轴垂直的弦的弦长与焦距相等”以及“已知正方形 ABCD，求以点 A,B 为焦点，且经过 C,D 两点的椭圆的离心率”，引导学生回顾椭圆离心率的定义，分析每个条件下 a、c 的关系，让学生独立求解。<br>学生活动：独立思考，根据条件找出 a、c 的关系，代入离心率公式 e &#x3D; c&#x2F;a 求解。<br>设计意图：强化学生对椭圆离心率定义的理解，提高学生运用椭圆性质求解离心率的能力。</p>
+<h3 id="3-课堂练习"><a href="#3-课堂练习" class="headerlink" title="3. 课堂练习"></a>3. 课堂练习</h3><p>教师活动：给出题目“求经过点 A(-2,3)和 B(1,2√3)的椭圆的标准方程，并画出图形”“已知直线 MN 经过椭圆 x²&#x2F;1 + y²&#x2F;b² &#x3D; 1 的右焦点 F，并与椭圆交于 M,N 两点，其左焦点为 F1，求△FMN 的周长”“已知椭圆 x²&#x2F;a² + y²&#x2F;b² &#x3D; 1(a &gt; b &gt; 0)的离心率为 e，其左焦点 F 到直线 l:y &#x3D; x - 2 的距离为 2√2，求此椭圆方程”，巡视学生的解题情况，及时给予指导和纠正。<br>学生活动：独立完成练习，在解题过程中遇到问题主动向老师或同学请教。<br>设计意图：及时巩固课堂所学知识，提高学生运用知识解决问题的能力，培养学生独立思考和解决问题的习惯。</p>
+<h3 id="4-课后练习"><a href="#4-课后练习" class="headerlink" title="4. 课后练习"></a>4. 课后练习</h3><p>教师活动：布置作业，包括本次整理的所有题目，要求学生认真完成，下节课进行讲解。<br>学生活动：课后认真完成作业，对课堂知识进行进一步的巩固和拓展。<br>设计意图：让学生在课后继续巩固所学知识，加深对椭圆标准方程和性质的理解和应用，提高学生的解题能力和综合素养。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/15/1-3-%E6%A4%AD%E5%9C%86%E7%9A%84%E6%A0%87%E5%87%86%E6%96%B9%E7%A8%8B%E4%B9%A0%E9%A2%98%E8%AF%BE--2/">1.3 椭圆的标准方程习题课 (2)</a>
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

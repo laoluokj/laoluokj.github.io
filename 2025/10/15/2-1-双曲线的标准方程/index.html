@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>2.1 双曲线的标准方程 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">2.1 双曲线的标准方程</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 15, 2025&nbsp;&nbsp;15:56:22</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <hr>
+<h2 id="2-1-双曲线的标准方程"><a href="#2-1-双曲线的标准方程" class="headerlink" title="2.1 双曲线的标准方程"></a>2.1 双曲线的标准方程</h2><h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以高中数学核心素养为导向，目标如下：①通过拉链实验抽象双曲线定义，辨析“距离差的绝对值”“常数范围”等关键要素，发展<strong>数学抽象</strong>素养；②类比椭圆标准方程的推导过程，经历移项、平方、化简等步骤得到双曲线标准方程，提升<strong>逻辑推理</strong>与<strong>数学运算</strong>素养；③结合爆炸点定位的实际问题，能用定义与标准方程建模求解，培养<strong>数学建模</strong>素养；④通过对比焦点在x轴、y轴上的标准方程，识别方程结构与焦点位置的关联，增强<strong>直观想象</strong>素养。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版教材以椭圆为认知基础，通过“距离差”的问题引导与拉链实验直观引入定义，注重“类比椭圆”的推导逻辑（建系、列定义式、化简），详细呈现标准方程的生成过程；例题联系实际（爆炸点轨迹），练习梯度合理（从基础定义应用到综合求方程），突出“过程性”与“实用性”。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通班学生已掌握椭圆的定义与方程，但抽象能力、运算能力有待提升；对双曲线定义中“绝对值”“常数&lt;焦距”的条件易混淆，推导方程时平方化简易出错，需直观引导与分步突破。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>①双曲线的定义及关键条件；②焦点在x轴、y轴上的标准方程结构；③用定义与标准方程解决简单问题。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>①理解定义中“常数范围”的必要性；②标准方程推导中的平方化简；③根据条件准确判断焦点位置并求方程。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用实验探究法（拉链实验）、类比教学法（椭圆迁移）、问题引导法（分步推导）、讲练结合法。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究（实验抽象定义）、类比迁移（椭圆到双曲线）、合作交流（突破化简难点）、练习巩固（应用方程）。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>拉链（实验用）、多媒体课件（展示图形与推导）、练习纸（针对性练习）。</p>
+<h3 id="9-课堂小结关键问题"><a href="#9-课堂小结关键问题" class="headerlink" title="9. 课堂小结关键问题"></a>9. 课堂小结关键问题</h3><p>①双曲线的定义是什么？定义中常数需满足什么范围？②焦点在x轴与y轴上的双曲线标准方程，结构有何不同？③求双曲线标准方程时，需先确定哪些关键量？</p>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以拉链实验直观切入定义，类比椭圆降低认知门槛，实际例题激发兴趣，多数学生能掌握定义与基础方程应用。<strong>不足之处</strong>：推导方程时部分学生跟不上平方化简节奏，对“虚半轴b”的几何意义理解模糊。<strong>改进设想</strong>：推导过程分步板书+动画演示，补充b的几何意义直观解释（如渐近线关联），增加化简步骤的专项练习，强化b与a、c的关系训练。</p>
+<h1 id="《双曲线的标准方程》教学设计"><a href="#《双曲线的标准方程》教学设计" class="headerlink" title="《双曲线的标准方程》教学设计"></a>《双曲线的标准方程》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><ul>
+<li><strong>实例</strong>：在军事雷达探测中，当两个雷达站同时监测目标时，目标的位置会满足到两雷达站距离之差的绝对值为定值，这就涉及到双曲线知识。</li>
+<li><strong>教师活动</strong>：展示军事雷达探测目标的图片或视频，提出问题引导学生思考目标位置与两雷达站距离的关系。</li>
+<li><strong>学生活动</strong>：观看展示内容，思考教师提出的问题，尝试初步分析目标位置的特点。</li>
+<li><strong>设计意图</strong>：通过新颖且贴近实际的实例引入，激发学生的学习兴趣和好奇心，让学生直观感受双曲线在实际生活中的应用。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：双曲线的定义"><a href="#探究活动一：双曲线的定义" class="headerlink" title="探究活动一：双曲线的定义"></a>探究活动一：双曲线的定义</h3><ul>
+<li><strong>内容</strong>：引导学生回顾椭圆的定义，然后进行如下实验。取一条拉链，拉开它的一部分，在拉开的两边上各选择一点，分别固定在点(F_1)，(F_2)上，把笔尖放在点(M)处，随着拉链逐渐拉开或者闭拢，笔尖所经过的点就画出一条曲线。让学生观察并思考笔尖(M)满足的条件。</li>
+<li><strong>教师活动</strong>：进行拉链实验演示，引导学生观察实验过程，提出问题：“笔尖(M)到两个固定点(F_1)，(F_2)的距离有什么关系？”</li>
+<li><strong>学生活动</strong>：认真观察实验，思考教师提出的问题，尝试总结笔尖(M)满足的条件。</li>
+<li><strong>设计意图</strong>：通过实验操作，让学生亲身体验双曲线的形成过程，培养学生的观察能力和自主探究能力，为引出双曲线的定义做铺垫。</li>
+</ul>
+<h3 id="探究活动二：双曲线定义的提炼"><a href="#探究活动二：双曲线定义的提炼" class="headerlink" title="探究活动二：双曲线定义的提炼"></a>探究活动二：双曲线定义的提炼</h3><ul>
+<li><strong>内容</strong>：在学生观察实验的基础上，给出双曲线的定义：平面内与两个定点(F_1)，(F_2)的距离之差的绝对值等于常数（大于零且小于(|F_1F_2|)）的点的轨迹叫做双曲线，这两个定点叫做双曲线的焦点，两焦点间的距离叫做双曲线的焦距。强调定义中的关键条件，如“绝对值”“大于零且小于焦距”等。</li>
+<li><strong>教师活动</strong>：结合实验结果，准确阐述双曲线的定义，通过举例说明定义中关键条件的必要性。</li>
+<li><strong>学生活动</strong>：倾听教师讲解，理解双曲线的定义，思考关键条件的作用。</li>
+<li><strong>设计意图</strong>：帮助学生准确把握双曲线的定义，明确定义中的限制条件，加深对双曲线概念的理解。</li>
+</ul>
+<h3 id="探究活动三：双曲线标准方程的推导"><a href="#探究活动三：双曲线标准方程的推导" class="headerlink" title="探究活动三：双曲线标准方程的推导"></a>探究活动三：双曲线标准方程的推导</h3><ul>
+<li><strong>内容</strong>：以双曲线的焦点在(x)轴上为例，设双曲线的焦点(F_1(-c,0))，(F_2(c,0))，双曲线上任意一点(M(x,y))，根据双曲线的定义(||MF_1 - MF_2|| &#x3D; 2a)（(0 &lt; 2a &lt; 2c)），推导双曲线的标准方程。<ul>
+<li>首先，根据两点间距离公式可得(|MF_1| &#x3D; \sqrt{(x + c)^2 + y^2})，(|MF_2| &#x3D; \sqrt{(x - c)^2 + y^2})，则(\sqrt{(x + c)^2 + y^2} - \sqrt{(x - c)^2 + y^2} &#x3D; \pm 2a)。</li>
+<li>然后，通过移项、平方等一系列化简步骤，得到((c^2 - a^2)x^2 - a^2y^2 &#x3D; a^2(c^2 - a^2))。</li>
+<li>设(b^2 &#x3D; c^2 - a^2)（(b &gt; 0)），则方程可化为(\frac{x^2}{a^2} - \frac{y^2}{b^2} &#x3D; 1)（(a &gt; 0)，(b &gt; 0)）。</li>
+</ul>
+</li>
+<li><strong>教师活动</strong>：引导学生建立平面直角坐标系，设出焦点和双曲线上的点的坐标，逐步推导双曲线的标准方程，在推导过程中，适时提醒学生注意化简的方法和步骤。</li>
+<li><strong>学生活动</strong>：跟随教师的思路，参与推导过程，理解每一步的推导依据，记录推导过程中的关键步骤和结果。</li>
+<li><strong>设计意图</strong>：让学生经历双曲线标准方程的推导过程，培养学生的逻辑推理能力和运算能力，加深对双曲线标准方程的理解和记忆。</li>
+</ul>
+<h3 id="探究活动四：焦点在-y-轴上的双曲线标准方程"><a href="#探究活动四：焦点在-y-轴上的双曲线标准方程" class="headerlink" title="探究活动四：焦点在(y)轴上的双曲线标准方程"></a>探究活动四：焦点在(y)轴上的双曲线标准方程</h3><ul>
+<li><strong>内容</strong>：类比焦点在(x)轴上的双曲线标准方程的推导过程，引导学生推导焦点在(y)轴上的双曲线标准方程。设双曲线的焦点(F_1(0,-c))，(F_2(0,c))，双曲线上任意一点(M(x,y))，根据双曲线的定义(||MF_1 - MF_2|| &#x3D; 2a)（(0 &lt; 2a &lt; 2c)）进行推导。</li>
+<li><strong>教师活动</strong>：提出问题“如果焦点在(y)轴上，我们该如何推导双曲线的标准方程？”引导学生类比焦点在(x)轴上的推导过程进行思考和推导。</li>
+<li><strong>学生活动</strong>：独立思考，尝试推导焦点在(y)轴上的双曲线标准方程，与同学交流讨论推导过程中遇到的问题。</li>
+<li><strong>设计意图</strong>：通过类比推导，培养学生的类比思维和知识迁移能力，让学生更加深入地理解双曲线标准方程的本质。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ul>
+<li><strong>题目</strong>：<ul>
+<li>已知双曲线的焦点为(F_1(-5,0))，(F_2(5,0))，双曲线上一点(P)到(F_1)，(F_2)的距离之差的绝对值等于(6)，求双曲线的标准方程。</li>
+<li>求双曲线(\frac{x^2}{4} - \frac{y^2}{1} &#x3D; 1)的焦点坐标。</li>
+</ul>
+</li>
+<li><strong>教师活动</strong>：布置练习题，巡视学生的做题情况，及时给予指导和帮助，鼓励学生积极思考，尝试用不同的方法解题。</li>
+<li><strong>学生活动</strong>：独立完成练习题，遇到问题时可以向同学或老师请教，完成后与同学交流解题思路和方法。</li>
+<li><strong>设计意图</strong>：通过课堂练习，及时巩固学生所学的双曲线定义和标准方程的知识，检验学生对知识的掌握程度，培养学生的解题能力和应用能力。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ul>
+<li><strong>题目</strong>：<ul>
+<li>已知双曲线的两个焦点分别为(F_1(-3,0))，(F_2(3,0))，且经过点(P(2,\sqrt{5}))，求双曲线的标准方程。</li>
+<li>若双曲线与椭圆(\frac{x^2}{25} + \frac{y^2}{9} &#x3D; 1)有相同的焦点，且经过点((\sqrt{5},2))，求双曲线的标准方程。</li>
+</ul>
+</li>
+<li><strong>教师活动</strong>：布置课后作业，强调作业的要求和完成时间，提醒学生认真思考，规范书写解题过程。</li>
+<li><strong>学生活动</strong>：在课后认真完成作业，对课堂所学知识进行进一步的巩固和拓展，总结解题方法和技巧。</li>
+<li><strong>设计意图</strong>：通过课后练习，让学生在课后有更多的时间和空间去深入理解和应用双曲线的知识，提高学生的综合解题能力和知识运用能力。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/15/2-2%20%E5%8F%8C%E6%9B%B2%E7%BA%BF%E7%9A%84%E7%AE%80%E5%8D%95%E5%87%A0%E4%BD%95%E6%80%A7%E8%B4%A8%20%E7%AC%AC%E4%BA%8C%E8%AF%BE%E6%97%B6/">2.2 双曲线的简单几何性质 第二课时</a>
+            
+            
+            <a class="next" rel="next" href="/2025/10/15/2-2%20%E5%8F%8C%E6%9B%B2%E7%BA%BF%E7%9A%84%E7%AE%80%E5%8D%95%E5%87%A0%E4%BD%95%E6%80%A7%E8%B4%A8%20%E7%AC%AC%E4%B8%80%E8%AF%BE%E6%97%B6/">2.2 双曲线的简单几何性质 第一课时</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

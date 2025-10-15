@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>1.2 椭圆的简单几何性质 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">1.2 椭圆的简单几何性质</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 15, 2025&nbsp;&nbsp;14:13:09</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1、教学目标"><a href="#1、教学目标" class="headerlink" title="1、教学目标"></a>1、教学目标</h3><p>以数学核心素养为引领，通过椭圆标准方程抽象出范围、对称性、顶点、离心率等几何性质，发展数学抽象素养；借助图形直观感知性质的几何意义，提升直观想象能力；通过推导离心率对椭圆形状的影响及性质间的逻辑关联，培养逻辑推理素养；在计算顶点坐标、离心率等过程中强化数学运算素养；最终能应用性质解决简单问题，树立“用代数方法研究几何问题”的解析几何核心意识。</p>
+<h3 id="2、教材分析"><a href="#2、教材分析" class="headerlink" title="2、教材分析"></a>2、教材分析</h3><p>新版北师大版教材中，本节是“椭圆”单元的核心环节，承接椭圆定义与标准方程，是“代数研究几何”方法的首次系统应用，为双曲线、抛物线的性质学习奠定方法论基础，凸显解析几何的本质思想。</p>
+<h3 id="3、学情分析"><a href="#3、学情分析" class="headerlink" title="3、学情分析"></a>3、学情分析</h3><p>普通高中普通班级学生已掌握椭圆定义及标准方程，但对“用方程研究几何性质”的方法不熟悉，抽象思维与逻辑推理能力一般，需借助直观图形、具体问题引导，逐步理解性质的本质内涵。</p>
+<h3 id="4、教学重点"><a href="#4、教学重点" class="headerlink" title="4、教学重点"></a>4、教学重点</h3><p>（1）椭圆范围、对称性、顶点、离心率等几何性质的推导与本质理解；（2）椭圆几何性质在简单问题中的应用（如求顶点坐标、离心率）。</p>
+<h3 id="5、教学难点"><a href="#5、教学难点" class="headerlink" title="5、教学难点"></a>5、教学难点</h3><p>（1）离心率的几何意义及对椭圆形状的影响；（2）利用椭圆性质综合解决问题的思路构建。</p>
+<h3 id="6、教法"><a href="#6、教法" class="headerlink" title="6、教法"></a>6、教法</h3><p>直观演示法、问题引导法、讲练结合法。</p>
+<h3 id="7、学法"><a href="#7、学法" class="headerlink" title="7、学法"></a>7、学法</h3><p>自主探究法、合作交流法、归纳总结法。</p>
+<h3 id="8、教学准备"><a href="#8、教学准备" class="headerlink" title="8、教学准备"></a>8、教学准备</h3><p>多媒体课件、几何画板软件、椭圆模型教具。</p>
+<h3 id="课堂小结"><a href="#课堂小结" class="headerlink" title="课堂小结"></a>课堂小结</h3><p>本节课深入探究了椭圆的简单几何性质，包括范围、对称性、顶点、离心率。通过方程推导性质，结合图形直观理解，还学会用性质解决相关问题，为后续圆锥曲线学习打基础。</p>
+<h3 id="教学反思"><a href="#教学反思" class="headerlink" title="教学反思"></a>教学反思</h3><h4 id="成功之处"><a href="#成功之处" class="headerlink" title="成功之处"></a>成功之处</h4><p>在教学过程中，引导学生从椭圆方程出发推导几何性质，有效培养了他们的逻辑推理能力。借助多媒体展示图形变化，让学生更直观地理解椭圆性质，增强了学习兴趣。课堂上设置的互动环节，促进了学生积极思考与交流。</p>
+<h4 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h4><p>部分基础薄弱的学生对性质推导理解困难，教学进度把控不够精准，导致后面的练习时间略显紧张。在小组讨论时，个别学生参与度不高。</p>
+<h4 id="改进思考"><a href="#改进思考" class="headerlink" title="改进思考"></a>改进思考</h4><p>今后要加强对基础薄弱学生的辅导，在推导性质前适当回顾相关知识。合理规划教学时间，给学生留出更充足的练习和巩固时间。同时，加强对小组讨论的组织和引导，提高每个学生的参与度。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/15/2-2%20%E5%8F%8C%E6%9B%B2%E7%BA%BF%E7%9A%84%E7%AE%80%E5%8D%95%E5%87%A0%E4%BD%95%E6%80%A7%E8%B4%A8%20%E7%AC%AC%E4%B8%80%E8%AF%BE%E6%97%B6/">2.2 双曲线的简单几何性质 第一课时</a>
+            
+            
+            <a class="next" rel="next" href="/2025/10/15/1-1-%E6%A4%AD%E5%9C%86%E5%8F%8A%E5%85%B6%E6%A0%87%E5%87%86%E6%96%B9%E7%A8%8B/">1.1 椭圆及其标准方程</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
