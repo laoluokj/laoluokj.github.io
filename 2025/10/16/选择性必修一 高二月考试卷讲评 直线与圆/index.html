@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>选择性必修一 高二月考试卷讲评 直线与圆 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">选择性必修一 高二月考试卷讲评 直线与圆</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 16, 2025&nbsp;&nbsp;9:11:12</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><ol>
+<li>借助直线倾斜角与斜率、圆的方程等概念的讲评，深化对直线与圆基本性质的理解，发展数学抽象素养；</li>
+<li>分析直线与线段相交的斜率范围、直线与圆（圆与圆）位置关系等问题，提升逻辑推理与数学运算素养；</li>
+<li>解决垂直平分线、公切线及距离相关问题，强化直观想象，体会几何问题的代数表达与几何意义的融合。</li>
+</ol>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材强调几何与代数融合，本试卷覆盖直线斜率、圆的方程、直线与圆（圆与圆）位置关系等核心内容，突出概念应用与数形结合，体现基础性与综合性。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生，对直线与圆的基本概念有初步认知，但概念应用不熟练，运算准确性不足，综合问题（如斜率范围、位置关系综合）的分析能力有待提升。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>直线斜率与倾斜角的关系；</li>
+<li>圆的方程及位置关系判断；</li>
+<li>垂直平分线等问题的求解。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>直线与线段相交的斜率范围分析；</li>
+<li>圆与圆位置关系的公切线条数判断；</li>
+<li>距离问题的几何意义转化。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用讲练结合法，结合错题统计，针对高频错误点启发引导，深化概念应用。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主整理错题，合作探究典型问题思路，总结直线与圆的常用方法（如距离公式、数形结合）。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>提前统计错题分布，制作包含典型错题、图形直观的PPT。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>直线倾斜角与斜率的对应关系是什么？</li>
+<li>判断直线与圆位置关系的方法有哪些？</li>
+<li>求线段垂直平分线方程的关键步骤是什么？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过错题统计聚焦高频错误（如第4题斜率范围、第8题距离点的个数），针对性强；结合图形直观讲解斜率范围、位置关系，帮助学生理解几何意义。<strong>不足之处</strong>：部分学生对综合问题（如第8题）的几何意义理解不深，互动参与度不够；运算错误仍有发生。<strong>改进设想</strong>：后续用几何画板动态演示直线与圆的位置变化，强化直观感知；设计分层练习（基础题+提升题），让不同层次学生参与；增加小组讨论，引导学生主动分析错题原因，整理错题本。</p>
+<h1 id="《高二月考试卷讲评——直线与圆》教学设计"><a href="#《高二月考试卷讲评——直线与圆》教学设计" class="headerlink" title="《高二月考试卷讲评——直线与圆》教学设计"></a>《高二月考试卷讲评——直线与圆》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，生活中车轮是圆形，道路是直线。那直线与圆有怎样的位置关系和特性呢？让我们从试卷找答案。</p>
+<ul>
+<li><strong>教师活动</strong>：展示车轮和道路的图片，提出问题引导思考。</li>
+<li><strong>学生活动</strong>：观察图片，思考直线与圆的关系。</li>
+<li><strong>设计意图</strong>：从生活实例引入，激发学生兴趣，自然过渡到试卷讲评。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：直线倾斜角与斜率"><a href="#探究活动一：直线倾斜角与斜率" class="headerlink" title="探究活动一：直线倾斜角与斜率"></a>探究活动一：直线倾斜角与斜率</h3><ul>
+<li><strong>题目</strong>：直线$y &#x3D; 3x - 1$的倾斜角为（  ）<br>A. $30^{\circ}$  B. $45^{\circ}$  C. $60^{\circ}$  D. $150^{\circ}$</li>
+<li><strong>教师活动</strong>：引导学生回顾直线斜率与倾斜角的关系$k &#x3D; \tan\alpha$，讲解本题思路。</li>
+<li><strong>学生活动</strong>：思考并回答斜率与倾斜角的关系，尝试解题。</li>
+<li><strong>设计意图</strong>：巩固直线斜率与倾斜角的知识点，掌握解题方法。</li>
+</ul>
+<h3 id="探究活动二：直线方程参数分析"><a href="#探究活动二：直线方程参数分析" class="headerlink" title="探究活动二：直线方程参数分析"></a>探究活动二：直线方程参数分析</h3><ul>
+<li><strong>题目</strong>：已知直线方程$y &#x3D; kx + b$，若直线过二、三、四象限，则（  ）<br>A. $k &gt; 0,b &gt; 0$  B. $k &gt; 0,b &lt; 0$  C. $k &lt; 0,b &gt; 0$  D. $k &lt; 0,b &lt; 0$</li>
+<li><strong>教师活动</strong>：引导学生分析直线在不同象限的特征与斜率、截距的关系。</li>
+<li><strong>学生活动</strong>：根据直线性质分析参数$k$和$b$的正负。</li>
+<li><strong>设计意图</strong>：加深对直线方程参数意义的理解。</li>
+</ul>
+<h3 id="探究活动三：直线与圆的位置关系"><a href="#探究活动三：直线与圆的位置关系" class="headerlink" title="探究活动三：直线与圆的位置关系"></a>探究活动三：直线与圆的位置关系</h3><ul>
+<li><strong>题目</strong>：直线$l:5x + 2y - 4 &#x3D; 0$与圆$C:x^{2}+(y - 1)^{2}&#x3D;2(r &gt; 0)$的位置关系是（  ）</li>
+<li><strong>教师活动</strong>：引导学生通过比较圆心到直线的距离$d$与半径$r$的大小判断位置关系。</li>
+<li><strong>学生活动</strong>：计算圆心坐标和半径，求圆心到直线的距离并判断位置。</li>
+<li><strong>设计意图</strong>：掌握直线与圆位置关系的判断方法。</li>
+</ul>
+<h3 id="探究活动四：圆与圆的位置关系"><a href="#探究活动四：圆与圆的位置关系" class="headerlink" title="探究活动四：圆与圆的位置关系"></a>探究活动四：圆与圆的位置关系</h3><ul>
+<li><strong>题目</strong>：圆$O:x^{2}+y^{2}&#x3D;9$与圆$O_{2}:(x - 4)^{2}+(y - 3)^{2}&#x3D;4$的位置关系是（  ）</li>
+<li><strong>教师活动</strong>：引导学生根据两圆的圆心距$d$与两圆半径$R$、$r$的关系判断。</li>
+<li><strong>学生活动</strong>：计算两圆的圆心坐标和半径，求圆心距并判断位置。</li>
+<li><strong>设计意图</strong>：学会判断圆与圆的位置关系。</li>
+</ul>
+<h3 id="探究活动五：直线斜率与倾斜角的综合比较"><a href="#探究活动五：直线斜率与倾斜角的综合比较" class="headerlink" title="探究活动五：直线斜率与倾斜角的综合比较"></a>探究活动五：直线斜率与倾斜角的综合比较</h3><ul>
+<li><strong>题目</strong>：如图直线$l_{1},l_{2}$的斜率分别为$k_{1},k_{2}$，倾斜角分别为$\alpha_{1},\alpha_{2}$，则下列选项正确的是（  ）</li>
+<li><strong>教师活动</strong>：引导学生根据直线的倾斜程度比较斜率和倾斜角大小。</li>
+<li><strong>学生活动</strong>：观察图形，分析斜率和倾斜角的关系并判断选项。</li>
+<li><strong>设计意图</strong>：提高学生综合运用知识的能力。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ul>
+<li><strong>教师活动</strong>：给出类似试卷考点的练习题，巡视指导学生做题，及时解答疑问。</li>
+<li><strong>学生活动</strong>：独立完成练习题，遇到问题向老师或同学请教。</li>
+<li><strong>设计意图</strong>：巩固课堂所学知识，及时反馈学习效果。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><p>从试卷中选取部分有代表性的题目，如直线倾斜角与斜率、直线与圆位置关系等题目，让学生课后完成。</p>
+<ul>
+<li><strong>教师活动</strong>：布置作业，强调作业要求和完成时间。</li>
+<li><strong>学生活动</strong>：认真完成作业，总结解题方法和思路。</li>
+<li><strong>设计意图</strong>：进一步巩固课堂知识，培养学生自主学习和总结归纳的能力。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/10/16/%E9%80%89%E6%8B%A9%E6%80%A7%E5%BF%85%E4%BF%AE%E4%B8%80%20%E9%AB%98%E4%BA%8C%E6%9C%88%E8%80%83%E8%AF%95%E5%8D%B7%E8%AE%B2%E8%AF%84%20%E7%9B%B4%E7%BA%BF%E4%B8%8E%E5%9C%86%20%E7%AC%AC%E4%BA%8C%E8%AF%BE%E6%97%B6/">选择性必修一 高二月考试卷讲评 直线与圆 第二课时</a>
+            
+            
+            <a class="next" rel="next" href="/2025/10/15/%E5%BF%85%E4%BF%AE%E4%BA%8C%2004%20%E7%AE%80%E5%8D%95%E5%87%A0%E4%BD%95%E4%BD%93%E5%86%8D%E8%AE%A4%E8%AF%86/">必修二 04 简单几何体再认识</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
