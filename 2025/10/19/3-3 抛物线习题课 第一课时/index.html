@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>3.3 抛物线习题课 第一课时 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">3.3 抛物线习题课 第一课时</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 19, 2025&nbsp;&nbsp;21:27:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>结合高中数学核心素养，制定如下目标：</p>
+<ul>
+<li><strong>数学抽象与逻辑推理</strong>：通过例4“距离小2”的条件转化，抽象出抛物线定义的本质（到定点与定直线距离相等），推理转化的合理性，理解定义的应用价值；</li>
+<li><strong>直观想象</strong>：借助图形直观理解点(M)与(F(4,0))、直线(l:x&#x3D;-6)的位置关系，建立几何条件与代数方程的联系；</li>
+<li><strong>数学运算</strong>：通过例4的轨迹方程求解、例5的点坐标计算，掌握代入消元、方程求解及结果验证的步骤，提升运算准确性；</li>
+<li><strong>数学建模</strong>：体会抛物线作为“距离相等”模型的应用场景，能运用定义解决距离相关的轨迹或点定位问题。</li>
+</ul>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>例4以<strong>轨迹问题</strong>为载体，通过“距离小2”到“距离相等”的转化，强化抛物线定义的核心；例5以<strong>已知焦点距离求点坐标</strong>为任务，呈现“坐标法”（代入方程求解）与“定义法”（焦点距离转化为到准线距离）的对比，体现定义的简捷性与代数方法的通用性，是定义应用与运算能力培养的典型素材。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已掌握抛物线定义与标准方程，但对定义的<strong>灵活应用</strong>（如例4的条件转化）存在障碍，坐标运算中易忽略<strong>变量范围</strong>（如例5的(x_0&#x3D;-6)舍去），抽象概括与逻辑推理能力有待提升，需教师引导突破条件转化与运算易错点。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>抛物线定义的灵活应用（距离条件向定义形式的转化）；</li>
+<li>坐标法求解抛物线相关问题（轨迹、点坐标）。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>例4中“点(M)到(F)”的距离比到“(l:x&#x3D;-6)小2”向“到(F)与(l’:x&#x3D;-4)距离相等”的转化；</li>
+<li>例5中运算结果的合理性验证（舍去无效解(x_0&#x3D;-6)）。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用<strong>问题引导法</strong>（设置阶梯问题启发转化）、<strong>讲练结合法</strong>（例4讲解后跟进同类练习，例5对比定义法与坐标法）。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>采用<strong>自主探究</strong>（尝试转化例4的距离条件）、<strong>合作交流</strong>（讨论例5的不同解法）、<strong>归纳总结</strong>（提炼“条件转化—定义应用—运算验证”的解题步骤）。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（展示例4图形、例5运算过程）、学案（印发例4、例5及针对性练习）。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><p>提出三个关键问题引导学生回顾：</p>
+<ol>
+<li>抛物线定义的核心是“到定点与定直线的距离相等”，请举例说明如何将复杂距离条件转化为定义形式？</li>
+<li>用坐标法求解抛物线点坐标（如例5）时，关键步骤有哪些？</li>
+<li>例5中为什么要舍去(x_0&#x3D;-6)？求解抛物线问题时需注意哪些变量范围？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过问题链（“距离小2”意味着什么？如何让距离相等？）引导例4的条件转化，学生参与度较高；例5对比了坐标法与定义法（如用定义：到焦点距离&#x3D;到准线距离，准线(x&#x3D;-1)，故(x_0+1&#x3D;5)，直接得(x_0&#x3D;4)），拓展了思维深度。<strong>不足之处</strong>：部分学生对例4的转化仍显被动，需更具体的铺垫（如先回顾定义的符号表达）；例5的定义法应用未充分展开，学生运算中的符号错误（如((x_0-1)^2+4x_0)的展开）未完全暴露。<strong>改进设想</strong>：课前增加定义回顾练习（如“已知点到(F(2,0))与(x&#x3D;-2)距离相等，求轨迹方程”）；例5先让学生尝试用定义法解题，再对比坐标法，强化定义的简捷性；运算环节增加学生板演，及时纠正易错点（如平方展开时漏项）。</p>
+<h1 id="《抛物线习题课-第一课时》教学设计"><a href="#《抛物线习题课-第一课时》教学设计" class="headerlink" title="《抛物线习题课 第一课时》教学设计"></a>《抛物线习题课 第一课时》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>在篮球比赛中，篮球出手后的运动轨迹近似抛物线。已知某球员投篮时的情况，如何确定其轨迹方程呢？</p>
+<ul>
+<li><strong>教师活动</strong>：展示篮球投篮的视频，提出关于篮球轨迹方程的问题。</li>
+<li><strong>学生活动</strong>：观看视频，思考教师提出的问题。</li>
+<li><strong>设计意图</strong>：通过生活中常见的篮球投篮情景，激发学生的学习兴趣，自然引入抛物线的相关知识。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：利用定义求轨迹方程"><a href="#探究活动一：利用定义求轨迹方程" class="headerlink" title="探究活动一：利用定义求轨迹方程"></a>探究活动一：利用定义求轨迹方程</h3><ul>
+<li><strong>例 4</strong>：已知点 $M$ 到点 $F(4,0)$ 的距离比它到直线 $l:x &#x3D; -6$ 的距离小 2，求点 $M$ 的轨迹方程。<ul>
+<li><strong>教师活动</strong>：详细分析题目条件，引导学生将“点 $M$ 到点 $F(4,0)$ 的距离比它到直线 $l:x &#x3D; -6$ 的距离小 2”转化为“点 $M$ 到点 $F(4,0)$ 的距离等于它到直线 $l:x &#x3D; -4$ 的距离”，进而引导学生根据抛物线的定义确定轨迹。</li>
+<li><strong>学生活动</strong>：认真听讲，跟随教师思路进行分析，理解如何利用抛物线定义求轨迹方程。</li>
+<li><strong>设计意图</strong>：让学生掌握根据已知条件，利用抛物线定义求轨迹方程的方法，加深对抛物线定义的理解。</li>
+</ul>
+</li>
+</ul>
+<h3 id="探究活动二：利用抛物线性质求点的坐标"><a href="#探究活动二：利用抛物线性质求点的坐标" class="headerlink" title="探究活动二：利用抛物线性质求点的坐标"></a>探究活动二：利用抛物线性质求点的坐标</h3><ul>
+<li><strong>例 5</strong>：已知抛物线 $y^{2}&#x3D;4x$ 上的点 $P$ 到焦点 $F$ 的距离为 5，求点 $P$ 的坐标。<ul>
+<li><strong>解法 1</strong>：<ul>
+<li><strong>教师活动</strong>：引导学生根据抛物线方程求出焦点 $F(1,0)$，设点 $P$ 的坐标为 $(x_0,y_0)$，列出方程 $(x_0 - 1)^2 + y_0^2 &#x3D; 25$（原答案此处可能有误，根据点到焦点距离为 5，应该是距离的平方为 25），将 $y_0^2 &#x3D; 4x_0$ 代入方程，详细讲解求解过程，强调舍去不符合实际情况的解。</li>
+<li><strong>学生活动</strong>：在教师引导下列出方程，跟随教师步骤进行求解，理解求解过程中舍去不合理解的原因。</li>
+</ul>
+</li>
+<li><strong>解法 2</strong>：<ul>
+<li><strong>教师活动</strong>：引导学生根据抛物线方程得出准线方程 $x &#x3D; -1$，利用抛物线的性质“点到焦点的距离等于到准线的距离”，得到 $x_0 - (-1) &#x3D; 5$，进而求解出 $x_0$ 和 $y_0$。</li>
+<li><strong>学生活动</strong>：理解抛物线的这一性质，根据教师引导进行计算。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong>：通过两种不同的解法，让学生掌握利用抛物线性质求抛物线上点的坐标的方法，培养学生的解题能力和思维的灵活性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="探究活动三：抛物线在实际问题中的应用"><a href="#探究活动三：抛物线在实际问题中的应用" class="headerlink" title="探究活动三：抛物线在实际问题中的应用"></a>探究活动三：抛物线在实际问题中的应用</h3><ul>
+<li><strong>例 6</strong>：某单行隧道横断面由一段抛物线及一个矩形的三边组成（尺寸如图 2 - 32，单位：m），某卡车载一集装箱，车宽 3m，车与集装箱总高 4.5m，此车能否安全通过隧道？说明理由。<ul>
+<li><strong>教师活动</strong>：引导学生分析题目，建立合适的平面直角坐标系，设出抛物线方程，根据已知条件求出抛物线方程，然后判断车的位置对应的高度与车高的关系。</li>
+<li><strong>学生活动</strong>：在教师引导下建立坐标系，设出方程，进行计算和判断。</li>
+<li><strong>设计意图</strong>：让学生体会抛物线在实际生活中的应用，提高学生运用数学知识解决实际问题的能力。</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="练习内容"><a href="#练习内容" class="headerlink" title="练习内容"></a>练习内容</h3><ol>
+<li>求适合下列条件的抛物线的方程：<ul>
+<li>焦点为 $(-1,0)$，准线方程为 $x &#x3D; -1$；</li>
+<li>顶点在原点，准线方程为 $y &#x3D; -3$；</li>
+<li>顶点在原点，以 $y$ 轴为对称轴，过点 $M(1,1)$。</li>
+</ul>
+</li>
+<li>在同一平面直角坐标系中画出下列抛物线：<ul>
+<li>$y &#x3D; x^2$；</li>
+<li>$y &#x3D; 2x^2$；</li>
+<li>$y^{2}&#x3D;4x$。<br>通过观察这些图形，说明抛物线开口的大小与方程中 $x$ 的系数（或二次项系数）有怎样的关系。</li>
+</ul>
+</li>
+<li>若抛物线 $y^{2}&#x3D;2px$ 上的点 $P(x_0,y_0)$ 到其焦点 $F$ 的距离为 5，则 $p$ 的值为______。</li>
+<li>已知点 $M$ 到点 $A(-2,0)$ 的距离比点 $M$ 到直线 $x &#x3D; 3$ 的距离小 1，求点 $M$ 的轨迹方程。</li>
+</ol>
+<h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>布置练习题目，巡视学生做题情况，及时给予指导和帮助。</li>
+<li>针对学生普遍存在的问题进行集中讲解。</li>
+</ul>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>独立完成练习题目。</li>
+<li>遇到问题时向教师或同学请教。</li>
+</ul>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>通过课堂练习，及时巩固所学的抛物线知识，提高学生运用知识解决问题的能力。</li>
+<li>让教师了解学生对知识的掌握情况，以便调整教学策略。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ol>
+<li>已知抛物线 $y^{2}&#x3D;8x$ 上一点 $P$ 到焦点的距离为 4，求点 $P$ 的坐标。</li>
+<li>某抛物线型拱桥，当水面离拱顶 2m 时，水面宽 4m，若水面下降 1m，求水面的宽度。</li>
+<li>已知点 $A(3,2)$，$F$ 为抛物线 $y^{2}&#x3D;2x$ 的焦点，点 $P$ 在抛物线上移动，当 $|PA| + |PF|$ 取最小值时，求点 $P$ 的坐标。</li>
+</ol>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>布置课后作业，强调作业的要求和完成时间。</li>
+<li>对作业中的重点和难点进行适当提示。</li>
+</ul>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成课后作业，巩固课堂所学知识。</li>
+</ul>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>让学生在课后进一步巩固和拓展课堂所学知识，加深对抛物线知识的理解和应用。</li>
+<li>培养学生独立思考和自主学习的能力。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/10/19/3-2%20%E6%8A%9B%E7%89%A9%E7%BA%BF%E7%9A%84%E6%80%A7%E8%B4%A8/">3.2 抛物线的性质</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
