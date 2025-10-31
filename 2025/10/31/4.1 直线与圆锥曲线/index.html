@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>4.1 直线与圆锥曲线 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">4.1 直线与圆锥曲线</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 31, 2025&nbsp;&nbsp;15:53:29</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>基于高中数学核心素养，学生通过本节课的学习，能从<strong>数学抽象</strong>角度将直线与椭圆的交点问题转化为方程组公共解的代数问题，体会坐标法的本质；通过<strong>逻辑推理</strong>推导直线与椭圆有唯一公共点的充要条件（判别式(\Delta&#x3D;0)），建立“几何位置—代数条件”的对应关系；提升<strong>数学运算</strong>素养，熟练掌握联立方程的消元化简、判别式计算等操作；强化<strong>直观想象</strong>，结合动态演示理解直线与椭圆的相交、相切、相离关系。最终形成“用代数方法解决几何问题”的思维习惯，体会“数形结合”“转化与化归”的数学思想。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版教材本节以椭圆为载体，衔接“直线与圆锥曲线方程”的前置知识，通过两个例题展现“联立方程—消元化简—分析解的个数”的坐标法流程，突出“代数化几何问题”的核心思想，为双曲线、抛物线的同类问题奠定方法基础。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已掌握直线与椭圆的方程形式，但联立方程的化简能力较弱，“几何问题转代数”的意识淡薄，对“判别式与位置关系”的逻辑关联理解不深，需教师逐步引导强化。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ul>
+<li>联立直线与椭圆方程求交点的方法；</li>
+<li>用判别式判断直线与椭圆的位置关系。</li>
+</ul>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ul>
+<li>几何问题（交点个数）向代数问题（方程解的个数）的转化；</li>
+<li>判别式在“唯一公共点”问题中的正确应用。</li>
+</ul>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用启发式教学、讲练结合法，结合多媒体动态演示，引导学生自主推导核心结论。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究联立方程的消元方法，合作交流判别式的应用条件，通过练习巩固运算能力。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含直线与椭圆位置关系动态图）、学生学案（例题变式练习）。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>求直线与椭圆交点坐标的核心步骤是什么？</li>
+<li>直线与椭圆有唯一公共点的代数条件是什么？</li>
+<li>本节课体现了哪些重要的数学思想方法？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过讲练结合突出重点，多媒体动态演示帮助学生建立几何直观，例题梯度设计符合学生认知节奏。<strong>不足之处</strong>：部分学生运算错误较多，对“转化思想”的理解停留在表面，未真正内化为思维习惯。<strong>改进设想</strong>：增加联立方程化简的专项练习，设计问题链引导学生主动总结“几何—代数”的转化逻辑，加强判别式应用的变式训练（如双曲线的类似问题），提升学生的迁移能力。</p>
+<h1 id="《直线与圆锥曲线》教学设计"><a href="#《直线与圆锥曲线》教学设计" class="headerlink" title="《直线与圆锥曲线》教学设计"></a>《直线与圆锥曲线》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><ul>
+<li><strong>实例</strong>：在宇宙中，彗星的运行轨道可能是椭圆、双曲线或抛物线，而地球的运行轨道近似为圆形。当彗星靠近地球时，其运行轨道（圆锥曲线）与地球轨道（可看作直线的一部分）是否会相交呢？这就涉及到直线与圆锥曲线的交点问题。</li>
+<li><strong>教师活动</strong>：展示彗星和地球运行轨道的图片或动画，提出问题引导学生思考。</li>
+<li><strong>学生活动</strong>：观察图片或动画，思考直线与圆锥曲线交点的实际意义。</li>
+<li><strong>设计意图</strong>：通过宇宙中彗星和地球运行轨道的情景，激发学生的学习兴趣，让学生感受到数学在实际生活中的应用，自然地引出本节课的主题——直线与圆锥曲线的交点。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：直线与圆锥曲线交点个数与方程公共解个数的关系"><a href="#探究活动一：直线与圆锥曲线交点个数与方程公共解个数的关系" class="headerlink" title="探究活动一：直线与圆锥曲线交点个数与方程公共解个数的关系"></a>探究活动一：直线与圆锥曲线交点个数与方程公共解个数的关系</h3><ul>
+<li><strong>教师活动</strong>：引导学生回顾前面学习的直线以及圆、椭圆、双曲线和抛物线等曲线，提问学生如何通过方程来研究这些曲线。然后讲解通过平面直角坐标系，圆锥曲线上的点和相应圆锥曲线方程的解建立了一一对应的关系，进而得出直线与圆锥曲线的交点个数与两者对应方程的公共解的个数相同。</li>
+<li><strong>学生活动</strong>：回忆之前学过的曲线知识，积极回答教师的问题，理解直线与圆锥曲线交点个数和方程公共解个数的关系。</li>
+<li><strong>设计意图</strong>：巩固旧知识，为新知识的学习做好铺垫，让学生从理论上理解如何通过方程来研究直线与圆锥曲线的交点问题。</li>
+</ul>
+<h3 id="探究活动二：求解直线与椭圆的交点坐标"><a href="#探究活动二：求解直线与椭圆的交点坐标" class="headerlink" title="探究活动二：求解直线与椭圆的交点坐标"></a>探究活动二：求解直线与椭圆的交点坐标</h3><ul>
+<li><strong>教师活动</strong>：给出例1：求直线$L:y &#x3D; -x + 1$与椭圆$C:\frac{x^2}{3} + y^2 &#x3D; 1$的交点坐标。引导学生分析问题，列出方程组$\begin{cases}\frac{x^2}{3} + y^2 &#x3D; 1 \ y &#x3D; -x + 1\end{cases}$，然后逐步讲解求解过程，如将$y &#x3D; -x + 1$代入$\frac{x^2}{3} + y^2 &#x3D; 1$，化简方程，求解$x$的值，再代入直线方程求出$y$的值。</li>
+<li><strong>学生活动</strong>：认真听讲，跟随教师的思路进行分析和计算，理解求解直线与椭圆交点坐标的方法。</li>
+<li><strong>设计意图</strong>：通过具体的例题，让学生掌握求解直线与椭圆交点坐标的一般步骤，即联立方程、消元、求解方程、回代求坐标，培养学生的运算能力和逻辑思维能力。</li>
+</ul>
+<h3 id="探究活动三：根据直线与椭圆有唯一公共点求参数的值"><a href="#探究活动三：根据直线与椭圆有唯一公共点求参数的值" class="headerlink" title="探究活动三：根据直线与椭圆有唯一公共点求参数的值"></a>探究活动三：根据直线与椭圆有唯一公共点求参数的值</h3><ul>
+<li><strong>教师活动</strong>：给出例2：已知椭圆$\frac{x^2}{2} + y^2 &#x3D; 1$，若直线$l:x - y + m &#x3D; 0$与椭圆$C$有唯一的公共点，求实数$m$的值。引导学生分析直线与椭圆有唯一公共点的条件是方程有唯一的公共解，然后联立直线与椭圆的方程$\begin{cases}\frac{x^2}{2} + y^2 &#x3D; 1 \ x - y + m &#x3D; 0\end{cases}$，化简得到一元二次方程$3x^2 + 4mx + 2m^2 - 2 &#x3D; 0$，讲解如何利用判别式$\Delta &#x3D; 0$来求解$m$的值。</li>
+<li><strong>学生活动</strong>：积极思考，参与分析过程，按照教师的要求进行计算，理解利用判别式求解参数的方法。</li>
+<li><strong>设计意图</strong>：进一步加深学生对直线与圆锥曲线位置关系的理解，让学生掌握通过判别式来求解参数的方法，提高学生运用数学知识解决问题的能力。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ul>
+<li><strong>教师活动</strong>：给出以下练习题：<ol>
+<li>求直线$y &#x3D; 2x - 1$与椭圆$\frac{x^2}{4} + y^2 &#x3D; 1$的交点坐标。</li>
+<li>已知椭圆$\frac{x^2}{9} + \frac{y^2}{4} &#x3D; 1$，直线$x + y + k &#x3D; 0$与椭圆有唯一公共点，求$k$的值。<br>巡视学生的做题情况，及时给予指导和纠正。</li>
+</ol>
+</li>
+<li><strong>学生活动</strong>：独立完成练习题，遇到问题可以向教师或同学请教。</li>
+<li><strong>设计意图</strong>：通过课堂练习，让学生巩固所学的求解直线与圆锥曲线交点坐标和利用判别式求解参数的方法，及时反馈学生的学习情况，以便教师调整教学策略。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ul>
+<li><strong>题目</strong>：<ol>
+<li>求直线$y &#x3D; -x + 3$与双曲线$\frac{x^2}{4} - \frac{y^2}{9} &#x3D; 1$的交点坐标。</li>
+<li>已知抛物线$y^2 &#x3D; 4x$，直线$y &#x3D; kx + 2$与抛物线有且只有一个公共点，求$k$的值。</li>
+<li>若直线$y &#x3D; x + m$与椭圆$\frac{x^2}{25} + \frac{y^2}{16} &#x3D; 1$相交于$A$、$B$两点，当$m$为何值时，$|AB|$最大？</li>
+</ol>
+</li>
+<li><strong>教师活动</strong>：布置课后作业，提醒学生注意解题的步骤和方法，要求学生认真完成作业。</li>
+<li><strong>学生活动</strong>：按时完成课后作业，对本节课的知识进行进一步的巩固和拓展。</li>
+<li><strong>设计意图</strong>：通过课后练习，让学生加深对直线与圆锥曲线位置关系的理解，提高学生综合运用知识解决问题的能力，培养学生的自主学习能力。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/10/20/%E5%BF%85%E4%BF%AE%E4%BA%8C%20%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E8%80%83%E8%AF%95%E5%88%86%E6%9E%90%20%E7%AC%AC%E4%B8%80%E8%AF%BE%E6%97%B6/">必修二 期末考试 第一课时</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
