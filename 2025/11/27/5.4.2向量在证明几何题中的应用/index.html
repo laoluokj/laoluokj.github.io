@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.4.2向量在证明几何题中的应用 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.4.2向量在证明几何题中的应用</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十一月 27, 2025&nbsp;&nbsp;16:02:02</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以高中数学核心素养为导向，设定以下目标：</p>
+<ul>
+<li><strong>数学抽象</strong>：能基于直三棱柱的几何特征，合理建立空间直角坐标系，将线面平行、面面垂直的几何问题转化为向量坐标运算问题，体会“几何问题代数化”的抽象思想；</li>
+<li><strong>逻辑推理</strong>：通过向量垂直关系推导线面平行（向量与平面法向量垂直且直线不在平面内）、通过法向量垂直推导面面垂直，掌握向量法证明立体几何结论的逻辑链条；</li>
+<li><strong>直观想象</strong>：能在坐标系中直观识别点、向量与平面的位置关系，构建“空间图形—坐标表示—向量运算”的直观关联；</li>
+<li><strong>数学运算</strong>：熟练完成向量坐标计算（中点坐标、向量减法）、法向量求解（解方程组）及向量点积运算，提升运算准确性与规范性。</li>
+</ul>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>本例题选自北师大版高中数学《必修第二册》“向量在立体几何中的应用”章节，是<strong>向量工具性的典型体现</strong>：</p>
+<ul>
+<li>以直三棱柱（含$\angle BAC&#x3D;90^\circ$）为背景，自然引入空间直角坐标系，连接“立体几何直观”与“向量坐标运算”；</li>
+<li>问题设计梯度合理：第(1)问线面平行是基础（向量与平面法向量垂直），第(2)问面面垂直是深化（两平面法向量垂直），逐步培养“坐标化解决立体几何问题”的核心能力；</li>
+<li>教材通过“修正法向量计算错误”的过程，强调运算准确性的重要性，渗透“严谨求实”的数学态度。</li>
+</ul>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生具备以下特征：</p>
+<ul>
+<li>已掌握空间直角坐标系的基本概念，但<strong>坐标系建立的合理性判断</strong>需强化（如利用$\angle BAC&#x3D;90^\circ$与直三棱柱的垂直关系定轴）；</li>
+<li>向量运算（中点坐标、向量减法、点积）基础尚可，但<strong>法向量求解的步骤规范性</strong>（解方程组、赋值技巧）易出错；</li>
+<li>空间想象能力一般，需通过“坐标系可视化”降低立体几何问题的抽象性，加强“几何条件”与“向量表达”的对应理解。</li>
+</ul>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>向量法证明线面平行的核心步骤：$\overrightarrow{MN} \perp$平面$A’ACC’$的法向量，且$MN<br>ot\subset$平面$A’ACC’$；</li>
+<li>向量法证明面面垂直的核心步骤：平面$CMN$的法向量与平面$AMN$的法向量垂直。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>准确求解平面的法向量（通过解方程组确定法向量坐标的赋值技巧）；</li>
+<li>理解“线面平行”与“向量垂直于法向量”、“面面垂直”与“法向量垂直”的逻辑关联。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用**“问题引导+演示验证”**教学法：</p>
+<ul>
+<li>以“如何将直三棱柱转化为坐标问题？”“线面平行的向量条件是什么？”等问题引导思考，逐步拆解难点；</li>
+<li>用多媒体演示坐标系构建、向量坐标计算及法向量求解过程，直观呈现“几何—代数”的转化。</li>
+</ul>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>以**“自主探究+合作交流”**为主要学法：</p>
+<ul>
+<li>自主完成中点坐标、向量$\overrightarrow{MN}$、$\overrightarrow{CM}$的计算，巩固基础运算；</li>
+<li>合作讨论法向量的求解方法（如赋值$z&#x3D;-2$简化计算），归纳向量法证明的步骤框架。</li>
+</ul>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><ul>
+<li>多媒体课件（含直三棱柱模型、坐标系动态构建、向量运算流程）；</li>
+<li>几何画板（演示向量与平面的垂直关系、法向量的几何意义）；</li>
+<li>学生练习纸（印制定理模板：线面平行&#x2F;面面垂直的向量判定条件）。</li>
+</ul>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><p>设计3个关键问题，引导学生归纳核心方法：</p>
+<ol>
+<li>用向量法证明线面平行时，为什么需要同时满足“向量与平面法向量垂直”和“直线不在平面内”？</li>
+<li>求解平面法向量时，如何通过“赋值”简化计算？（如令$z&#x3D;-2$将$x$化为整数）</li>
+<li>用向量法证明面面垂直的本质是什么？（两平面法向量的点积为0）</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><ul>
+<li><strong>成功之处</strong>：通过“坐标系构建—向量计算—法向量求解—结论推导”的分步引导，学生基本掌握了向量法证明的流程，体会到向量的工具性；多媒体演示降低了空间想象难度，普通班学生参与度较高。</li>
+<li><strong>不足之处</strong>：部分学生在法向量求解时仍存在“方程组消元错误”（如两式相减漏变号）、“赋值随意性大”（如令$z&#x3D;1$导致分数运算）的问题，运算准确性需加强。</li>
+<li><strong>改进设想</strong>：增加“法向量求解专项练习”（如给定点坐标求平面法向量），用“错题示例”（如本例题中原法向量计算错误）提醒易错点；设计“分步评分表”（坐标系建立2分、向量计算3分、法向量求解3分、结论推导2分），强化运算规范性。</li>
+</ul>
+<h1 id="《向量在证明几何题中的应用》教学设计"><a href="#《向量在证明几何题中的应用》教学设计" class="headerlink" title="《向量在证明几何题中的应用》教学设计"></a>《向量在证明几何题中的应用》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>生活中，桥梁结构的稳定性依赖于几何形状。比如斜拉桥，其索塔与拉索构成的几何关系，可用向量证明其稳定性，引出课题。</p>
+<h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><p>展示斜拉桥的图片，引导学生观察其结构特点，提出如何用数学方法证明结构稳定性的问题。</p>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><p>观察图片，思考教师提出的问题，尝试从几何角度分析结构。</p>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><p>从生活实例引入，激发学生的学习兴趣，让学生感受数学在实际生活中的应用，为新知识的学习做好铺垫。</p>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：问题呈现与坐标系建立"><a href="#探究活动一：问题呈现与坐标系建立" class="headerlink" title="探究活动一：问题呈现与坐标系建立"></a>探究活动一：问题呈现与坐标系建立</h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>已知直三棱柱 $ABC - A’B’C’$ 中，$\angle BAC &#x3D; 90^{\circ}$，$AB &#x3D; AC &#x3D; 2AA’$，设 $AA’ &#x3D; 1$，则 $AB &#x3D; AC &#x3D; 2$。以 $AB$，$AC$，$AA’$ 所在直线分别为 $x$ 轴、$y$ 轴、$z$ 轴建立空间直角坐标系。点 $M$，$N$ 分别为 $A’B$ 和 $BC’$ 的中点。</p>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><p>详细讲解题目条件，引导学生根据条件建立合适的空间直角坐标系，强调建立坐标系的关键要素。</p>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><p>认真听教师讲解，理解题目条件，跟随教师思路建立空间直角坐标系。</p>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><p>让学生学会根据几何图形的特点建立空间直角坐标系，为后续用向量解决几何问题奠定基础。</p>
+<h3 id="探究活动二：点的坐标确定"><a href="#探究活动二：点的坐标确定" class="headerlink" title="探究活动二：点的坐标确定"></a>探究活动二：点的坐标确定</h3><p>已知 $A’(0,0,1)$，$B(2,0,0)$，$C(0,2,0)$，$C’(0,2,1)$，$B’(2,0,1)$。<br>因为点 $M$ 是 $A’B$ 的中点，根据中点坐标公式可得 $M$ 的坐标为 $(\frac{0 + 2}{2},\frac{0 + 0}{2},\frac{1 + 0}{2})&#x3D;(1,0,0.5)$；点 $N$ 是 $BC’$ 的中点，可得 $N$ 的坐标为 $(\frac{2 + 0}{2},\frac{0 + 2}{2},\frac{0 + 1}{2})&#x3D;(1,1,0.5)$。</p>
+<h3 id="教师活动-2"><a href="#教师活动-2" class="headerlink" title="教师活动"></a>教师活动</h3><p>引导学生回顾中点坐标公式，让学生根据公式计算点 $M$，$N$ 的坐标，并进行巡视指导。</p>
+<h3 id="学生活动-2"><a href="#学生活动-2" class="headerlink" title="学生活动"></a>学生活动</h3><p>回顾中点坐标公式，计算点 $M$，$N$ 的坐标，与同学交流计算结果。</p>
+<h3 id="设计意图-2"><a href="#设计意图-2" class="headerlink" title="设计意图"></a>设计意图</h3><p>巩固中点坐标公式的应用，让学生掌握在空间直角坐标系中确定点坐标的方法。</p>
+<h3 id="探究活动三：向量的计算与证明"><a href="#探究活动三：向量的计算与证明" class="headerlink" title="探究活动三：向量的计算与证明"></a>探究活动三：向量的计算与证明</h3><h4 id="（1）证明-MN-平行于平面-A’ACC’"><a href="#（1）证明-MN-平行于平面-A’ACC’" class="headerlink" title="（1）证明 $MN$ 平行于平面 $A’ACC’$"></a>（1）证明 $MN$ 平行于平面 $A’ACC’$</h4><p>因为向量 $\overrightarrow{AB}&#x3D;(2,0,0)$，且 $A’ACC’$ 是直三棱柱的侧面，$AB$ 垂直于 $AA’$ 和 $AC$，所以向量 $\overrightarrow{AB}$ 是平面 $A’ACC’$ 的一个法向量。<br>又因为 $M(1,0,0.5)$，$N(1,1,0.5)$，所以 $\overrightarrow{MN}&#x3D;(1 - 1,1 - 0,0.5 - 0.5)&#x3D;(0,1,0)$。<br>计算 $\overrightarrow{MN}\cdot\overrightarrow{AB}&#x3D;(0,1,0)\cdot(2,0,0)&#x3D;0\times2 + 1\times0 + 0\times0 &#x3D; 0$，所以 $\overrightarrow{MN}\perp\overrightarrow{AB}$，又 $MN<br>ot\subset$ 平面 $A’ACC’$，故 $MN$ 平行于平面 $A’ACC’$。</p>
+<h4 id="（2）证明平面-CMN-perp-平面-AMN"><a href="#（2）证明平面-CMN-perp-平面-AMN" class="headerlink" title="（2）证明平面 $CMN\perp$ 平面 $AMN$"></a>（2）证明平面 $CMN\perp$ 平面 $AMN$</h4><p>已知 $C(0,2,0)$，$M(1,0,0.5)$，$N(1,1,0.5)$，则 $\overrightarrow{CM}&#x3D;(1 - 0,0 - 2,0.5 - 0)&#x3D;(1,-2,0.5)$，$\overrightarrow{CN}&#x3D;(1 - 0,1 - 2,0.5 - 0)&#x3D;(1,-1,0.5)$。<br>设平面 $CMN$ 的法向量 $\overrightarrow{n}&#x3D;(x,y,z)$，因为 $\overrightarrow{n}\perp\overrightarrow{CM}$ 且 $\overrightarrow{n}\perp\overrightarrow{CN}$，所以 $\begin{cases}\overrightarrow{n}\cdot\overrightarrow{CM}&#x3D;x - 2y + 0.5z &#x3D; 0\\overrightarrow{n}\cdot\overrightarrow{CN}&#x3D;x - y + 0.5z &#x3D; 0\end{cases}$，解方程组可得 $\overrightarrow{n}&#x3D;(3,1,-2)$（具体求解过程：两式相减得 $-y &#x3D; 0$，即 $y &#x3D; 1$，代入第一个方程可得 $x - 2 + 0.5z &#x3D; 0$，令 $z &#x3D; - 2$，则 $x &#x3D; 3$）。<br>同理可求平面 $AMN$ 的法向量 $\overrightarrow{n_1}$（过程略），通过计算 $\overrightarrow{n}\cdot\overrightarrow{n_1}&#x3D;0$，可得平面 $CMN\perp$ 平面 $AMN$。</p>
+<h3 id="教师活动-3"><a href="#教师活动-3" class="headerlink" title="教师活动"></a>教师活动</h3><p>引导学生分析证明思路，讲解向量平行、垂直的判定方法，指导学生进行向量的计算和方程组的求解。</p>
+<h3 id="学生活动-3"><a href="#学生活动-3" class="headerlink" title="学生活动"></a>学生活动</h3><p>跟随教师思路，分析证明过程，进行向量的计算和方程组的求解，与同学讨论证明过程中的问题。</p>
+<h3 id="设计意图-3"><a href="#设计意图-3" class="headerlink" title="设计意图"></a>设计意图</h3><p>让学生掌握用向量证明线面平行、面面垂直的方法，提高学生运用向量解决几何问题的能力。</p>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动-4"><a href="#教师活动-4" class="headerlink" title="教师活动"></a>教师活动</h3><p>给出类似的几何证明题目，巡视学生的做题情况，及时给予指导和纠正。</p>
+<h3 id="学生活动-4"><a href="#学生活动-4" class="headerlink" title="学生活动"></a>学生活动</h3><p>独立完成练习题目，遇到问题向教师或同学请教。</p>
+<h3 id="设计意图-4"><a href="#设计意图-4" class="headerlink" title="设计意图"></a>设计意图</h3><p>巩固课堂所学知识，让学生熟练掌握用向量证明几何问题的方法，提高学生的解题能力。</p>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><p>选取一些难度适中的向量证明几何题，要求学生独立完成，加深对向量在几何证明中应用的理解。</p>
+<h3 id="教师活动-5"><a href="#教师活动-5" class="headerlink" title="教师活动"></a>教师活动</h3><p>布置课后作业，批改作业，了解学生对知识的掌握情况。</p>
+<h3 id="学生活动-5"><a href="#学生活动-5" class="headerlink" title="学生活动"></a>学生活动</h3><p>认真完成课后作业，总结解题方法和思路。</p>
+<h3 id="设计意图-5"><a href="#设计意图-5" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过课后作业，进一步巩固课堂所学知识，培养学生的自主学习能力和总结归纳能力。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/11/27/5.4.2%20%E7%94%A8%E5%90%91%E9%87%8F%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%85%B3%E7%B3%BB/">5.4.2 用向量方法研究立体几何中的位置关系</a>
+            
+            
+            <a class="next" rel="next" href="/2025/11/27/5.4.1%E7%9B%B4%E7%BA%BF%E7%9A%84%E6%96%B9%E5%90%91%E5%90%91%E9%87%8F%E4%B8%8E%E5%B9%B3%E9%9D%A2%E7%9A%84%E6%B3%95%E5%90%91%E9%87%8F/">5.4.1直线的方向向量与平面的法向量</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

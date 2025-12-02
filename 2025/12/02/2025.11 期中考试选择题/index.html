@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>2025.11 期中考试选择题 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">2025.11 期中考试选择题</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 2, 2025&nbsp;&nbsp;11:29:34</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="2025-11-期中考试选择题复习课教案"><a href="#2025-11-期中考试选择题复习课教案" class="headerlink" title="2025.11 期中考试选择题复习课教案"></a>2025.11 期中考试选择题复习课教案</h3><h4 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a><strong>1. 教学目标</strong></h4><p>以高中数学核心素养为导向，引导学生：① 通过集合交集、函数奇偶性等概念的应用，深化<strong>数学抽象</strong>素养；② 借助直线与圆位置关系、解三角形的推理过程，发展<strong>逻辑推理</strong>素养；③ 准确完成平行直线距离、向量垂直（$\boldsymbol{m} \perp \boldsymbol{n} \Leftrightarrow 2(a-1) + a \cdot 1 &#x3D; 0$）、解三角形（$a^2 &#x3D; b^2 + c^2 - 2bc\cos A$）等运算，强化<strong>数学运算</strong>素养；④ 利用图形分析双曲线（$\frac{x^2}{a^2} - \frac{y^2}{b^2} &#x3D; 1$）、抛物线（$x^2 &#x3D; 2py$）的几何特征，培养<strong>直观想象</strong>素养；⑤ 计算统计量（极差、平均数、分位数）并分析数据特征，提升<strong>数据分析</strong>素养。最终实现期中考试选择题解题能力与应试技巧的提升。</p>
+<h4 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a><strong>2. 教材分析</strong></h4><p>北师大新版教材注重“基础+综合”，试题覆盖集合、概率、直线与圆、函数、解三角形、圆锥曲线、向量、统计等模块，既考查概念本质（如集合交集、函数奇偶性），又考查方法迁移（如平行直线距离公式、圆的位置关系判断），契合教材“螺旋上升”的编排逻辑。</p>
+<h4 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a><strong>3. 学情分析</strong></h4><p>普通高中普通班学生，对基础概念（如圆锥曲线定义）的理解停留在表面，运算能力（如解三角形、向量垂直计算）薄弱，逻辑推理（如双曲线离心率推导）不足，需教师引导梳理知识点关联，强化解题步骤的规范性。</p>
+<h4 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a><strong>4. 教学重点</strong></h4><ol>
+<li>集合、函数奇偶性、直线与圆等基础知识点巩固；</li>
+<li>解三角形、圆锥曲线等模块的解题方法总结。</li>
+</ol>
+<h4 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a><strong>5. 教学难点</strong></h4><ol>
+<li>双曲线、抛物线的综合几何应用；</li>
+<li>复杂问题的逻辑推理与运算（如双曲线离心率推导）。</li>
+</ol>
+<h4 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a><strong>6. 教法</strong></h4><p>采用“讲练结合+分类指导+直观演示”法：结合实例讲解知识点，针对基础&#x2F;综合题分层指导，用图形演示圆锥曲线几何特征。</p>
+<h4 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a><strong>7. 学法</strong></h4><p>学生自主思考完成题目，小组合作交流解题思路，总结错题原因，整理“题型-方法”对应清单。</p>
+<h4 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a><strong>8. 教学准备</strong></h4><p>多媒体课件（含试题解析、圆锥曲线图形演示）、学生答题情况统计分析表、错题集模板。</p>
+<h4 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a><strong>9. 课堂小结</strong></h4><ol>
+<li>本堂复习覆盖了哪些核心知识模块？</li>
+<li>解决直线与圆、圆锥曲线问题的常用方法有哪些？</li>
+<li>你在解题中最易出错的环节（如概念混淆、运算失误）是什么？</li>
+</ol>
+<h4 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a><strong>10. 教学反思</strong></h4><p><strong>成功之处</strong>：以核心素养为线索串联知识点，讲练结合提升了学生对基础题（如集合、直线距离）的正确率；图形演示突破了双曲线离心率推导的直观想象难点。<strong>不足之处</strong>：部分学生对综合题（如双曲线离心率）的逻辑推理仍显吃力，课堂互动局限于“教师讲、学生听”。<strong>改进设想</strong>：增加分层练习（基础题+拓展题），针对不同层次学生设计任务；加强小组讨论，鼓励学生展示解题思路；课后针对圆锥曲线综合题开展1-2次专题辅导，强化推理过程的拆解。</p>
+<h1 id="高中数学期中考试选择题与填空题复习教学设计"><a href="#高中数学期中考试选择题与填空题复习教学设计" class="headerlink" title="高中数学期中考试选择题与填空题复习教学设计"></a>高中数学期中考试选择题与填空题复习教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如我们在生活中遇到很多数据集合、图形位置关系等问题，该如何解决呢？今天就通过这些考题来一探究竟。</p>
+<ul>
+<li><strong>教师活动</strong>：通过简洁话语引出本节课围绕考试题目展开复习。</li>
+<li><strong>学生活动</strong>：倾听并思考生活中可能遇到的相关数学问题。</li>
+<li><strong>设计意图</strong>：以生活实例引发学生兴趣，自然过渡到本节课内容。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：集合与概率问题"><a href="#探究活动一：集合与概率问题" class="headerlink" title="探究活动一：集合与概率问题"></a>探究活动一：集合与概率问题</h3><ol>
+<li><strong>题目呈现</strong><ul>
+<li>已知集合$A &#x3D; {1, 2, 5}$，$B &#x3D; {1, 2, 9}$，则$A \cap B &#x3D;$（ ）<ul>
+<li>A.</li>
+<li>B. ${1, 2}$</li>
+<li>C. ${1}$</li>
+<li>D. ${1, 2, 5, 9}$</li>
+</ul>
+</li>
+<li>掷一颗质地均匀的正方体骰子，出现点数是$1$的概率是____。</li>
+</ul>
+</li>
+<li><strong>教师活动</strong><ul>
+<li>展示题目，引导学生回顾集合交集的定义和概率的计算方法。</li>
+<li>提问学生集合交集的概念，以及计算骰子出现特定点数概率的思路。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>思考并回答教师的问题。</li>
+<li>尝试计算集合的交集和骰子出现点数$1$的概率。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>巩固集合交集和简单概率的基础知识，为后续更复杂的题目做铺垫。</li>
+<li>培养学生回顾和运用旧知识解决问题的能力。</li>
+</ul>
+</li>
+</ol>
+<h3 id="探究活动二：直线与圆的问题"><a href="#探究活动二：直线与圆的问题" class="headerlink" title="探究活动二：直线与圆的问题"></a>探究活动二：直线与圆的问题</h3><ol>
+<li><strong>题目呈现</strong><ul>
+<li>两条平行直线$l_1: x - y - 2 &#x3D; 0$与$l_2: x - y &#x3D; 0$之间的距离为（ ）<ul>
+<li>A. $2$</li>
+<li>B. $1$</li>
+<li>C. $\frac{\sqrt{2}}{2}$</li>
+<li>D. $2$</li>
+</ul>
+</li>
+<li>若方程$x^2 + y^2 + 2x - a &#x3D; 0$表示的曲线是一个圆，则实数$a$的取值范围是（ ）<ul>
+<li>A. $(-\infty, 1)$</li>
+<li>B. $(1, +\infty)$</li>
+<li>C. $(-\infty, -1)$</li>
+<li>D. $(-1, +\infty)$</li>
+</ul>
+</li>
+<li>圆$C_1: x^2 + (y - 4)^2 &#x3D; 4$与圆$C_2: (x - 3)^2 + y^2 &#x3D; 9$的位置关系是（ ）<ul>
+<li>A. 内含</li>
+<li>B. 外切</li>
+<li>C. 内切</li>
+<li>D. 相交</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>教师活动</strong><ul>
+<li>讲解直线平行距离公式、圆的一般方程的条件以及判断两圆位置关系的方法。</li>
+<li>引导学生分析题目，找出解题的关键步骤。</li>
+<li>针对学生的回答进行点评和纠正。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>认真听讲，理解教师讲解的知识点。</li>
+<li>积极思考题目，尝试运用所学知识解题。</li>
+<li>与同学交流讨论，分享自己的解题思路。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>加深学生对直线与圆相关知识的理解和运用。</li>
+<li>培养学生分析问题和解决问题的能力，以及合作交流的意识。</li>
+</ul>
+</li>
+</ol>
+<h3 id="探究活动三：函数与三角函数问题"><a href="#探究活动三：函数与三角函数问题" class="headerlink" title="探究活动三：函数与三角函数问题"></a>探究活动三：函数与三角函数问题</h3><ol>
+<li><strong>题目呈现</strong><ul>
+<li>已知$f(x)$是定义在$R$上的偶函数，且当$x &lt; 0$时$f(x) &#x3D; x + 2$，则$f(2) &#x3D;$（ ）<ul>
+<li>A. $0$</li>
+<li>B. $-4$</li>
+<li>C.</li>
+<li>D. $-2$</li>
+</ul>
+</li>
+<li>在$\triangle ABC$中，角$A$，$B$，$C$的对边分别是$a$，$b$，$c$，若$b &#x3D; 1$，$c &#x3D; 3$，$\cos A &#x3D; \frac{1}{3}$（假设补充完整），则$a &#x3D;$（ ）<ul>
+<li>A. $4$</li>
+<li>B. $2\sqrt{2}$</li>
+<li>C. $2\sqrt{3}$</li>
+<li>D. $\sqrt{14}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>教师活动</strong><ul>
+<li>强调偶函数的性质，引导学生利用偶函数的对称性解题。</li>
+<li>讲解余弦定理的内容和应用，通过题目示例让学生掌握如何运用余弦定理求三角形的边长。</li>
+<li>鼓励学生提出疑问，及时解答学生的困惑。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>回顾偶函数的性质，思考如何利用已知条件求出$f(2)$的值。</li>
+<li>学习余弦定理，尝试运用余弦定理解决三角形边长的问题。</li>
+<li>提出自己在解题过程中遇到的问题，与教师和同学共同探讨。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>强化学生对函数奇偶性和三角函数余弦定理的理解和运用。</li>
+<li>培养学生独立思考和解决问题的能力，以及提出问题和解决问题的意识。</li>
+</ul>
+</li>
+</ol>
+<h3 id="探究活动四：双曲线与抛物线问题"><a href="#探究活动四：双曲线与抛物线问题" class="headerlink" title="探究活动四：双曲线与抛物线问题"></a>探究活动四：双曲线与抛物线问题</h3><ol>
+<li><strong>题目呈现</strong><ul>
+<li>如图，双曲线$C: \frac{x^2}{b^2} - \frac{y^2}{a^2} &#x3D; 1$（$a &gt; 0$，$b &gt; 0$）的左、右焦点分别为$F_1$，$F_2$，$O$为原点，在$C$的右支上存在关于$x$轴对称的两点$P$，$Q$，使得$\triangle PF_1Q$为正三角形，且$OQ \perp FP$，直线$OQ$交$FP$于点$M$，则双曲线$C$的离心率为（ ）<ul>
+<li>A. $2$</li>
+<li>B. $1 + \sqrt{2}$</li>
+<li>C. $3$</li>
+<li>D. $1 + \sqrt{3}$</li>
+</ul>
+</li>
+<li>已知抛物线$C: x^2 &#x3D; 2py$的焦点为$F$，$P$为其上一动点，当$P$运动到$(t, 1)$时，$|PF| &#x3D; 2$，直线$l$与抛物线$C$相交于$A$、$B$两点，则下列结论正确的是（ ）<ul>
+<li>A. 抛物线$C$的方程为$x^2 &#x3D; 4y$</li>
+<li>B. 抛物线$C$的准线方程为$y &#x3D; -1$</li>
+<li>C. $|PF| &gt; 1$</li>
+<li>D. 当直线$l$过焦点$F$时，以$AF$为直径的圆与$x$轴相切</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>教师活动</strong><ul>
+<li>详细讲解双曲线离心率的定义和求法，结合题目中的几何条件，引导学生建立等式求解离心率。</li>
+<li>介绍抛物线的焦点、准线等概念，以及抛物线的定义和性质。</li>
+<li>通过图形辅助，帮助学生理解题目中的几何关系，引导学生分析解题思路。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>认真听讲，理解双曲线离心率和抛物线相关概念。</li>
+<li>观察图形，分析题目中的几何条件，尝试找出解题的关键。</li>
+<li>与教师和同学互动，分享自己的解题思路和遇到的困难。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>提升学生对双曲线和抛物线这两种圆锥曲线的综合运用能力。</li>
+<li>培养学生的几何直观和逻辑推理能力，提高学生解决复杂数学问题的能力。</li>
+</ul>
+</li>
+</ol>
+<h3 id="探究活动五：多项选择题与数据统计问题"><a href="#探究活动五：多项选择题与数据统计问题" class="headerlink" title="探究活动五：多项选择题与数据统计问题"></a>探究活动五：多项选择题与数据统计问题</h3><ol>
+<li><strong>题目呈现</strong><ul>
+<li>二选择题：本题共$3$小题，每小题$6$分，共$18$分。在每小题给出的选项中，有多项符合题目要求。全部选对的得$6$分，部分选对的得$3$分，有选错的得$0$分。</li>
+<li>关于直线$l: 3x + y + 2 &#x3D; 0$，下列说法正确的有（ ）<ul>
+<li>A. 直线$l$的斜率为$-3$</li>
+<li>B. 直线$l$的倾斜角为$120^{\circ}$</li>
+<li>C. 直线$l$在$y$轴上的截距为$-2$</li>
+<li>D. 直线$l$不经过第一象限</li>
+</ul>
+</li>
+<li>为了弘扬航天人顽强拼搏的精神，某校航天课外小组举行了一次航天知识竞赛，随机抽取$6$名同学的分数（满分$30$分）：$20$，$22$，$24$，$24$，$26$，$28$，则这组数据的（ ）<ul>
+<li>A. 极差为$8$</li>
+<li>B. 平均数为$24$</li>
+<li>C. $80%$分位数为$25$</li>
+<li>D. 众数为$24$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>教师活动</strong><ul>
+<li>强调多项选择题的得分规则，提醒学生仔细分析每个选项。</li>
+<li>引导学生回顾直线的斜率、倾斜角、截距等概念，以及数据统计中的极差、平均数、分位数和众数的计算方法。</li>
+<li>组织学生讨论多项选择题的解题策略，鼓励学生分享自己的思考过程。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>了解多项选择题的得分规则，认真分析每个选项。</li>
+<li>回顾直线和数据统计的相关知识，运用所学知识判断选项的正确性。</li>
+<li>参与小组讨论，分享自己的解题思路和答案，听取他人的意见和建议。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>培养学生的综合分析能力和严谨的思维习惯，提高多项选择题的得分率。</li>
+<li>巩固直线和数据统计的基础知识，提升学生运用数学知识解决实际问题的能力。</li>
+</ul>
+</li>
+</ol>
+<h3 id="探究活动六：填空题"><a href="#探究活动六：填空题" class="headerlink" title="探究活动六：填空题"></a>探究活动六：填空题</h3><ol>
+<li><strong>题目呈现</strong><ul>
+<li>已知平面向量$\vec{m} &#x3D; (2, a)$，$\vec{n} &#x3D; (a - 1, 1)$，若$\vec{m} \perp \vec{n}$，则实数$a$的值为____。</li>
+<li>若椭圆$C: \frac{x^2}{a^2} + \frac{y^2}{b^2} &#x3D; 1$（$a &gt; b &gt; 0$）的离心率为$e$，且$e &#x3D; \frac{\sqrt{3}}{2}$，则$b &#x3D;$（ ）</li>
+</ul>
+</li>
+<li><strong>教师活动</strong><ul>
+<li>提醒学生填空题的答题规范，强调计算的准确性。</li>
+<li>引导学生回顾向量垂直的性质和椭圆离心率的公式。</li>
+<li>对学生的解答进行点评和总结，强调解题的关键步骤和易错点。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>认真读题，注意答题规范。</li>
+<li>运用向量垂直的性质和椭圆离心率的公式进行计算。</li>
+<li>检查自己的答案，确保计算的准确性。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>巩固向量垂直和椭圆离心率的相关知识，提高学生的计算能力和答题规范。</li>
+<li>培养学生严谨的数学思维和认真审题的习惯。</li>
+</ul>
+</li>
+</ol>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ol>
+<li><strong>教师活动</strong><ul>
+<li>给出一些与上述探究活动类似的练习题，要求学生独立完成。</li>
+<li>巡视学生的做题情况，及时发现学生存在的问题并给予指导。</li>
+<li>选择部分学生的答案进行展示和讲解，强调解题的思路和方法。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>独立完成练习题，运用所学知识解决问题。</li>
+<li>遇到问题时，先尝试自己思考解决，若无法解决则向教师或同学请教。</li>
+<li>认真聆听教师对练习题的讲解，对比自己的解题思路，总结经验教训。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>及时巩固课堂所学知识，提高学生运用知识解决问题的能力。</li>
+<li>发现学生在学习过程中存在的问题，以便及时进行针对性的辅导和强化。</li>
+</ul>
+</li>
+</ol>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ol>
+<li><strong>题目布置</strong><ul>
+<li>布置适量的课后作业，包括选择题、填空题和解答题，涵盖本节课复习的所有知识点。</li>
+<li>要求学生认真完成作业，注意答题规范和书写工整。</li>
+</ul>
+</li>
+<li><strong>教师活动</strong><ul>
+<li>批改学生的课后作业，了解学生对本节课知识的掌握情况。</li>
+<li>针对学生作业中出现的问题，进行集中讲解和个别辅导。</li>
+</ul>
+</li>
+<li><strong>学生活动</strong><ul>
+<li>按时完成课后作业，独立思考，认真书写。</li>
+<li>对作业中出现的错误进行反思和总结，分析原因并加以改正。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong><ul>
+<li>进一步巩固课堂所学知识，加深学生对知识点的理解和运用。</li>
+<li>通过作业反馈，了解学生的学习情况，为后续的教学提供参考。</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/11/27/5.4.3.0%20%E5%B9%B3%E9%9D%A2%E6%B3%95%E5%90%91%E9%87%8F%E7%9A%84%E5%BA%94%E7%94%A8/">5.4.3.0 平面法向量的应用</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
