@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.4.3.2 直线与平面的夹角 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.4.3.2 直线与平面的夹角</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 18, 2025&nbsp;&nbsp;16:57:09</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>基于高中数学核心素养，目标如下：①通过回顾必修线面角定义，抽象“斜线-投影-锐角”的本质，培养<strong>数学抽象</strong>素养；②推导线面角与方向向量、法向量夹角的互余关系，得出公式$\sin\theta&#x3D;|\frac{\boldsymbol{l}\cdot\boldsymbol{n}}{|\boldsymbol{l}||\boldsymbol{n}|}|$，提升<strong>逻辑推理</strong>能力；③通过正三棱柱例题的坐标系建立与向量运算，发展<strong>直观想象</strong>与<strong>数学运算</strong>素养；④体会向量将空间角转化为向量夹角的“降维”思想，增强用数学工具解决问题的意识。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材将线面角放在“空间向量与立体几何”单元，是必修定义的延伸。内容以“定义→互余关系→向量公式→例题”展开，突出向量工具性；例题以正三棱柱为载体，强化坐标系建立的典型性，体现理论到实践的应用逻辑。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通班学生已掌握必修线面角定义，但对向量法的推导联系不牢；空间想象能力一般，坐标系建立易混淆轴的选择；向量运算易因符号或计算出错，需强化步骤指引与易错点提醒。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>①线面角的定义及范围$[0,\frac{\pi}{2}]$；②向量法公式$\sin\theta&#x3D;|\cos\langle\boldsymbol{l},\boldsymbol{n}\rangle|$；③正三棱柱中坐标系的建立与应用。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>①线面角与方向向量、法向量夹角的互余关系推导；②复杂几何体中坐标系的合理选择；③向量点积运算的准确性。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用问题引导法、直观演示法、讲练结合法，结合多媒体展示图形，突破互余关系的抽象难点。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主回忆定义，合作探究公式推导，模仿例题实践，总结“建系-求向量-算夹角”步骤，提升空间思维。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含图3-42至3-45）、正三棱柱模型、三角板。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><p>①直线与平面所成角的定义是什么？其范围是多少？②如何利用直线的方向向量$\boldsymbol{l}$和平面的法向量$\boldsymbol{n}$计算线面角$\theta$？③解决线面角问题的一般步骤有哪些？</p>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过必修定义自然衔接向量法，推导过程用图形直观演示，学生对$\sin\theta&#x3D;|\cos\langle\boldsymbol{l},\boldsymbol{n}\rangle|$理解较深；例题步骤分解清晰，多数学生能模仿完成。<strong>不足之处</strong>：部分学生建系时忽略正三角形坐标计算（如点B的坐标），导致后续错误；少数学生对互余关系的逻辑推导仍有困惑。<strong>改进设想</strong>：增加正三角形、正棱柱等常见几何体的坐标练习；用动画演示方向向量、法向量与线面角的位置关系，强化直观理解；对运算易错点（如向量点积、模长计算）进行专项提醒。</p>
+<h1 id="《直线与平面的夹角》教学设计"><a href="#《直线与平面的夹角》教学设计" class="headerlink" title="《直线与平面的夹角》教学设计"></a>《直线与平面的夹角》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，生活中桥梁的引桥与地面、滑梯的滑道与地面都形成一定角度，如何度量呢？今天我们来探究。</p>
+<ol>
+<li><strong>教师活动</strong>：展示桥梁引桥、滑梯等图片，提出度量角度问题。</li>
+<li><strong>学生活动</strong>：观察图片，思考问题。</li>
+<li><strong>设计意图</strong>：从生活实例引入，激发学生学习兴趣和探究欲望。</li>
+</ol>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：直线与平面所成角的定义"><a href="#探究活动一：直线与平面所成角的定义" class="headerlink" title="探究活动一：直线与平面所成角的定义"></a>探究活动一：直线与平面所成角的定义</h3><ol>
+<li>引导学生回顾必修课程中平面斜线与其投影的相关知识。<ul>
+<li><strong>教师活动</strong>：提出问题“平面的一条斜线和什么所成的角比较特殊呢”，引导学生回顾。</li>
+<li><strong>学生活动</strong>：回顾必修课程内容，积极思考并回答。</li>
+<li><strong>设计意图</strong>：通过回顾旧知，为新知识的学习搭建基础。</li>
+</ul>
+</li>
+<li>给出直线与平面所成角的定义：<br>平面的一条斜线和它在平面内的投影所成的锐角就是这条直线与这个平面所成的角。当一条直线与一个平面平行或在这个平面内时，规定这条直线与这个平面所成角的大小为$0$；当一条直线与一个平面垂直时，规定这条直线与这个平面所成角的大小为$\frac{\pi}{2}$。<ul>
+<li><strong>教师活动</strong>：详细讲解定义，结合图形进行说明。</li>
+<li><strong>学生活动</strong>：认真听讲，理解定义内容，做好笔记。</li>
+<li><strong>设计意图</strong>：让学生明确直线与平面所成角的概念。</li>
+</ul>
+</li>
+</ol>
+<h3 id="探究活动二：直线与平面所成角的性质"><a href="#探究活动二：直线与平面所成角的性质" class="headerlink" title="探究活动二：直线与平面所成角的性质"></a>探究活动二：直线与平面所成角的性质</h3><ol>
+<li>展示如图3 - 42和图3 - 43，引导学生观察。<ul>
+<li><strong>教师活动</strong>：展示图形，提出问题“从图中能发现直线与平面所成的角和直线与平面的垂线所成角有什么关系”。</li>
+<li><strong>学生活动</strong>：仔细观察图形，小组内交流讨论。</li>
+<li><strong>设计意图</strong>：培养学生的观察能力和合作交流能力。</li>
+</ul>
+</li>
+<li>总结性质：直线与平面所成的角和直线与平面的垂线所成的角互余。<ul>
+<li><strong>教师活动</strong>：引导学生总结性质，进行点评和完善。</li>
+<li><strong>学生活动</strong>：代表发言，总结性质。</li>
+<li><strong>设计意图</strong>：锻炼学生的归纳总结能力。</li>
+</ul>
+</li>
+</ol>
+<h3 id="探究活动三：直线与平面所成角的向量关系"><a href="#探究活动三：直线与平面所成角的向量关系" class="headerlink" title="探究活动三：直线与平面所成角的向量关系"></a>探究活动三：直线与平面所成角的向量关系</h3><ol>
+<li>设向量$\vec{l}$为直线的一个方向向量，$\vec{n}$是平面$\alpha$的一个法向量，引导学生推导直线$l$与平面$\alpha$所成的角$\theta$（$\theta\in[0,\frac{\pi}{2}]$）与向量的关系。<ul>
+<li><strong>教师活动</strong>：给出向量条件，引导学生利用向量的夹角公式和线面角与线线角的关系进行推导。</li>
+<li><strong>学生活动</strong>：在教师的引导下，尝试推导，同桌之间交流。</li>
+<li><strong>设计意图</strong>：培养学生的逻辑推理能力和知识迁移能力。</li>
+</ul>
+</li>
+<li>得出结论：<br>$\theta &#x3D; \frac{\pi}{2}- \langle\vec{l},\vec{n}\rangle$（如图3 - 43）或$\theta &#x3D; \frac{\pi}{2}- \arccos(\frac{|\vec{l}\cdot\vec{n}|}{|\vec{l}||\vec{n}|})$（如图3 - 42），故$\sin\theta &#x3D; |\cos\langle\vec{l},\vec{n}\rangle|&#x3D;\frac{|\vec{l}\cdot\vec{n}|}{|\vec{l}||\vec{n}|}$。<ul>
+<li><strong>教师活动</strong>：对学生的推导过程进行点评，总结得出正确结论。</li>
+<li><strong>学生活动</strong>：理解推导过程和结论，做好记录。</li>
+<li><strong>设计意图</strong>：让学生掌握用向量方法求线面角的公式。</li>
+</ul>
+</li>
+</ol>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ol>
+<li>题目：一个正方体的棱长为$1$，求直线$A_1C_1$与平面$ABCD$所成角的大小。<ul>
+<li><strong>教师活动</strong>：布置练习题目，巡视学生做题情况，及时给予指导。</li>
+<li><strong>学生活动</strong>：独立完成题目，有问题及时向老师和同学请教。</li>
+<li><strong>设计意图</strong>：及时巩固所学的线面角的知识，提高学生运用知识解决问题的能力。</li>
+</ul>
+</li>
+<li>题目：在长方体$ABCD - A_1B_1C_1D_1$中，$AB &#x3D; 3$，$AD &#x3D; 4$，$AA_1 &#x3D; 5$，求直线$A_1B$与平面$ABCD$所成角的正弦值。<ul>
+<li><strong>教师活动</strong>：进一步提出难度稍大的题目，让学生思考并解答，之后进行详细讲解。</li>
+<li><strong>学生活动</strong>：积极思考，认真解答，对比自己的答案和老师讲解的思路。</li>
+<li><strong>设计意图</strong>：加深学生对知识的理解和运用，培养学生的综合解题能力。</li>
+</ul>
+</li>
+</ol>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><h3 id="基础题"><a href="#基础题" class="headerlink" title="基础题"></a>基础题</h3><ol>
+<li>在直三棱柱$ABC - A_1B_1C_1$中，$\angle BAC &#x3D; 90^{\circ}$，$AB &#x3D; AC &#x3D; AA_1 &#x3D; 1$，求直线$A_1C$与平面$ABC$所成角的大小。</li>
+<li>已知平面$\alpha$的一个法向量$\vec{n}&#x3D;(1, - 1,1)$，直线$l$的一个方向向量$\vec{l}&#x3D;(2,1,0)$，求直线$l$与平面$\alpha$所成角的正弦值。</li>
+</ol>
+<h3 id="提高题"><a href="#提高题" class="headerlink" title="提高题"></a>提高题</h3><p>在正四棱锥$P - ABCD$中，底面边长为$2$，侧棱长为$3$，求直线$PA$与底面$ABCD$所成角的正切值。</p>
+<h3 id="拓展题"><a href="#拓展题" class="headerlink" title="拓展题"></a>拓展题</h3><p>在四棱柱$ABCD - A_1B_1C_1D_1$中，底面$ABCD$是正方形，侧棱$DD_1\perp$底面$ABCD$，$AB &#x3D; 1$，$DD_1 &#x3D; \sqrt{2}$，点$E$为$CC_1$的中点，求直线$BE$与平面$ABCD$所成角的余弦值。</p>
+<ol>
+<li><strong>教师活动</strong>：布置课后作业，要求学生完成基础题，鼓励完成提高题和拓展题，下节课进行讲解和反馈。</li>
+<li><strong>学生活动</strong>：认真完成作业，总结本节课所学知识。</li>
+<li><strong>设计意图</strong>：通过分层作业，满足不同层次学生的需求，进一步巩固和拓展所学知识。</li>
+</ol>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/12/18/5.4.3.3%20%E5%B9%B3%E9%9D%A2%E4%B8%8E%E5%B9%B3%E9%9D%A2%E7%9A%84%E5%A4%B9%E8%A7%92/">5.4.3.3 平面与平面的夹角</a>
+            
+            
+            <a class="next" rel="next" href="/2025/12/18/5.4.3.1%20%E7%9B%B4%E7%BA%BF%E4%B8%8E%E7%9B%B4%E7%BA%BF%E7%9A%84%E5%A4%B9%E8%A7%92/">5.4.3.1 直线与直线的夹角</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

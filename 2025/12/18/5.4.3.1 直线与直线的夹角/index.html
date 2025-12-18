@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.4.3.1 直线与直线的夹角 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.4.3.1 直线与直线的夹角</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 18, 2025&nbsp;&nbsp;16:49:40</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>通过回顾必修课程中异面直线夹角的定性定义，抽象出空间两条直线所成角的统一概念（范围$[0, \frac{\pi}{2}]$），发展<strong>数学抽象</strong>素养；通过推导直线方向向量夹角与直线夹角的关系（$\cos\theta &#x3D; |\cos\langle\vec{a}, \vec{b}\rangle|$），经历“定义→向量转化→结论”的逻辑推理过程，提升<strong>逻辑推理</strong>能力；通过长方体模型及空间直角坐标系下的向量运算（如例8），求解异面直线夹角的余弦值，强化<strong>数学运算</strong>素养，同时借助空间图形的直观想象，深化对“向量工具化”的理解。最终能准确掌握直线与直线夹角的向量计算方法，体会“空间角向向量角转化”的核心思想。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材将“直线与直线的夹角”作为“用向量研究立体几何度量关系”的开篇内容，衔接必修阶段异面直线夹角的定义，通过向量量化实现定量计算。内容从“定义辨析”到“向量关系推导”再到“坐标系下例题示范”，层次清晰；例8以长方体为载体，贴近学生认知，突出坐标运算的实用性，渗透“转化与化归”思想，体现向量的工具价值。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已掌握异面直线夹角的定性定义，但空间想象和向量运算的准确性有待提高。对“方向向量夹角与直线夹角的关系（为何取绝对值）”易混淆，选取异面直线方向向量时可能存在困惑，运算中常出现内积符号或模长计算错误，需直观引导和步骤强化。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>空间两条直线所成角的定义及向量计算方法；</li>
+<li>用空间向量求解异面直线夹角。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>方向向量夹角与直线夹角的关系（绝对值的意义）；</li>
+<li>异面直线方向向量的合理选取。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用问题引导法，结合直观演示（长方体模型），通过“定义辨析→推导探究→例题示范”落实向量工具的应用。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究定义内涵，合作讨论向量关系，练习巩固运算步骤，体会“空间角→向量角”的转化思想。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含长方体向量图示）、空间直角坐标系教具、练习纸。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>空间两条直线所成角的范围是什么？</li>
+<li>如何利用直线的方向向量求它们的夹角？（写出核心公式）</li>
+<li>求解异面直线夹角时，方向向量的选取需要注意什么？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以问题串引导定义理解，结合长方体模型直观演示“方向向量夹角与直线夹角的关系”，学生参与度高；例8的坐标运算步骤示范细致，多数学生能模仿完成类似练习。<strong>不足之处</strong>：部分学生对“为何取方向向量夹角的余弦绝对值”的逻辑推导理解不深，课堂练习时间不足，个别学生运算（如内积、模长）仍有错误。<strong>改进设想</strong>：增加小组讨论推导“向量夹角与直线夹角关系”的环节，补充1-2道“不同方向向量选取”的对比练习；课后布置针对性运算小练，强化易错点（如符号、根号运算）。</p>
+<h1 id="《直线与直线的夹角》教学设计"><a href="#《直线与直线的夹角》教学设计" class="headerlink" title="《直线与直线的夹角》教学设计"></a>《直线与直线的夹角》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，生活中立交桥上纵横交错的车道，它们之间存在一定角度，如何用数学求其夹角呢？</p>
+<h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><p>展示立交桥车道图片，提出问题引导学生思考。</p>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><p>观察图片，思考如何求直线间夹角。</p>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><p>从生活实例引入，激发学生学习兴趣和探究欲望。</p>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：空间中的角的概述"><a href="#探究活动一：空间中的角的概述" class="headerlink" title="探究活动一：空间中的角的概述"></a>探究活动一：空间中的角的概述</h3><p>在立体几何中，我们可以用向量方法研究空间中的角，主要包括异面直线所成的角、直线与平面所成的角以及两个平面相交所成的二面角。这些角都可以通过直线的方向向量和平面的法向量来进行度量。</p>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><p>讲解空间中角的分类，强调向量方法在研究这些角中的应用。</p>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><p>倾听讲解，理解空间中不同角的概念。</p>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><p>让学生对空间中的角有整体认识，为后续学习做铺垫。</p>
+<h3 id="探究活动二：两条直线所成的角的定义"><a href="#探究活动二：两条直线所成的角的定义" class="headerlink" title="探究活动二：两条直线所成的角的定义"></a>探究活动二：两条直线所成的角的定义</h3><p>设两条直线 $a$，$b$，在空间中任取一点 $O$，作 $a’\parallel a$，$b’\parallel b$，则 $a’$，$b’$ 所成的角 $\theta$ 的取值范围是 $(0, \frac{\pi}{2}]$，这个角 $\theta$ 叫做直线 $a$ 与 $b$ 所成的角。若两条直线方向向量分别为 $\vec{a}$，$\vec{b}$，当 $0 &lt; \langle\vec{a},\vec{b}\rangle \leq \frac{\pi}{2}$ 时，直线 $a$ 与 $b$ 所成的角 $\theta &#x3D; \langle\vec{a},\vec{b}\rangle$；当 $\frac{\pi}{2} &lt; \langle\vec{a},\vec{b}\rangle \leq \pi$ 时，直线 $a$ 与 $b$ 所成的角 $\theta &#x3D; \pi - \langle\vec{a},\vec{b}\rangle$，综合可得 $\cos\theta &#x3D; |\cos\langle\vec{a},\vec{b}\rangle|$。</p>
+<h3 id="教师活动-2"><a href="#教师活动-2" class="headerlink" title="教师活动"></a>教师活动</h3><p>通过动画演示 $a’$，$b’$ 的作法，详细推导直线所成角与向量夹角的关系。</p>
+<h3 id="学生活动-2"><a href="#学生活动-2" class="headerlink" title="学生活动"></a>学生活动</h3><p>观察动画，理解直线所成角的定义及与向量夹角的联系。</p>
+<h3 id="设计意图-2"><a href="#设计意图-2" class="headerlink" title="设计意图"></a>设计意图</h3><p>让学生深入理解两条直线所成角的概念和计算方法。</p>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动-3"><a href="#教师活动-3" class="headerlink" title="教师活动"></a>教师活动</h3><p>给出练习题：在一个长方体 $ABCD - A’B’C’D’$ 中，已知 $A(0,0,0)$，$C(2,1,3)$，$A’(0,0,3)$，$D(0,1,0)$，求直线 $AC$ 与 $A’D$ 所成角的余弦值。引导学生分析题目，提示利用向量方法求解，巡视学生做题情况，及时给予指导。</p>
+<h3 id="学生活动-3"><a href="#学生活动-3" class="headerlink" title="学生活动"></a>学生活动</h3><p>独立思考，设 $s_1$，$s_2$ 分别是 $AC$ 和 $A’D$ 的一个方向向量，计算 $s_1 &#x3D; \overrightarrow{AC}&#x3D;(2,1,3)$，$s_2 &#x3D; \overrightarrow{A’D}&#x3D;(0,1,-3)$，根据公式 $\cos\theta &#x3D; |\cos\langle s_1,s_2\rangle|$ 进行计算。</p>
+<h3 id="设计意图-3"><a href="#设计意图-3" class="headerlink" title="设计意图"></a>设计意图</h3><p>及时巩固所学知识，提高学生运用向量方法求直线夹角的能力。</p>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ol>
+<li>在正方体 $ABCD - A_1B_1C_1D_1$ 中，求直线 $AB_1$ 与 $BC_1$ 所成角的大小。</li>
+<li>已知三棱锥 $P - ABC$ 中，$PA\perp$ 平面 $ABC$，$AB &#x3D; 3$，$AC &#x3D; 4$，$PA &#x3D; 5$，求直线 $PB$ 与 $AC$ 所成角的余弦值。</li>
+</ol>
+<h3 id="教师活动-4"><a href="#教师活动-4" class="headerlink" title="教师活动"></a>教师活动</h3><p>布置课后作业，强调作业的要求和完成时间，解答学生关于作业的疑问。</p>
+<h3 id="学生活动-4"><a href="#学生活动-4" class="headerlink" title="学生活动"></a>学生活动</h3><p>认真完成课后作业，对课堂知识进行进一步巩固和拓展。</p>
+<h3 id="设计意图-4"><a href="#设计意图-4" class="headerlink" title="设计意图"></a>设计意图</h3><p>让学生在课后继续加深对直线与直线夹角的理解和应用，提高解题能力。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/12/18/5.4.3.2%20%E7%9B%B4%E7%BA%BF%E4%B8%8E%E5%B9%B3%E9%9D%A2%E7%9A%84%E5%A4%B9%E8%A7%92/">5.4.3.2 直线与平面的夹角</a>
+            
+            
+            <a class="next" rel="next" href="/2025/12/02/2025.11%20%E6%9C%9F%E4%B8%AD%E8%80%83%E8%AF%95%E9%80%89%E6%8B%A9%E9%A2%98/">2025.11 期中考试选择题</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

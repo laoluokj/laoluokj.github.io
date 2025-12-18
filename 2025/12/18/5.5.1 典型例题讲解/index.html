@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.5.1 典型例题讲解 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.5.1 典型例题讲解</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 18, 2025&nbsp;&nbsp;17:38:21</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以高中数学核心素养为导向，通过例题讲解培养<strong>数学运算</strong>素养（掌握空间向量模、点积、投影的准确计算），<strong>逻辑推理</strong>素养（推导空间轨迹、点与直线位置关系的向量逻辑），<strong>直观想象</strong>素养（建立空间轨迹、平面法向量的几何图景）；能运用向量工具解决直线、平面位置关系问题，体会向量的“数”与“形”融合的工具性，提升空间问题的转化能力。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材此部分例题聚焦空间向量与直线、平面的综合应用，涵盖向量运算、轨迹分析、线面位置关系及法向量求解，注重运算与几何意义的关联，突出向量的工具性，衔接前后知识。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生空间想象能力较弱，向量运算熟练度不足，对抽象的轨迹、法向量概念理解困难，需通过具体例题拆解难点，以直观演示降低认知门槛。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>空间向量模、点积、投影的基本运算；</li>
+<li>向量方法解决直线、平面位置关系问题。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>空间轨迹的向量分析（如第9题）；</li>
+<li>平面法向量的逻辑推导与求解（如14、15题）。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用讲练结合法，多媒体直观演示空间图形，例题拆解引导逻辑推导。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主练习与合作讨论结合，总结向量运算规律及线面问题的向量解决步骤。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含空间动画）、空间模型、向量运算练习纸。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>空间向量的模、点积运算如何对应几何意义？</li>
+<li>判断点在直线上的向量核心条件是什么？</li>
+<li>求解平面法向量的关键是利用什么关系？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过讲练结合和直观演示，学生基本掌握向量运算，能初步用向量解决线面问题。<strong>不足之处</strong>：部分学生对轨迹、法向量的几何意义理解浮于表面，运算失误较多。<strong>改进设想</strong>：增加空间模型动手操作，强化几何意义感知；设计分层练习，针对性提升运算准确性，逐步深化抽象概念理解。</p>
+<h1 id="5-5-1-典型例题讲解教学设计"><a href="#5-5-1-典型例题讲解教学设计" class="headerlink" title="5.5.1 典型例题讲解教学设计"></a>5.5.1 典型例题讲解教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>在宇宙中，卫星的运行轨道可看作是点的轨迹。假如有两颗卫星相关位置满足特定向量关系，那其轨迹会是怎样的呢？</p>
+<h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>展示卫星运行的动画或图片，提出上述问题，引导学生思考。</li>
+</ul>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>观看展示内容，思考教师提出的问题。</li>
+</ul>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过宇宙中卫星的实例引入，激发学生的学习兴趣和好奇心，让学生感受到数学在实际生活中的应用，自然地引出本节课关于点的轨迹和向量运算的问题。</p>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：向量点积与轨迹问题（对应第-9-题）"><a href="#探究活动一：向量点积与轨迹问题（对应第-9-题）" class="headerlink" title="探究活动一：向量点积与轨迹问题（对应第 9 题）"></a>探究活动一：向量点积与轨迹问题（对应第 9 题）</h3><p>题目：点 $A$，$B$ 为空间中两个不同的点，且 $|\overrightarrow{AB}| &#x3D; 1$，满足条件 $\overrightarrow{AM} \cdot \overrightarrow{AB} &#x3D; 1$ 的点 $M$ 的轨迹是什么图形？</p>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>引导学生回顾向量点积的定义 $\overrightarrow{a} \cdot \overrightarrow{b} &#x3D; |\overrightarrow{a}| |\overrightarrow{b}| \cos\theta$，将 $\overrightarrow{AM} \cdot \overrightarrow{AB}$ 按照定义展开。</li>
+<li>设 $\overrightarrow{AB}$ 的方向为单位向量方向，帮助学生建立坐标关系来分析点 $M$ 的轨迹。</li>
+</ul>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>回顾向量点积定义，尝试将 $\overrightarrow{AM} \cdot \overrightarrow{AB}$ 展开。</li>
+<li>配合教师建立坐标关系，思考点 $M$ 的轨迹特征。</li>
+</ul>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><p>让学生通过回顾旧知识，解决新问题，培养学生知识迁移和运用能力，同时深入理解向量点积与点的轨迹之间的联系。</p>
+<h3 id="探究活动二：向量的模与投影数量计算（对应第-10-题）"><a href="#探究活动二：向量的模与投影数量计算（对应第-10-题）" class="headerlink" title="探究活动二：向量的模与投影数量计算（对应第 10 题）"></a>探究活动二：向量的模与投影数量计算（对应第 10 题）</h3><p>题目：已知向量 $\overrightarrow{a}&#x3D;(0,-1,1)$，$\overrightarrow{b}&#x3D;(2,2,1)$，计算：<br>(1) $|\overrightarrow{a}|$，$|\overrightarrow{b}|$，$|-3\overrightarrow{a}|$，$|2\overrightarrow{a} - \overrightarrow{b}|$；<br>(2) $\cos\langle\overrightarrow{a},\overrightarrow{b}\rangle$；<br>(3) $2\overrightarrow{a} - \overrightarrow{b}$ 在 $-3\overrightarrow{a}$ 方向上的投影数量。</p>
+<h3 id="教师活动-2"><a href="#教师活动-2" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>引导学生回顾向量模的计算公式 $|\overrightarrow{m}| &#x3D; \sqrt{m_1^2 + m_2^2 + m_3^2}$，以及向量点积公式计算 (1) 中的各项。</li>
+<li>讲解向量夹角余弦值公式 $\cos\langle\overrightarrow{a},\overrightarrow{b}\rangle &#x3D; \frac{\overrightarrow{a} \cdot \overrightarrow{b}}{|\overrightarrow{a}| |\overrightarrow{b}|}$，引导学生计算 (2)。</li>
+<li>推导向量投影数量公式 $\frac{\overrightarrow{c} \cdot \overrightarrow{d}}{|\overrightarrow{d}|}$，让学生计算 $2\overrightarrow{a} - \overrightarrow{b}$ 在 $-3\overrightarrow{a}$ 方向上的投影数量。</li>
+</ul>
+<h3 id="学生活动-2"><a href="#学生活动-2" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>回顾相关公式，按照教师引导逐步计算各小题答案。</li>
+</ul>
+<h3 id="设计意图-2"><a href="#设计意图-2" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过本题的计算，强化学生对向量模、夹角余弦值和投影数量等概念的理解和运用，提高学生的计算能力和逻辑思维能力。</p>
+<h3 id="探究活动三：直线上点的坐标问题（对应第-11、12、13-题）"><a href="#探究活动三：直线上点的坐标问题（对应第-11、12、13-题）" class="headerlink" title="探究活动三：直线上点的坐标问题（对应第 11、12、13 题）"></a>探究活动三：直线上点的坐标问题（对应第 11、12、13 题）</h3><h4 id="第-11-题：已知直线-l-经过点-A-1-2-3-，且平行于-x-轴，求直线-l-上满足-overrightarrow-AP-1-的点-P-的坐标。"><a href="#第-11-题：已知直线-l-经过点-A-1-2-3-，且平行于-x-轴，求直线-l-上满足-overrightarrow-AP-1-的点-P-的坐标。" class="headerlink" title="第 11 题：已知直线 $l$ 经过点 $A(1,2,3)$，且平行于 $x$ 轴，求直线 $l$ 上满足 $|\overrightarrow{AP}| &#x3D; 1$ 的点 $P$ 的坐标。"></a>第 11 题：已知直线 $l$ 经过点 $A(1,2,3)$，且平行于 $x$ 轴，求直线 $l$ 上满足 $|\overrightarrow{AP}| &#x3D; 1$ 的点 $P$ 的坐标。</h4><h4 id="第-12-题：已知直线-l-经过-A-2-1-1-，-B-1-0-3-两点，求直线-l-上一点-P-，使得-overrightarrow-AP-overrightarrow-AB-。"><a href="#第-12-题：已知直线-l-经过-A-2-1-1-，-B-1-0-3-两点，求直线-l-上一点-P-，使得-overrightarrow-AP-overrightarrow-AB-。" class="headerlink" title="第 12 题：已知直线 $l$ 经过 $A(-2,1,1)$，$B(1,0,-3)$ 两点，求直线 $l$ 上一点 $P$，使得 $\overrightarrow{AP}&#x3D;-\overrightarrow{AB}$。"></a>第 12 题：已知直线 $l$ 经过 $A(-2,1,1)$，$B(1,0,-3)$ 两点，求直线 $l$ 上一点 $P$，使得 $\overrightarrow{AP}&#x3D;-\overrightarrow{AB}$。</h4><h4 id="第-13-题：判断下列点-P-是否在直线-l-上："><a href="#第-13-题：判断下列点-P-是否在直线-l-上：" class="headerlink" title="第 13 题：判断下列点 $P$ 是否在直线 $l$ 上："></a>第 13 题：判断下列点 $P$ 是否在直线 $l$ 上：</h4><p>(1) 点 $P(3,-3, )$，直线 $l$ 经过 $A(-1,1,1)$ 和 $B(1,-1, )$ 两点；<br>(2) 点 $P(1,-2,-1)$，直线 $l$ 经过 $A(-1,-4,1)$ 和 $B(2,1,2)$ 两点。</p>
+<h3 id="教师活动-3"><a href="#教师活动-3" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>对于第 11 题，引导学生根据直线平行于 $x$ 轴的特点设出点 $P$ 的坐标，再利用向量模的公式求解。</li>
+<li>对于第 12 题，先求出 $\overrightarrow{AB}$ 的坐标，再根据向量关系求出点 $P$ 的坐标。</li>
+<li>对于第 13 题，讲解判断点是否在直线上可通过判断向量是否共线的方法，引导学生计算相关向量并判断。</li>
+</ul>
+<h3 id="学生活动-3"><a href="#学生活动-3" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>按照教师引导，逐步分析和解决各题，设坐标、求向量、判断共线等。</li>
+</ul>
+<h3 id="设计意图-3"><a href="#设计意图-3" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过这几道题，让学生掌握直线的向量表示方法，以及如何利用向量关系求直线上点的坐标和判断点是否在直线上，提高学生运用向量知识解决直线问题的能力。</p>
+<h3 id="探究活动四：平面法向量问题（对应第-14、15-题）"><a href="#探究活动四：平面法向量问题（对应第-14、15-题）" class="headerlink" title="探究活动四：平面法向量问题（对应第 14、15 题）"></a>探究活动四：平面法向量问题（对应第 14、15 题）</h3><h4 id="第-14-题：已知直线-l-1-经过点-P-1-2-3-，平行于向量-overrightarrow-s-1-1-2-，直线-l-2-经过点-P-2-1-2-0-，平行于向量-overrightarrow-s-2-0-1-，求与两直线-l-1-，-l-2-都平行的平面-alpha-的一个法向量的坐标。"><a href="#第-14-题：已知直线-l-1-经过点-P-1-2-3-，平行于向量-overrightarrow-s-1-1-2-，直线-l-2-经过点-P-2-1-2-0-，平行于向量-overrightarrow-s-2-0-1-，求与两直线-l-1-，-l-2-都平行的平面-alpha-的一个法向量的坐标。" class="headerlink" title="第 14 题：已知直线 $l_1$ 经过点 $P(-1,2,3)$，平行于向量 $\overrightarrow{s}&#x3D;(1,-1,2)$，直线 $l_2$ 经过点 $P_2(1,-2,0)$，平行于向量 $\overrightarrow{s_2}&#x3D;(0, ,1)$，求与两直线 $l_1$，$l_2$ 都平行的平面 $\alpha$ 的一个法向量的坐标。"></a>第 14 题：已知直线 $l_1$ 经过点 $P(-1,2,3)$，平行于向量 $\overrightarrow{s}&#x3D;(1,-1,2)$，直线 $l_2$ 经过点 $P_2(1,-2,0)$，平行于向量 $\overrightarrow{s_2}&#x3D;(0, ,1)$，求与两直线 $l_1$，$l_2$ 都平行的平面 $\alpha$ 的一个法向量的坐标。</h4><h4 id="第-15-题：已知直线-l-经过点-P-0-1-0-1-，平行于向量-overrightarrow-s-2-1-1-，求经过直线-l-和点-A-1-2-3-的平面的一个法向量的坐标。"><a href="#第-15-题：已知直线-l-经过点-P-0-1-0-1-，平行于向量-overrightarrow-s-2-1-1-，求经过直线-l-和点-A-1-2-3-的平面的一个法向量的坐标。" class="headerlink" title="第 15 题：已知直线 $l$ 经过点 $P_0(1,0,-1)$，平行于向量 $\overrightarrow{s}&#x3D;(2,1,1)$，求经过直线 $l$ 和点 $A(1,2,3)$ 的平面的一个法向量的坐标。"></a>第 15 题：已知直线 $l$ 经过点 $P_0(1,0,-1)$，平行于向量 $\overrightarrow{s}&#x3D;(2,1,1)$，求经过直线 $l$ 和点 $A(1,2,3)$ 的平面的一个法向量的坐标。</h4><h3 id="教师活动-4"><a href="#教师活动-4" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>回顾平面法向量的定义和求法，即设法向量 $\overrightarrow{n}&#x3D;(x,y,z)$，根据法向量与平面内两向量垂直，其点积为 0 列出方程组。</li>
+<li>对于第 14 题，引导学生找出平面内与两直线平行的向量，列出关于法向量的方程组。</li>
+<li>对于第 15 题，先求出直线 $l$ 上的向量，再结合点 $A$ 得到平面内的向量，列出方程组求解法向量。</li>
+</ul>
+<h3 id="学生活动-4"><a href="#学生活动-4" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>回顾平面法向量的知识，按照教师引导列出方程组并求解。</li>
+</ul>
+<h3 id="设计意图-4"><a href="#设计意图-4" class="headerlink" title="设计意图"></a>设计意图</h3><p>让学生深入理解平面法向量的概念和求法，提高学生利用向量知识解决空间几何中平面问题的能力，培养学生的空间想象能力和逻辑推理能力。</p>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动-5"><a href="#教师活动-5" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>给出类似的练习题，如：<ul>
+<li>已知向量 $\overrightarrow{m}&#x3D;(1,2,-3)$，$\overrightarrow{n}&#x3D;(-2,1,1)$，计算 $|\overrightarrow{m} + \overrightarrow{n}|$ 和 $\cos\langle\overrightarrow{m},\overrightarrow{n}\rangle$。</li>
+<li>直线 $l$ 经过点 $Q(2, -1, 4)$ 且平行于向量 $\overrightarrow{v}&#x3D;(3, 0, -1)$，求直线 $l$ 上到点 $Q$ 距离为 $\sqrt{10}$ 的点的坐标。</li>
+</ul>
+</li>
+<li>在学生做题过程中巡视，观察学生的解题情况，及时给予指导和帮助。</li>
+</ul>
+<h3 id="学生活动-5"><a href="#学生活动-5" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成练习题，遇到问题主动向教师或同学请教。</li>
+</ul>
+<h3 id="设计意图-5"><a href="#设计意图-5" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过课堂练习，及时巩固学生所学的向量运算、直线上点的坐标求解和平面法向量等知识，提高学生运用知识解决问题的能力，同时让教师了解学生的学习情况，以便调整教学策略。</p>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><h3 id="教师活动-6"><a href="#教师活动-6" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>布置课后作业，包括：<ul>
+<li>书面作业：完成课本上相关章节的习题，如求向量的模、夹角、投影数量，判断点是否在直线上，求平面法向量等类型的题目。</li>
+<li>拓展作业：思考如果空间中有三条直线，如何求与这三条直线都平行的平面的法向量。</li>
+</ul>
+</li>
+<li>强调作业的要求和完成时间，鼓励学生独立思考，遇到问题可以通过查阅资料或与同学交流解决。</li>
+</ul>
+<h3 id="学生活动-6"><a href="#学生活动-6" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成书面作业，积极思考拓展作业，按时提交作业。</li>
+</ul>
+<h3 id="设计意图-6"><a href="#设计意图-6" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过书面作业进一步巩固课堂所学知识，加深对向量和空间几何相关概念的理解和运用。拓展作业则激发学生的探究精神和思维能力，培养学生的自主学习能力和创新意识。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/12/18/5.5%20%E7%AB%A0%E8%8A%82%E7%BB%83%E4%B9%A0%E5%B0%8F%E7%BB%93/">5.5 章节练习小结</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

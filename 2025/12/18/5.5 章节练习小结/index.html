@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.5 章节练习小结 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.5 章节练习小结</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 18, 2025&nbsp;&nbsp;17:36:12</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以高中数学核心素养为导向，引导学生梳理“函数单调性、极值、最值与导数”的逻辑关联，提升<strong>逻辑推理素养</strong>（构建知识体系的因果链）；通过$y&#x3D;x^3-3x$等典例分析，强化<strong>数学运算素养</strong>（规范“求导—判单调—定极值”的步骤）；归纳“导数工具化应用”的通性通法，发展<strong>数学抽象素养</strong>（提炼一类问题的解决模式）；结合“利润最大化”实际问题，渗透<strong>数学建模素养</strong>（用导数转化优化问题），最终达成对章节内容的系统性理解与迁移应用能力。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材“5.5 章节练习小结”以“导数如何研究函数性质？”等问题串整合核心内容，突出“导数是研究函数的工具”主线，衔接前章“导数定义”与后续“定积分”，注重通法提炼（如“导数符号判单调性”）与实际应用，符合新课标“知识联系与整合”的设计理念。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生对导数与函数性质的单个知识点（如求导、判单调）有初步掌握，但知识碎片化严重，自主梳理体系的能力不足；运算中常因“导数计算错误”“临界点遗漏”出错；对“导数解决实际问题”的建模意识薄弱，需教师引导整合与强化。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>① 梳理“导数—函数单调性—极值—最值”核心知识；② 提炼导数应用的通性通法；③ 联系导数与实际优化问题。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>① 自主构建“导数与函数性质”的知识网络；② 灵活解决含参数的极值综合问题；③ 提升实际问题的建模能力。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用问题引导法（以知识链问题驱动）、小组合作法（促进知识梳理）、典例分析法（强化通法）。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主归纳（梳理知识点）、合作交流（完善知识网络）、典例巩固（内化通法）。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>PPT（含知识框架图、典例）、空白知识卡片、分层拓展习题。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><p>① 本章节核心知识的逻辑主线是什么？② 用导数研究函数性质的通性通法有哪些？③ 导数解决实际问题的关键步骤是什么？</p>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过“导数如何连接单调性与极值？”等问题串，学生参与度较高，多数能梳理出“导数工具化”的知识主线；典例分析强化了运算规范，如$y&#x3D;x^3-3x$的极值求解错误率降低。<strong>不足之处</strong>：部分学生对“含参数的极值问题”（如$y&#x3D;ax^3+bx^2$的极值讨论）仍混淆，自主归纳时依赖教师提示，未能深度构建知识网络。<strong>改进设想</strong>：提前布置“知识点清单”预习（如让学生先填写“导数与单调性的关系”），课堂增加“参数问题”的分层小组讨论（基础组讨论$a&gt;0$，进阶组讨论$a≠0$），课后针对性布置变式练习（如$y&#x3D;x^3+ax^2+3x$的极值问题），并加强个别指导。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/12/18/5.5.1%20%E5%85%B8%E5%9E%8B%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/">5.5.1 典型例题讲解</a>
+            
+            
+            <a class="next" rel="next" href="/2025/12/18/5.4.3.3%20%E5%B9%B3%E9%9D%A2%E4%B8%8E%E5%B9%B3%E9%9D%A2%E7%9A%84%E5%A4%B9%E8%A7%92/">5.4.3.3 平面与平面的夹角</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
