@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.6.0 二项式的定义 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.6.0 二项式的定义</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 19, 2025&nbsp;&nbsp;10:06:47</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以高中数学核心素养为引领，通过从$(a+b)^2$、$(a+b)^3$的特殊展开到$(a+b)^n$的一般推导，让学生<strong>理解二项式定理的逻辑脉络</strong>（依托计数原理），掌握二项展开式的结构特征（项数、二项式系数、通项公式）；在分析“项的形成”与“系数计数”的过程中，<strong>发展逻辑推理素养</strong>（从特殊到一般的归纳）与<strong>数学抽象素养</strong>（概括展开式的通用结构）；在例题应用（如求特定项系数）中，强化<strong>数学运算素养</strong>（组合数与符号的准确计算），体会“用计数原理建模复杂问题”的数学思想，深化对“抽象代数”的认知。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材以“多项式乘法—计数原理—二项式定理”为主线，从具体例子（$(a+b)^2$、$(a+b)^3$）出发，用分步乘法与组合数推导一般形式，注重过程的逻辑性与方法渗透；内容按“问题提出—分析理解—抽象概括—例题应用”展开，例题覆盖基础展开与特定项系数求解，体现定理的实用性与工具性。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已学计数原理与组合数，但<strong>抽象概括能力较弱</strong>，对“多项式乘法规律的归纳”易停留于表面，“组合数与展开式系数的关联”理解不深；需通过直观引导（如乘法过程演示）与分步问题（如“选k个b的意义”），降低抽象难度，逐步建立定理认知。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>① 二项式定理的推导过程（计数原理的应用）；② 二项展开式的结构特征（项数、二项式系数、通项）。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>① 用组合数解释展开式中项的系数来源；② 通项公式中“二项式系数”与“项的系数”的区分。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用“问题引导法”（从特殊到一般设问）、“讲授法”（推导关键步骤）、“案例分析法”（例题讲解），结合多媒体辅助展示推导过程。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究（观察具体展开式找规律）、合作交流（讨论“项与系数的形成”）、练习巩固（模仿例题应用定理）。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（展示多项式乘法与组合数计算）、学案（提前印发$(a+b)^2$到$(a+b)^4$的展开式例子）。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><p>① 二项式定理的推导核心是利用了哪两个计数原理？② 二项展开式的“项数”“二项式系数”“通项”分别有什么特征？③ 如何用通项公式求展开式中特定项的系数？</p>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过“特殊→一般”的推导路径，大部分学生理解了定理的来源；例题分层设计（基础展开→通项应用），落实了定理的使用，数学运算能力得到锻炼。<strong>不足之处</strong>：部分学生对“二项式系数”与“项的系数”仍混淆，通项中的符号（如负号、系数次方）处理易出错；推导中“选k个b”的逻辑讲解不够具象，少数学生理解不深。<strong>改进设想</strong>：增加“二项式系数vs项的系数”对比练习；推导时用“卡片模拟因式选a&#x2F;b”的具象演示，加深对组合数的理解；课后布置针对性习题（如含负号、常数项的展开式求特定项），巩固通项应用。</p>
+<h1 id="《二项式定理》教学设计"><a href="#《二项式定理》教学设计" class="headerlink" title="《二项式定理》教学设计"></a>《二项式定理》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><ul>
+<li><strong>引入实例</strong>：生活中，假如有一种细胞每过一分钟会由 1 个分裂成 2 个，那么经过$n$分钟后，细胞总数是多少呢？从数学角度看，这和$(a + b)^n$的展开有着紧密联系。</li>
+<li><strong>教师活动</strong>：提出细胞分裂的问题，引导学生思考其与数学式子的关联，激发学生的好奇心。</li>
+<li><strong>学生活动</strong>：积极思考细胞分裂问题，尝试寻找与已有数学知识的联系。</li>
+<li><strong>设计意图</strong>：通过生活中常见的细胞分裂现象引入，让学生感受到数学与生活的紧密联系，提高学生对本节课的学习兴趣，自然地引出本节课的主题——二项式定理。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：问题提出"><a href="#探究活动一：问题提出" class="headerlink" title="探究活动一：问题提出"></a>探究活动一：问题提出</h3><ul>
+<li><strong>内容</strong>：根据多项式的乘法法则，容易知道$(a + b)^2 &#x3D; a^2 + 2ab + b^2$，$(a + b)^3 &#x3D; a^3 + 3a^2b + 3ab^2 + b^3$。如果称等式的右边为左边的展开式，那么如何求出$(a + b)^n$的展开式？</li>
+<li><strong>教师活动</strong>：引导学生回顾$(a + b)^2$和$(a + b)^3$的展开式，提出问题“如何求出$(a + b)^n$的展开式”，引发学生思考。</li>
+<li><strong>学生活动</strong>：回顾之前学过的多项式乘法法则和$(a + b)^2$、$(a + b)^3$的展开过程，尝试思考$(a + b)^n$展开式的求法。</li>
+<li><strong>设计意图</strong>：从学生熟悉的$(a + b)^2$和$(a + b)^3$展开式入手，提出$(a + b)^n$展开式的问题，让学生感受到知识的连贯性和递进性，激发学生的探究欲望。</li>
+</ul>
+<h3 id="探究活动二：分析理解"><a href="#探究活动二：分析理解" class="headerlink" title="探究活动二：分析理解"></a>探究活动二：分析理解</h3><h4 id="1-展开式每一项的特征"><a href="#1-展开式每一项的特征" class="headerlink" title="1. 展开式每一项的特征"></a>1. 展开式每一项的特征</h4><ul>
+<li><strong>内容</strong>：$(a + b)^n &#x3D; (a + b)(a + b)\cdots(a + b)$（共$n$个因式），根据多项式的乘法法则，在每个因式$(a + b)$中任选其中一项作为因子，只有$a$和$b$两种选择，即不选$a$，就选$b$。从第 1 个因式$(a + b)$中选一项作为因子，再从第 2 个因式$(a + b)$中选一项作为因子，依此类推，最后从第$n$个因式$(a + b)$中选一项作为因子，这$n$个因子的乘积构成一个单项式。由此可知：展开式的每一项由若干个$a$与若干个$b$的乘积构成，并且$a$和$b$的总个数为$n$。若$b$的个数为$k$，则$a$的个数为$n - k$，即$a^{n - k}b^k$（$k &#x3D; 0,1,2,\cdots,n$）。</li>
+<li><strong>教师活动</strong>：详细讲解$(a + b)^n$展开式每一项的形成过程，引导学生分析每一项中$a$和$b$的个数关系，举例说明不同$k$值对应的项。</li>
+<li><strong>学生活动</strong>：认真听讲，理解$(a + b)^n$展开式每一项的形成过程，跟随教师的思路分析$a$和$b$的个数关系，尝试自己举例。</li>
+<li><strong>设计意图</strong>：通过详细的讲解和举例，让学生清楚地了解$(a + b)^n$展开式每一项的特征，为后续分析同类项个数和推导二项式定理奠定基础。</li>
+</ul>
+<h4 id="2-a-n-k-b-k-同类项的个数"><a href="#2-a-n-k-b-k-同类项的个数" class="headerlink" title="2. $a^{n - k}b^k$同类项的个数"></a>2. $a^{n - k}b^k$同类项的个数</h4><ul>
+<li><strong>内容</strong>：从$n$个因式$(a + b)$中，若选出$k$个$(a + b)$，在这$k$个$(a + b)$中只取$b$不取$a$，在余下的$n - k$个$(a + b)$中只取$a$不取$b$，这样得到的乘积都是$a^{n - k}b^k$。因此，$a^{n - k}b^k$的同类项个数为$\binom{n}{k}$，即$a^{n - k}b^k$的同类项个数就是从$n$个$(a + b)$中选出$k$个$(a + b)$的组合数。</li>
+<li><strong>教师活动</strong>：结合组合的知识，解释$a^{n - k}b^k$同类项个数的计算方法，通过举例让学生理解组合数$\binom{n}{k}$在其中的应用。</li>
+<li><strong>学生活动</strong>：回顾组合的相关知识，理解$a^{n - k}b^k$同类项个数与组合数的关系，尝试用组合数的概念分析其他类似情况。</li>
+<li><strong>设计意图</strong>：将二项式展开式与组合知识相结合，让学生明白同类项个数的计算原理，培养学生综合运用知识的能力，为推导二项式定理做好铺垫。</li>
+</ul>
+<h3 id="探究活动三：抽象概括"><a href="#探究活动三：抽象概括" class="headerlink" title="探究活动三：抽象概括"></a>探究活动三：抽象概括</h3><ul>
+<li><strong>内容</strong>：$(a + b)^n$的展开式中共有$n + 1$种不同的同类项：$a^{n - k}b^k$（$k &#x3D; 0,1,2,\cdots,n$），相应的系数为$\binom{n}{k}$（$k &#x3D; 0,1,2,\cdots,n$）。因此，根据分类加法计数原理，其展开式为：<br>$(a + b)^n &#x3D; \binom{n}{0}a^n + \binom{n}{1}a^{n - 1}b + \cdots + \binom{n}{k}a^{n - k}b^k + \cdots + \binom{n}{n}b^n$<br>上式可简写成：<br>$(a + b)^n &#x3D; \sum_{k &#x3D; 0}^n \binom{n}{k}a^{n - k}b^k$<br>公式①称为二项式定理，等号右边的式子称为$(a + b)^n$的二项展开式。$(a + b)^n$的二项展开式共有$n + 1$项，其中各项系数$\binom{n}{k}$（$k &#x3D; 0,1,2,\cdots,n$）称为二项式系数。式中的$T_{k + 1} &#x3D; \binom{n}{k}a^{n - k}b^k$用$T_{k + 1}$表示，称为二项展开式中第$k + 1$项，又称为二项式通项，记作$T_{k + 1} &#x3D; \binom{n}{k}a^{n - k}b^k$。</li>
+<li><strong>教师活动</strong>：引导学生根据前面的分析，总结$(a + b)^n$展开式的规律，得出二项式定理，详细讲解二项式定理的各个组成部分，如二项展开式、二项式系数、二项式通项等概念。</li>
+<li><strong>学生活动</strong>：积极参与总结，理解二项式定理的推导过程，掌握二项式定理的内容和相关概念，做好笔记。</li>
+<li><strong>设计意图</strong>：通过引导学生抽象概括，培养学生的归纳总结能力，让学生深入理解二项式定理的本质和相关概念，为应用二项式定理解决问题打下基础。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ul>
+<li><strong>教师活动</strong>：给出练习题，如求$(2 + x)^4$的展开式和$(3x - 2y)^6$展开式中$x^3y^3$的系数。巡视学生的做题情况，及时给予指导和纠正，鼓励学生积极思考，尝试不同的解题方法。</li>
+<li><strong>学生活动</strong>：认真完成练习题，运用所学的二项式定理和通项公式进行计算，遇到问题主动向教师或同学请教。</li>
+<li><strong>设计意图</strong>：通过课堂练习，让学生及时巩固所学的二项式定理和通项公式，提高学生运用知识解决问题的能力，同时教师可以了解学生的学习情况，以便进行有针对性的辅导。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ul>
+<li><strong>题目选取</strong>：<ol>
+<li>求$(1 - 2x)^5$的展开式。</li>
+<li>求$(2x + \frac{1}{x})^6$展开式中的常数项。</li>
+<li>在$(x - \sqrt{2})^8$的展开式中，$x^6$的系数是多少？</li>
+</ol>
+</li>
+<li><strong>教师活动</strong>：布置课后作业，强调作业的要求和完成时间，提醒学生注意解题的规范和步骤。</li>
+<li><strong>学生活动</strong>：认真完成课后作业，复习课堂所学内容，总结解题方法和技巧，遇到问题做好记录，以便下节课与教师和同学交流。</li>
+<li><strong>设计意图</strong>：通过课后练习，让学生进一步巩固和拓展所学的二项式定理知识，培养学生的自主学习能力和独立思考能力，同时为下节课的复习和总结提供依据。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/12/19/5.6.2%20%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%BB%83%E4%B9%A0/">5.6.2 二项式练习</a>
+            
+            
+            <a class="next" rel="next" href="/2025/12/18/5.5.1%20%E5%85%B8%E5%9E%8B%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/">5.5.1 典型例题讲解</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

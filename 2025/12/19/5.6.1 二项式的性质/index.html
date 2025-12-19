@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.6.1 二项式的性质 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.6.1 二项式的性质</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 19, 2025&nbsp;&nbsp;10:12:18</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>结合高中数学核心素养，设定目标如下：通过观察杨辉三角的结构特征，探究二项式系数“两端为1、中间数等于肩上两数之和”的递推性质，发展直观想象与数学抽象素养；利用组合数性质$\binom{n}{k} &#x3D; \binom{n-1}{k-1} + \binom{n-1}{k}$推导杨辉三角的递推规律，培养逻辑推理能力；通过赋值法（令$a&#x3D;b&#x3D;1$）证明二项式系数和为$2^n$，提升数学运算素养；了解杨辉三角的历史，感受数学文化的魅力，增强对数学的兴趣与认同感。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材将二项式系数性质与杨辉三角结合，以直观表格呈现递推规律，通过例5巩固杨辉三角的应用，例6用赋值法证明二项式系数和，体现从直观到抽象、从特例到一般的认知逻辑，渗透数形结合思想。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生，对组合数性质的掌握不够扎实，从直观杨辉三角到抽象组合数公式的转换存在困难，对赋值法的应用缺乏经验，需要教师通过具体实例逐步引导，降低认知难度。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>① 杨辉三角的规律及与二项式系数的联系；② 二项式系数和为$2^n$的性质及证明。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>① 用组合数性质解释杨辉三角的递推规律；② 赋值法在证明二项式系数和中的应用本质。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用直观演示法展示杨辉三角，问题引导法探究规律，讲练结合法巩固性质应用。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主观察杨辉三角找规律，合作讨论递推原因，归纳总结二项式系数性质。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含杨辉三角动态生成）、学生学案（印杨辉三角空白表格）。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>杨辉三角的核心递推规律用组合数公式如何表示？</li>
+<li>为什么可以通过令$a&#x3D;b&#x3D;1$证明二项式系数和为$2^n$？</li>
+<li>二项式系数的性质与组合数的性质有什么内在联系？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以杨辉三角直观引入，激发学生兴趣；例5的练习让学生快速掌握了杨辉三角的应用，参与度较高。<strong>不足之处</strong>：对赋值法的本质讲解不够深入，部分学生未理解“为什么选$a&#x3D;b&#x3D;1$”；组合数性质与杨辉三角的联系讲解得不够透彻。<strong>改进设想</strong>：增加赋值法的铺垫（如让学生先代入$a&#x3D;1,b&#x3D;2$等值计算，再引导到$a&#x3D;b&#x3D;1$）；用具体组合数例子（如$\binom{3}{1} &#x3D; \binom{2}{0} + \binom{2}{1}$）强化递推规律的理解，帮助学生突破难点。</p>
+<h1 id="《二项式的性质》教学设计"><a href="#《二项式的性质》教学设计" class="headerlink" title="《二项式的性质》教学设计"></a>《二项式的性质》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，大家玩过数字接龙游戏吗？现在来看这样一组数字：1，2，1；1，3，3，1；猜猜下一组会是啥？这和二项式又有啥联系呢？</p>
+<h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>通过讲述数字接龙游戏，展示前面几组数字，引发学生兴趣，提出问题。</li>
+</ul>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>积极思考，尝试猜测下一组数字，对教师提出的与二项式的联系问题产生好奇。</li>
+</ul>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>以游戏形式引入，激发学生的学习兴趣和探索欲望，自然地引出本节课关于二项式系数的内容。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：认识杨辉三角"><a href="#探究活动一：认识杨辉三角" class="headerlink" title="探究活动一：认识杨辉三角"></a>探究活动一：认识杨辉三角</h3><p>当$n$依次取$1$，$2$，$3$，…时，$(a + b)^n$展开式的二项式系数如图 5 - 15 所示。图 5 - 15 中的表叫作二项式系数表，历史上也称为杨辉三角（详见阅读材料“杨辉三角”）。</p>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>展示二项式系数表（杨辉三角），引导学生观察其整体特征。</li>
+</ul>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真观察杨辉三角，对其有初步的直观认识。</li>
+</ul>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>让学生直观接触杨辉三角，为后续探究其规律做铺垫。</li>
+</ul>
+<h3 id="探究活动二：探索杨辉三角的规律"><a href="#探究活动二：探索杨辉三角的规律" class="headerlink" title="探究活动二：探索杨辉三角的规律"></a>探究活动二：探索杨辉三角的规律</h3><p>杨辉三角有如下规律：表中每行两端都是$1$，而且除$1$以外的每一个数都等于它“肩上”的两个数之和。事实上，设表中任意一个不为“$1$”的数为$C_{n}^{k}$，那么它“肩上”的两个数分别为$C_{n - 1}^{k - 1}$和$C_{n - 1}^{k}$，由组合数的性质 2 得到：$C_{n}^{k}&#x3D;C_{n - 1}^{k - 1}+C_{n - 1}^{k}$。</p>
+<h3 id="教师活动-2"><a href="#教师活动-2" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>引导学生逐行观察杨辉三角，提示学生关注每行两端数字以及其他数字与“肩上”数字的关系。</li>
+<li>讲解组合数性质在杨辉三角中的体现，即$C_{n}^{k}&#x3D;C_{n - 1}^{k - 1}+C_{n - 1}^{k}$。</li>
+</ul>
+<h3 id="学生活动-2"><a href="#学生活动-2" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>仔细观察杨辉三角，自主发现每行两端数字为$1$以及数字间的相加规律。</li>
+<li>理解教师讲解的组合数性质与杨辉三角规律的联系。</li>
+</ul>
+<h3 id="设计意图-2"><a href="#设计意图-2" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>培养学生的观察能力和归纳总结能力，让学生深入理解杨辉三角的规律以及组合数性质在其中的应用。</li>
+</ul>
+<h3 id="探究活动三：利用杨辉三角求二项式系数"><a href="#探究活动三：利用杨辉三角求二项式系数" class="headerlink" title="探究活动三：利用杨辉三角求二项式系数"></a>探究活动三：利用杨辉三角求二项式系数</h3><h4 id="例-5：根据杨辉三角，写出-a-b-6-的二项式系数。"><a href="#例-5：根据杨辉三角，写出-a-b-6-的二项式系数。" class="headerlink" title="例 5：根据杨辉三角，写出$(a + b)^6$的二项式系数。"></a>例 5：根据杨辉三角，写出$(a + b)^6$的二项式系数。</h4><p>解：从图 5 - 15 的杨辉三角知道，$(a + b)^6$的各二项式系数为$1$，$6$，$15$，$20$，$15$，$6$，$1$。根据其规律，有$(a + b)^7$的各二项式系数为$1$，$7$，$21$，$35$，$35$，$21$，$7$，$1$。于是，可以根据杨辉三角将二项式系数表延伸下去，从而可根据这个表来求二项式系数。</p>
+<h3 id="教师活动-3"><a href="#教师活动-3" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>提出例 5 问题，引导学生从杨辉三角中寻找$(a + b)^6$的二项式系数。</li>
+<li>提示学生根据规律推出$(a + b)^7$的二项式系数，讲解如何利用杨辉三角延伸二项式系数表。</li>
+</ul>
+<h3 id="学生活动-3"><a href="#学生活动-3" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>从杨辉三角中找出$(a + b)^6$的二项式系数。</li>
+<li>尝试根据规律推出$(a + b)^7$的二项式系数，掌握利用杨辉三角延伸系数表求二项式系数的方法。</li>
+</ul>
+<h3 id="设计意图-3"><a href="#设计意图-3" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>让学生学会运用杨辉三角的规律解决实际问题，加深对杨辉三角规律的理解和应用能力。</li>
+</ul>
+<h3 id="探究活动四：证明二项式系数和公式"><a href="#探究活动四：证明二项式系数和公式" class="headerlink" title="探究活动四：证明二项式系数和公式"></a>探究活动四：证明二项式系数和公式</h3><h4 id="例-6：求证：-C-0-n-C-1-n-cdots-C-n-n-2-n-。"><a href="#例-6：求证：-C-0-n-C-1-n-cdots-C-n-n-2-n-。" class="headerlink" title="例 6：求证：$C_{0}^{n}+C_{1}^{n}+\cdots +C_{n}^{n}&#x3D;2^n$。"></a>例 6：求证：$C_{0}^{n}+C_{1}^{n}+\cdots +C_{n}^{n}&#x3D;2^n$。</h4><p>证明：由定理，令$a &#x3D; b &#x3D; 1$，则$(1 + 1)^n &#x3D; C_{0}^{n}×1^n×1^0 + C_{1}^{n}×1^{n - 1}×1^1 + \cdots + C_{n}^{n}×1^0×1^n$，即$2^n &#x3D; C_{0}^{n}+C_{1}^{n}+\cdots +C_{n}^{n}$。</p>
+<h3 id="教师活动-4"><a href="#教师活动-4" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>提出例 6 问题，引导学生思考如何证明二项式系数和公式。</li>
+<li>提示学生利用二项式定理，通过赋值法来证明。</li>
+</ul>
+<h3 id="学生活动-4"><a href="#学生活动-4" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>积极思考证明方法，在教师提示下，理解并掌握利用赋值法证明二项式系数和公式的过程。</li>
+</ul>
+<h3 id="设计意图-4"><a href="#设计意图-4" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>培养学生的逻辑推理能力和运用所学知识解决问题的能力，加深对二项式定理的理解。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动-5"><a href="#教师活动-5" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>给出练习题：<ul>
+<li>根据杨辉三角写出$(a + b)^8$的二项式系数。</li>
+<li>已知$(1 + x)^n$的二项式系数之和为$64$，求$n$的值。</li>
+</ul>
+</li>
+<li>巡视学生做题情况，及时给予指导和纠正。</li>
+</ul>
+<h3 id="学生活动-5"><a href="#学生活动-5" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成练习题，遇到问题主动向教师或同学请教。</li>
+</ul>
+<h3 id="设计意图-5"><a href="#设计意图-5" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>及时巩固所学的杨辉三角规律和二项式系数和公式的知识，提高学生运用知识解决问题的能力。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ul>
+<li>已知$(a + b)^n$展开式中第$3$项与第$7$项的二项式系数相等，求$n$。</li>
+<li>利用杨辉三角，计算$(2x + 3)^5$展开式中各项的系数（先写出二项式系数，再结合各项的幂次计算）。</li>
+</ul>
+<h3 id="教师活动-6"><a href="#教师活动-6" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>布置课后作业，强调作业的要求和完成时间。</li>
+</ul>
+<h3 id="学生活动-6"><a href="#学生活动-6" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>课后认真完成作业，进一步巩固课堂所学知识。</li>
+</ul>
+<h3 id="设计意图-6"><a href="#设计意图-6" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>让学生在课后继续深化对二项式系数性质的理解和应用，提高综合运用知识的能力。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/12/19/5.6.2%20%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%BB%83%E4%B9%A0/">5.6.2 二项式练习</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
