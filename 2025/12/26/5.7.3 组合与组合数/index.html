@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>5.7.3 组合与组合数 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">5.7.3 组合与组合数</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十二月 26, 2025&nbsp;&nbsp;12:52:36</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>通过“体育场选2座”“4元素取2个”“5候选人选3名”等实例，经历从具体计数问题抽象出组合定义的过程，发展<strong>数学抽象</strong>素养；对比排列（需顺序）与组合（无需顺序）的计数逻辑，分析“ab与ba是同一组合”的本质原因，提升<strong>逻辑推理</strong>能力；借助列举法、“排列数$A_n^m &#x3D; $组合个数×排序数$A_m^m$”的分解法解决简单组合计数问题，巩固<strong>数学运算</strong>素养。能准确表述组合的定义，区分排列与组合问题，体会“具体—抽象—辨析”的数学思维路径。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版教材以3个递进实例为载体，从列举法到“$A_4^2 &#x3D; x \cdot A_2^2$”的推导，自然生成组合定义；通过与排列的对比，明确“顺序”的核心差异，体现“实例感知—逻辑推导—概念建构”的设计思路，为组合数公式铺垫基础。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已掌握排列的概念与计数，但抽象思维较弱，对“忽略顺序”的组合本质需具体实例支撑；列举法熟练，但对“$A_n^m &#x3D; x \cdot A_m^m$”的推导逻辑需逐步引导，易混淆排列与组合的区别。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>① 组合的定义；② 排列与组合的核心区别（是否考虑元素顺序）。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>① 理解组合“不考虑元素顺序”的本质；② 用“$A_n^m &#x3D; x \cdot A_m^m$”推导组合个数的逻辑。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用实例直观法、对比辨析法、问题串引导法，结合列举与排列分解，突破概念理解。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主列举实例，小组对比排列与组合的计数过程，归纳组合的本质特征。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（展示实例、列举结果与$A_n^m &#x3D; x \cdot A_m^m$推导）、学生学案（含问题串与对比表格）。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><p>① 组合的定义是什么？② 排列与组合的核心区别是什么？③ 如何用排列数推导组合的个数（如$A_4^2 &#x3D; x \cdot A_2^2$的逻辑）？</p>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以贴近生活的实例引入，用列举法让学生直观感知组合的计数过程；对比排列时用“ab与ba是同一组合”的具体例子，有效辨析“顺序”的影响；通过$A_4^2 &#x3D; x \cdot A_2^2$的推导，将抽象的组合计数转化为已知的排列计数，降低认知难度。<strong>不足之处</strong>：部分学生对“$A_n^m &#x3D; x \cdot A_m^m$”中的“x”（组合个数）与“排序数$A_m^m$”的逻辑关联理解不深，课后作业中仍有将组合问题误作排列计算的情况。<strong>改进设想</strong>：增加“选3人排队（排列）vs选3人开会（组合）”的具象化对比练习，将“排列&#x3D;组合×排序”的逻辑拆解为“先选3人（组合）、再排顺序（排列）”的分步操作（用流程图展示）；设计“找不同”游戏（如判断“选AB vs选BA”是否为同一组合），强化“元素相同即同一组合”的认知。</p>
+<h1 id="《组合与组合数》教学设计"><a href="#《组合与组合数》教学设计" class="headerlink" title="《组合与组合数》教学设计"></a>《组合与组合数》教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如有一场篮球友谊赛，要从 6 支队伍里选 3 支进行循环赛，该怎么选呢？</p>
+<ul>
+<li><strong>教师活动</strong>：展示上述情景问题，引导学生思考。</li>
+<li><strong>学生活动</strong>：思考问题，尝试初步分析。</li>
+<li><strong>设计意图</strong>：通过贴近生活的情景，激发学生的学习兴趣和探究欲望。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动-1：实例分析"><a href="#探究活动-1：实例分析" class="headerlink" title="探究活动 1：实例分析"></a>探究活动 1：实例分析</h3><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题 1"></a>问题 1</h4><ul>
+<li><strong>问题描述</strong>：从 3 座大型体育场 $A$、$B$、$C$ 中选择 2 座承办运动会，共有多少种选择方案？</li>
+<li><strong>分析</strong>：利用列举法，所有可能为 $AB$、$AC$、$BC$，共 3 种。</li>
+<li><strong>结果</strong>：从 3 座大型体育场 $A$、$B$、$C$ 中选 2 座体育场承办运动会，共有 3 种选择方案。</li>
+</ul>
+<h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题 2"></a>问题 2</h4><ul>
+<li><strong>问题描述</strong>：从 $a$、$b$、$c$、$d$ 这 4 个元素中取出 2 个元素，共有多少种可能？</li>
+<li><strong>方法 1</strong>：列举法，所有可能为 $ab$、$ac$、$ad$、$bc$、$bd$、$cd$，共 6 种。</li>
+<li><strong>方法 2</strong>：从排列问题分析。从 $a$、$b$、$c$、$d$ 这 4 个不同元素中取出 2 个元素的排列问题可分解为两步：第 1 步，从 4 个元素中取出 2 个元素，设取法总数为 $x$；第 2 步，将取出的 2 个元素进行排列，排列数为 $A_{2}^{2}&#x3D;2\times1$。根据分步乘法计数原理，排列数 $A_{4}^{2}&#x3D;x\cdot A_{2}^{2}$，即 $4\times3 &#x3D; x\times2\times1$，解得 $x &#x3D; 6$。</li>
+<li><strong>结果</strong>：从 $a$、$b$、$c$、$d$ 这 4 个元素中取出 2 个元素，共有 6 种可能。</li>
+</ul>
+<h4 id="问题-3"><a href="#问题-3" class="headerlink" title="问题 3"></a>问题 3</h4><ul>
+<li><p><strong>问题描述</strong>：从 5 名候选人中选出 3 名担任代表，共有多少种方案？</p>
+</li>
+<li><p><strong>方法 1</strong>：列举法，5 名候选人（$a$、$b$、$c$、$d$、$e$）所有可能的 3 人组合为 $abc$、$abd$、$abe$、$acd$、$ace$、$ade$、$bcd$、$bce$、$bde$、$cde$，共 10 种。</p>
+</li>
+<li><p><strong>方法 2</strong>：从排列问题分析。从 $a$、$b$、$c$、$d$、$e$ 这 5 个不同元素中取出 3 个元素的排列问题可分解为两步：第 1 步，从 5 个元素中取出 3 个元素，设取法总数为 $x$；第 2 步，将取出的 3 个元素进行排列，排列数为 $A_{3}^{3}&#x3D;3\times2\times1$。根据分步乘法计数原理，排列数 $A_{5}^{3}&#x3D;x\cdot A_{3}^{3}$，即 $5\times4\times3 &#x3D; x\times3\times2\times1$，解得 $x &#x3D; 10$。</p>
+</li>
+<li><p><strong>结果</strong>：从 5 名候选人中选出 3 名担任代表，共有 10 种方案。</p>
+</li>
+<li><p><strong>教师活动</strong>：依次展示三个问题，引导学生思考分析，讲解不同的解题方法。</p>
+</li>
+<li><p><strong>学生活动</strong>：积极思考问题，尝试用列举法解题，理解从排列问题分析组合问题的思路。</p>
+</li>
+<li><p><strong>设计意图</strong>：通过具体实例，让学生初步感受组合问题，为组合定义的引出做铺垫。</p>
+</li>
+</ul>
+<h3 id="探究活动-2：组合的定义与性质"><a href="#探究活动-2：组合的定义与性质" class="headerlink" title="探究活动 2：组合的定义与性质"></a>探究活动 2：组合的定义与性质</h3><ul>
+<li><p><strong>组合定义</strong>：一般地，从 $n$ 个不同元素中，任取 $m(m\leq n$，且 $m,n\in N)$ 个元素为一组，叫做从 $n$ 个不同元素中取出 $m$ 个元素的一个组合。我们把有关求组合的个数的问题叫做组合问题。</p>
+</li>
+<li><p><strong>举例</strong>：上述 3 个问题中，问题 1 是从 3 个不同元素中取出 2 个元素的组合问题，问题 2 是从 4 个不同元素中取出 2 个元素的组合问题，问题 3 是从 5 个不同元素中取出 3 个元素的组合问题。</p>
+</li>
+<li><p><strong>排列与组合的区别</strong>：排列与组合都是从 $n$ 个不同元素中取出 $m(m\leq n$，且 $m,n\in N)$ 个元素的计数问题，差别在于：排列需考虑元素顺序，组合不需考虑元素顺序。即：只有元素相同且顺序也相同的两个排列才是相同的；只要两个组合的元素相同，不论元素的顺序如何，都是相同的组合。例如，$ab$ 与 $ba$ 是两个不同的排列，但它们却是同一个组合。</p>
+</li>
+<li><p><strong>教师活动</strong>：给出组合的定义，结合前面实例进行解释，对比排列与组合的区别。</p>
+</li>
+<li><p><strong>学生活动</strong>：理解组合的定义，通过实例区分排列与组合。</p>
+</li>
+<li><p><strong>设计意图</strong>：准确阐述组合的概念，让学生清晰掌握排列与组合的差异。</p>
+</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>展示练习题：从 7 本书中选 3 本借给同学，有多少种选法？从 10 个学生中选 3 人担任不同职务，和从 10 个学生中选 3 人参加活动，分别是排列问题还是组合问题？</li>
+<li>巡视学生做题情况，适时给予指导。</li>
+</ul>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真思考练习题，运用所学知识解答。</li>
+<li>与同学交流讨论，分享自己的解题思路。</li>
+</ul>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>及时巩固所学的组合知识，加深对排列与组合区别的理解。</li>
+<li>通过交流讨论，培养学生的合作学习能力和思维能力。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><h3 id="基础题"><a href="#基础题" class="headerlink" title="基础题"></a>基础题</h3><ol>
+<li>从 5 个不同的水果中选 2 个，有多少种选法？</li>
+<li>判断下列问题是排列问题还是组合问题：<ul>
+<li>从 15 名同学中选 3 人分别参加数学、物理、化学竞赛。</li>
+<li>从 15 名同学中选 3 人参加一项活动。</li>
+</ul>
+</li>
+</ol>
+<h3 id="提高题"><a href="#提高题" class="headerlink" title="提高题"></a>提高题</h3><ol>
+<li>某班有 40 名同学，要选出 5 人组成班委会，共有多少种选法？</li>
+<li>从 1、2、3、4、5 这 5 个数字中，任取 3 个数字组成一个没有重复数字的三位数，其中是组合问题的有哪些情况？</li>
+</ol>
+<h3 id="拓展题"><a href="#拓展题" class="headerlink" title="拓展题"></a>拓展题</h3><p>在一次足球比赛中，有 12 支球队参赛，比赛采用单循环赛制（每两支球队之间都赛一场），一共要赛多少场？</p>
+<ul>
+<li><strong>教师活动</strong>：布置课后作业，提醒学生认真完成，对作业中的问题进行答疑。</li>
+<li><strong>学生活动</strong>：按时完成作业，复习巩固课堂所学知识。</li>
+<li><strong>设计意图</strong>：通过分层练习，满足不同层次学生的需求，进一步巩固和拓展组合知识。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/12/26/5.7.2%20%E6%8E%92%E5%88%97%E4%B8%8E%E6%8E%92%E5%88%97%E6%95%B0/">5.7.2 排列与排列数</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
