@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>6.4.1 二项分布 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">6.4.1 二项分布</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 26, 2026&nbsp;&nbsp;15:17:19</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以数学抽象、逻辑推理、数学建模、数据分析核心素养为导向，学生能从“4次射击”实例中抽象出<strong>n重伯努利试验</strong>的本质特征，推导二项分布的分布列；理解二项分布的定义（参数$n,p$的意义），掌握其均值$E(X)&#x3D;np$、方差$D(X)&#x3D;np(1-p)$的计算公式；能运用二项分布模型解决“次品数”“骰子点数”等简单实际问题，提升从具体到一般的抽象概括能力与概率建模意识。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版教材遵循“实例—抽象—应用”的认知逻辑：以“射击试验”为切入点，分步推导命中次数的分布列，自然抽象出<strong>n重伯努利试验</strong>与二项分布的概念；衔接“两点分布”（$n&#x3D;1$的特例），体现知识的连贯性；通过“思考交流”与“例2”强化概念辨析与公式应用，注重过程性与思想性。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已掌握概率基本公式（互斥、独立事件）与两点分布，但对“n次独立重复试验”的本质（每次试验结果独立、概率不变）理解不深，抽象概括能力有待提升；需借助具体实例降低认知难度，强化条件辨析。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>① 二项分布的定义及分布列形式$P(X&#x3D;k)&#x3D;\mathrm{C}_n^k p^k(1-p)^{n-k}$；<br>② 二项分布的均值与方差公式。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>① 准确判断“n重伯努利试验”的条件；② 用二项分布模型描述实际问题（建模）。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用<strong>实例引导法</strong>（射击试验）、<strong>问题驱动法</strong>（“如何表示命中次数的分布列？”），结合多媒体演示推导过程，突破抽象难点。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究（推导射击试验的分布列）、合作交流（辨析“思考交流”中的实例）、归纳总结（提炼二项分布的核心特征）。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含射击试验动画）、二项分布实例卡片（如“抛硬币”“产品检验”）、计算器。</p>
+<h3 id="9-课堂小结（关键问题）"><a href="#9-课堂小结（关键问题）" class="headerlink" title="9. 课堂小结（关键问题）"></a>9. 课堂小结（关键问题）</h3><ol>
+<li>二项分布的前提“n重伯努利试验”需满足哪些条件？</li>
+<li>二项分布的分布列表达式是什么？参数$n,p$分别表示什么？</li>
+<li>二项分布的均值与方差公式是什么？如何记忆？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以“射击试验”直观导入，逐步推导分布列，符合学生从具体到抽象的认知规律，学生对二项分布的“形式”掌握较好；“思考交流”环节通过实例辨析，强化了概念理解。<strong>不足之处</strong>：部分学生对“独立重复试验”的本质（每次试验概率不变）仍有混淆，均值方差的推导过程未充分让学生自主参与，导致公式记忆不牢。<strong>改进设想</strong>：增加“判断是否为伯努利试验”的专项练习（如“不放回抽样是否为独立重复？”）；让学生自主推导均值$E(X)&#x3D;\sum_{k&#x3D;0}^n k\mathrm{C}_n^k p^k(1-p)^{n-k}$，加深对公式的理解；课后布置“用二项分布解决生活中的一个小问题”（如“投篮命中次数”），提升建模能力。</p>
+<h1 id="6-4-1-二项分布-教学设计"><a href="#6-4-1-二项分布-教学设计" class="headerlink" title="6.4.1 二项分布 教学设计"></a>6.4.1 二项分布 教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如射击运动员进行 4 次独立射击，每次命中概率固定，那命中次数的概率分布是怎样的呢？</p>
+<h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><p>展示射击运动员射击的情景，提出关于命中次数概率分布的问题。</p>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><p>思考问题，在脑海中初步构建对该问题的认识。</p>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过具体且熟悉的射击情景引入，激发学生的好奇心和学习兴趣，为后续新知识的探究做好铺垫。</p>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动-1：实例分析——射击问题"><a href="#探究活动-1：实例分析——射击问题" class="headerlink" title="探究活动 1：实例分析——射击问题"></a>探究活动 1：实例分析——射击问题</h3><p>某射击运动员每次射击命中目标的概率为 $p$，设该运动员在 4 次射击中命中目标的次数为 $X$，求 $X$ 的分布列和均值。<br>设 $A_k(k &#x3D; 1,2,3,4)$ 表示“第 $k$ 次射击命中目标”，则 $A_k^c$ 表示“第 $k$ 次射击未命中目标”。设 $B_k(k &#x3D; 0,1,2,3,4)$ 表示“4 次射击中恰好命中 $k$ 次”。</p>
+<ul>
+<li>当 $k &#x3D; 0$ 时，$B_0 &#x3D; A_1^c A_2^c A_3^c A_4^c$，则 $P(X &#x3D; 0) &#x3D; P(B_0) &#x3D; P(A_1^c A_2^c A_3^c A_4^c) &#x3D; P(A_1^c)P(A_2^c)P(A_3^c)P(A_4^c)&#x3D;(1 - p)^4$。</li>
+<li>当 $k &#x3D; 1$ 时，$B_1 &#x3D; A_1 A_2^c A_3^c A_4^c \cup A_1^c A_2 A_3^c A_4^c \cup A_1^c A_2^c A_3 A_4^c \cup A_1^c A_2^c A_3^c A_4$，且这 4 个事件两两互斥，每个事件的概率均为 $p(1 - p)^3$，所以 $P(X &#x3D; 1) &#x3D; C_4^1 p(1 - p)^3$。</li>
+<li>一般地，$P(X &#x3D; k) &#x3D; P(B_k) &#x3D; C_4^k p^k (1 - p)^{4 - k}(k &#x3D; 0,1,2,3,4)$。</li>
+</ul>
+<h4 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h4><p>引导学生分析射击问题，逐步推导 $X$ 取不同值时的概率，讲解组合数在其中的应用。</p>
+<h4 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h4><p>跟随教师思路，理解每一步的推导过程，积极思考并回答教师提出的问题。</p>
+<h4 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h4><p>通过具体实例，让学生亲身经历概率分布列的推导过程，加深对离散型随机变量分布列的理解，为引出二项分布做准备。</p>
+<h3 id="探究活动-2：抽象概括——n-重伯努利试验与二项分布"><a href="#探究活动-2：抽象概括——n-重伯努利试验与二项分布" class="headerlink" title="探究活动 2：抽象概括——n 重伯努利试验与二项分布"></a>探究活动 2：抽象概括——n 重伯努利试验与二项分布</h3><p>在相同条件下重复做的 $n$ 次试验称为 $n$ 重伯努利试验，其中每次试验只有两个相互对立的结果，即“成功”与“不成功”，每次试验中“成功”的概率均为 $p$，“不成功”的概率均为 $1 - p$。<br>若随机变量 $X$ 表示 $n$ 重伯努利试验中成功的次数，则 $X$ 可能取值为 $0,1,2,\cdots,n$，且 $P(X &#x3D; k) &#x3D; C_n^k p^k (1 - p)^{n - k}(k &#x3D; 0,1,2,\cdots,n)$，此时称随机变量 $X$ 服从参数为 $n$ 和 $p$ 的二项分布，记作 $X \sim B(n,p)$。当 $n &#x3D; 1$ 时，二项分布就是两点分布。</p>
+<h4 id="教师活动-2"><a href="#教师活动-2" class="headerlink" title="教师活动"></a>教师活动</h4><p>给出 $n$ 重伯努利试验和二项分布的定义，结合射击实例进行解释，强调定义中的关键要素。</p>
+<h4 id="学生活动-2"><a href="#学生活动-2" class="headerlink" title="学生活动"></a>学生活动</h4><p>认真听讲，理解 $n$ 重伯努利试验和二项分布的概念，对比射击实例与定义的联系。</p>
+<h4 id="设计意图-2"><a href="#设计意图-2" class="headerlink" title="设计意图"></a>设计意图</h4><p>从具体的射击实例抽象出一般的 $n$ 重伯努利试验和二项分布的概念，培养学生的抽象概括能力，让学生掌握二项分布的本质特征。</p>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动-3"><a href="#教师活动-3" class="headerlink" title="教师活动"></a>教师活动</h3><p>给出以下练习题：</p>
+<ol>
+<li>抛掷一枚质地均匀的骰子 5 次，求恰好掷出 3 次 6 点的概率。</li>
+<li>已知某种产品的次品率为 $0.1$，从中随机抽取 5 件，设抽到次品的件数为 $X$，求 $X$ 的分布列。</li>
+</ol>
+<p>巡视学生的做题情况，及时给予指导和帮助，鼓励学生积极思考和交流。</p>
+<h3 id="学生活动-3"><a href="#学生活动-3" class="headerlink" title="学生活动"></a>学生活动</h3><p>独立完成练习题，遇到问题时可以与同桌交流或向老师请教。完成后，积极展示自己的解题过程和结果。</p>
+<h3 id="设计意图-3"><a href="#设计意图-3" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过课堂练习，让学生巩固所学的二项分布知识，提高运用二项分布解决实际问题的能力，同时及时反馈学生对知识的掌握情况。</p>
+<h2 id="四、思考交流"><a href="#四、思考交流" class="headerlink" title="四、思考交流"></a>四、思考交流</h2><ol>
+<li>抛掷一枚骰子，设掷出的点数为偶数为成功，重复抛掷 10 次，这是 $n$ 重伯努利试验吗？为什么？</li>
+<li>一个袋子中有 5 个红球和 3 个白球，从中有放回地任取 4 次，每次取一个球，取到红球为成功，求成功次数 $X$ 的分布列。</li>
+<li>任取 $n$ 个女性，其中患色盲的人数 $X$ 服从二项分布吗？说明理由。</li>
+</ol>
+<h3 id="教师活动-4"><a href="#教师活动-4" class="headerlink" title="教师活动"></a>教师活动</h3><p>提出思考交流的问题，组织学生进行小组讨论，引导学生积极发言，参与讨论。</p>
+<h3 id="学生活动-4"><a href="#学生活动-4" class="headerlink" title="学生活动"></a>学生活动</h3><p>分组讨论问题，每个小组推选代表发言，分享小组的讨论结果。</p>
+<h3 id="设计意图-4"><a href="#设计意图-4" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过思考交流，培养学生的思维能力和合作交流能力，让学生进一步理解 $n$ 重伯努利试验和二项分布的条件和应用，加深对知识点的理解和掌握。</p>
+<h2 id="五、例-2"><a href="#五、例-2" class="headerlink" title="五、例 2"></a>五、例 2</h2><p>已知某批产品的次品率为 $p$，从中随机抽取 4 件产品，设随机变量 $X$ 表示抽到次品的件数。</p>
+<ul>
+<li>求 $X$ 的分布列。</li>
+<li>已知 $X \sim B(4,p)$，求 $E(X)$ 和 $D(X)$。</li>
+</ul>
+<p><strong>解</strong>：</p>
+<ul>
+<li>$X$ 的分布列为 $P(X &#x3D; k) &#x3D; C_4^k p^k (1 - p)^{4 - k}(k &#x3D; 0,1,2,3,4)$。</li>
+<li>根据二项分布的期望和方差公式，$E(X) &#x3D; np &#x3D; 4p$，$D(X) &#x3D; np(1 - p)&#x3D;4p(1 - p)$。</li>
+</ul>
+<h3 id="教师活动-5"><a href="#教师活动-5" class="headerlink" title="教师活动"></a>教师活动</h3><p>详细讲解例 2，分析题目条件，引导学生确定随机变量服从的分布，再根据公式求解分布列、期望和方差。</p>
+<h3 id="学生活动-5"><a href="#学生活动-5" class="headerlink" title="学生活动"></a>学生活动</h3><p>认真听讲，理解解题思路和方法，做好笔记，思考是否还有其他解题方法。</p>
+<h3 id="设计意图-5"><a href="#设计意图-5" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过典型例题，让学生学会运用二项分布的知识解决实际问题，掌握二项分布的分布列、期望和方差的计算方法，提高学生的解题能力。</p>
+<h2 id="六、课后练习"><a href="#六、课后练习" class="headerlink" title="六、课后练习"></a>六、课后练习</h2><ol>
+<li>某射手每次射击击中目标的概率是 $0.8$，求这名射手在 10 次射击中：<ul>
+<li>恰有 8 次击中目标的概率；</li>
+<li>至少有 8 次击中目标的概率。</li>
+</ul>
+</li>
+<li>某批种子的发芽率为 $0.9$，现播种该种子 5 粒，求：<ul>
+<li>恰好发芽 4 粒的概率；</li>
+<li>发芽粒数 $X$ 的期望和方差。</li>
+</ul>
+</li>
+</ol>
+<h3 id="教师活动-6"><a href="#教师活动-6" class="headerlink" title="教师活动"></a>教师活动</h3><p>布置课后练习，要求学生独立完成，在下次课上检查练习完成情况。</p>
+<h3 id="学生活动-6"><a href="#学生活动-6" class="headerlink" title="学生活动"></a>学生活动</h3><p>认真完成课后练习，巩固课堂所学知识。</p>
+<h3 id="设计意图-6"><a href="#设计意图-6" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过课后练习，让学生进一步熟练掌握二项分布的相关知识，提高运用知识解决问题的能力，加深对知识点的理解和记忆。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2026/01/26/6.3.2%20%E7%A6%BB%E6%95%A3%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%96%B9%E5%B7%AE/">6.3.2 离散随机变量的方差</a>
+            
+            
+            <a class="next" rel="next" href="/2026/01/26/6.4.2%20%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/">6.4.2 超几何分布</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

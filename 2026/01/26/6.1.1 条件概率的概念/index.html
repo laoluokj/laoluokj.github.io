@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>6.1.1 条件概率的概念 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">6.1.1 条件概率的概念</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 26, 2026&nbsp;&nbsp;15:17:19</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>以“抽签问题”为情境，引导学生经历从具体实例到抽象概念的过程：通过分析“样本空间缩小”的逻辑，发展<strong>逻辑推理</strong>素养；从古典概型实例抽象出条件概率定义，提升<strong>数学抽象</strong>素养；利用条件概率公式计算具体问题，培养<strong>数学运算</strong>素养；从集合视角理解条件概率的本质，发展<strong>直观想象</strong>素养。最终能准确表述条件概率的概念，并应用公式解决简单问题。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版以“抽签公平性”为核心情境，通过4个问题串逐步揭示条件概率的产生（已知事件发生导致样本空间缩小）；从古典概型的样本点计数出发，过渡到抽象的概率公式，注重概念生成的逻辑性；结合集合视角深化对“样本空间缩小”的理解，体现“直观—抽象—本质”的认知脉络。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已掌握古典概型，但抽象思维和逻辑推理能力有待提升；对“条件概率中样本空间缩小”的核心逻辑易混淆，需通过具体实例（如抽签、摸球）搭建直观认知桥梁，逐步从“无条件概率”过渡到“条件概率”。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ul>
+<li>条件概率的概念；</li>
+<li>条件概率公式的应用。</li>
+</ul>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ul>
+<li>理解“样本空间缩小”是条件概率的核心逻辑；</li>
+<li>区分条件概率与无条件概率。</li>
+</ul>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用<strong>问题驱动法</strong>（以“抽签问题”串引导探究）、<strong>直观演示法</strong>（用样本点列举展示空间变化）、<strong>小组讨论法</strong>（突破“样本空间缩小”难点）。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>遵循“<strong>实例分析—小组讨论—归纳抽象</strong>”的路径：自主分析抽签问题中的概率变化，合作讨论“样本空间缩小”的逻辑，归纳总结条件概率的定义与公式。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><ul>
+<li>多媒体课件（展示样本空间、事件集合的Venn图）；</li>
+<li>抽签模拟道具（3张奖券实物，辅助直观演示）。</li>
+</ul>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>条件概率的定义是什么？请用公式表达。</li>
+<li>计算条件概率时，“样本空间”发生了怎样的变化？</li>
+<li>条件概率$P(B|A)$与无条件概率$P(B)$的本质区别是什么？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以“抽签问题”贯穿始终，通过问题串引导学生主动参与概念生成，集合图示直观呈现“样本空间缩小”，降低了抽象难度；练习设计结合古典概型，强化了公式应用。<strong>不足之处</strong>：部分学生对“$P(B|A)$中$AB$是$A$与$B$的交集”仍混淆，说明集合视角的深化不够；对“样本空间缩小”的本质理解停留在表面，未完全内化为逻辑。<strong>改进设想</strong>：补充“摸球试验”的动手活动（如2红1白球，不放回摸球），让学生自主列举“第一次摸红”后的样本空间，对比$P(第二次摸红)$与$P(第二次摸红|第一次摸红)$；增加“条件概率 vs 无条件概率”的对比练习，强化本质区分。</p>
+<h1 id="6-1-1-条件概率的概念教学设计"><a href="#6-1-1-条件概率的概念教学设计" class="headerlink" title="6.1.1 条件概率的概念教学设计"></a>6.1.1 条件概率的概念教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如抽奖箱里有 3 张奖券，仅 1 张能中奖，先后抽奖，若已知一人未中，他人中奖概率会变吗？</p>
+<ol>
+<li>教师活动：展示抽奖情景，提出问题，引导学生思考。</li>
+<li>学生活动：思考问题，尝试初步分析概率情况。</li>
+<li>设计意图：通过生活中常见的抽奖情景，引发学生兴趣，自然引入条件概率的概念。</li>
+</ol>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动-1：基础概率计算"><a href="#探究活动-1：基础概率计算" class="headerlink" title="探究活动 1：基础概率计算"></a>探究活动 1：基础概率计算</h3><p><strong>问题 1</strong>：3 张奖券中只有 1 张能中奖，3 名同学依次不放回抽取，设事件$N_1$、$N_2$分别表示“抽到未中奖奖 1、奖 2”，事件$Y$表示“抽到中奖奖券”，求样本空间及最后一名同学抽到中奖奖券的概率。<br><strong>分析</strong>：<br>样本空间为$\Omega &#x3D; {YN_1N_2, YN_2N_1, N_1YN_2, N_2YN_1, N_1N_2Y, N_2N_1Y}$，$n(\Omega)&#x3D;6$。<br>事件$B$表示“最后一名同学抽到中奖奖券”，则$B &#x3D; {N_1N_2Y, N_2N_1Y}$，$n(B)&#x3D;2$。<br>由古典概型计算概率的公式$P(B)&#x3D;\frac{n(B)}{n(\Omega)}$，可得$P(B)&#x3D;\frac{2}{6}&#x3D;\frac{1}{3}$。</p>
+<ol>
+<li>教师活动：详细讲解问题，引导学生确定样本空间和事件$B$，推导概率公式并计算。</li>
+<li>学生活动：跟随教师思路，理解样本空间和事件的表示，计算概率。</li>
+<li>设计意图：复习古典概型概率计算，为后续条件概率学习做铺垫。</li>
+</ol>
+<h3 id="探究活动-2：条件下的概率计算"><a href="#探究活动-2：条件下的概率计算" class="headerlink" title="探究活动 2：条件下的概率计算"></a>探究活动 2：条件下的概率计算</h3><p><strong>问题 2</strong>：继续考虑上面的问题，事件$A$表示“第一名同学未抽到中奖奖券”，求在$A$发生的条件下，最后一名同学抽到中奖奖券的概率。<br><strong>分析</strong>：<br>事件$A &#x3D; {N_1N_2Y, N_1YN_2, N_2N_1Y, N_2YN_1}$，$n(A)&#x3D;4$。<br>$B &#x3D; {N_1N_2Y, N_2N_1Y}$，$AB &#x3D; {N_1N_2Y, N_2N_1Y}$，$n(AB)&#x3D;2$。<br>由古典概型计算概率的公式可知，如果已知第一名同学没有抽到中奖奖券，那么最后一名同学抽到中奖奖券的概率为$P(B|A)&#x3D;\frac{n(AB)}{n(A)}&#x3D;\frac{2}{4}&#x3D;\frac{1}{2}$。</p>
+<ol>
+<li>教师活动：引导学生确定事件$A$，分析$A$与$B$的关系，讲解条件概率的计算方法。</li>
+<li>学生活动：确定事件$A$的样本点，计算$n(A)$、$n(AB)$，得出条件概率。</li>
+<li>设计意图：让学生感受在已知部分条件下，概率计算的变化，引出条件概率概念。</li>
+</ol>
+<h3 id="探究活动-3：样本空间的变化"><a href="#探究活动-3：样本空间的变化" class="headerlink" title="探究活动 3：样本空间的变化"></a>探究活动 3：样本空间的变化</h3><p><strong>问题 3</strong>：分析样本空间的变化对概率的影响。<br><strong>分析</strong>：样本空间由$\Omega$缩小为$A$，在缩小后的样本空间$A$中计算事件$B$发生的概率，即条件概率$P(B|A)$。</p>
+<ol>
+<li>教师活动：引导学生对比样本空间$\Omega$和$A$，讲解样本空间变化对概率的影响。</li>
+<li>学生活动：观察样本空间变化，理解条件概率与样本空间的关系。</li>
+<li>设计意图：加深学生对条件概率本质的理解，即样本空间的改变导致概率变化。</li>
+</ol>
+<h3 id="探究活动-4：条件概率公式推导"><a href="#探究活动-4：条件概率公式推导" class="headerlink" title="探究活动 4：条件概率公式推导"></a>探究活动 4：条件概率公式推导</h3><p><strong>问题 4</strong>：如何计算条件概率$P(B|A)$？<br><strong>分析</strong>：<br>根据前面的计算，我们可以得到$P(B|A)&#x3D;\frac{n(AB)}{n(A)}$，又因为$P(A)&#x3D;\frac{n(A)}{n(\Omega)}$，$P(AB)&#x3D;\frac{n(AB)}{n(\Omega)}$，所以$P(B|A)&#x3D;\frac{P(AB)}{P(A)}$（$P(A)&gt;0$）。<br><strong>抽象概括</strong>：设$A$、$B$是两个事件，且$P(A)&gt;0$，则称$P(B|A)&#x3D;\frac{P(AB)}{P(A)}$为在事件$A$发生的条件下事件$B$发生的条件概率。$P(B|A)$读作“在事件$A$发生的条件下事件$B$发生的概率”，显然，$0\leq P(B|A)\leq1$。</p>
+<ol>
+<li>教师活动：引导学生推导条件概率公式，给出条件概率的定义。</li>
+<li>学生活动：参与公式推导，理解条件概率的定义。</li>
+<li>设计意图：让学生经历公式推导过程，深入理解条件概率的概念和计算方法。</li>
+</ol>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><p><strong>教师活动</strong>：给出练习题，如“一个盒子中有 4 个红球，3 个白球，从中不放回地取两次球，已知第一次取到红球，求第二次取到白球的概率”，巡视学生做题情况，适时给予指导。<br><strong>学生活动</strong>：独立完成练习题，运用所学条件概率知识进行计算。<br><strong>设计意图</strong>：及时巩固所学条件概率知识，提高学生运用公式解决问题的能力。</p>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><p>布置课后作业，如教材相关习题，要求学生完成并总结解题思路和遇到的问题。</p>
+<ol>
+<li>教师活动：布置作业，强调作业要求和注意事项。</li>
+<li>学生活动：认真完成作业，总结解题方法和疑惑。</li>
+<li>设计意图：通过课后作业，进一步巩固课堂所学知识，培养学生自主学习和总结归纳的能力。</li>
+</ol>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2026/01/26/6.1.2%20%E4%B9%98%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B8%8E%E4%BA%8B%E4%BB%B6%E7%8B%AC%E7%AB%8B%E6%80%A7/">6.1.2 乘法公式与事件独立性</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

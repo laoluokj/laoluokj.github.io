@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>6.1.2 乘法公式与事件独立性 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">6.1.2 乘法公式与事件独立性</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 26, 2026&nbsp;&nbsp;15:17:19</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>通过条件概率的定义推导乘法公式，经历“旧知（条件概率）→新知（乘法公式）”的逻辑推理过程，培养<strong>逻辑推理</strong>素养；理解事件相互独立的直观含义（“事件发生互不影响”）及“$P(AB) &#x3D; P(A)P(B)$”的充要条件，深化对概率本质的认识，提升<strong>数学抽象</strong>素养；能运用乘法公式解决“两次不放回摸球”“第三次才摸到黑球”等实际问题，在“放回 vs 不放回”的独立性判断中，发展<strong>数学运算</strong>的准确性与<strong>数学建模</strong>的实用性，体会概率知识与生活场景的联系。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大新版教材此节以条件概率为基础推导乘法公式，衔接必修“事件独立性”旧知，通过“不放回摸球”“第三次才摸到黑球”等例题讲清公式应用，以“放回 vs 不放回”的对比突出独立性本质，体现“从理论到应用、从具象到抽象”的编写特点，注重知识的逻辑性与实用性。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通班学生已学条件概率与必修独立性，但抽象思维较弱，对“独立性充要条件”易混淆，应用乘法公式时易忽略“条件概率的先后顺序”，需通过具体摸球试验降低理解难度，用具象例子支撑抽象概念。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ul>
+<li>乘法公式的推导与简单应用；</li>
+<li>事件相互独立的定义及充要条件。</li>
+</ul>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ul>
+<li>事件独立性与条件概率的内在联系；</li>
+<li>区分放回与不放回试验中事件的独立性。</li>
+</ul>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用问题引导法、案例分析法，结合摸球试验直观演示，以旧引新突破抽象概念。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究乘法公式推导，合作交流分析独立性案例，练习巩固公式应用。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（展示摸球流程）、实物小球（黑球、白球各若干）。</p>
+<h3 id="9-课堂小结关键问题"><a href="#9-课堂小结关键问题" class="headerlink" title="9. 课堂小结关键问题"></a>9. 课堂小结关键问题</h3><ol>
+<li>乘法公式是如何由条件概率推导而来的？</li>
+<li>事件相互独立的充要条件是什么？</li>
+<li>放回与不放回摸球试验中，事件独立性有何不同？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：用摸球实例直观呈现条件概率与乘法公式的关系，学生参与度高，能掌握基本应用；通过“放回 vs 不放回”的对比，初步区分独立性情况。<strong>不足之处</strong>：对“独立性充要条件”的理论深度挖掘不够，部分学生仍对“$P(B|A) &#x3D; P(B)$”与“$P(AB) &#x3D; P(A)P(B)$”的等价性理解模糊。<strong>改进设想</strong>：增加“验证等价性”的小组任务（用具体数值计算$P(B|A)$与$P(B)$），强化理论理解；补充“抛硬币”“抽奖”等多情境练习，深化独立性的应用。</p>
+<h1 id="6-1-2-乘法公式与事件独立性教学设计"><a href="#6-1-2-乘法公式与事件独立性教学设计" class="headerlink" title="6.1.2 乘法公式与事件独立性教学设计"></a>6.1.2 乘法公式与事件独立性教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如抽奖箱里有不同颜色的球，先后抽奖，每次结果会相互影响，那如何计算特定结果的概率呢？</p>
+<ol>
+<li><strong>教师活动</strong>：提出抽奖箱摸球的情景问题，引导学生思考概率计算。</li>
+<li><strong>学生活动</strong>：思考问题，尝试在脑海中构建概率计算的思路。</li>
+<li><strong>设计意图</strong>：通过生活中常见的抽奖情景，引发学生兴趣，自然引入乘法公式与事件独立性的学习。</li>
+</ol>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：条件概率与乘法公式"><a href="#探究活动一：条件概率与乘法公式" class="headerlink" title="探究活动一：条件概率与乘法公式"></a>探究活动一：条件概率与乘法公式</h3><p>在必修课程中，我们已经学习过事件的独立性，下面我们进一步来了解条件概率与独立性的关系。</p>
+<p>由条件概率的定义$P(B|A) &#x3D; \frac{P(AB)}{P(A)}$（其中$P(A) &gt; 0$），可得$P(AB) &#x3D; P(B|A)P(A)$。</p>
+<p>同理，当$P(B) &gt; 0$时，$P(AB) &#x3D; P(A|B)P(B)$。</p>
+<p>称以上两式为乘法公式，利用它们可以计算两个事件同时发生的概率。</p>
+<ol>
+<li><strong>教师活动</strong>：引导学生回顾条件概率定义，推导乘法公式，强调公式适用条件和用途。</li>
+<li><strong>学生活动</strong>：跟随教师思路，回顾旧知，推导乘法公式，理解公式意义。</li>
+<li><strong>设计意图</strong>：温故知新，让学生自主推导乘法公式，加深对公式的理解和记忆。</li>
+</ol>
+<h3 id="探究活动二：例题解析（例-3）"><a href="#探究活动二：例题解析（例-3）" class="headerlink" title="探究活动二：例题解析（例 3）"></a>探究活动二：例题解析（例 3）</h3><p>例 3 已知口袋中有 3 个黑球和 7 个白球，这 10 个球除颜色外完全相同。<br>（1）先后两次从中不放回地各摸出一球，求两次摸到的均为黑球的概率；<br>（2）从中不放回地摸球，每次各摸一球，求第三次才摸到黑球的概率。</p>
+<p>设事件$A_i$表示“第$i$次摸到的是黑球”（$i &#x3D; 1, 2, 3$），则事件$A_1A_2$表示“两次摸到的均为黑球”。</p>
+<p>（1）由题意知$P(A_1) &#x3D; \frac{3}{10}$，$P(A_2|A_1) &#x3D; \frac{2}{9}$（第一次摸到黑球后，剩余 9 个球，2 个黑球）。根据乘法公式，有：</p>
+<p>$P(A_1A_2) &#x3D; P(A_1)P(A_2|A_1) &#x3D; \frac{3}{10} \times \frac{2}{9} &#x3D; \frac{1}{15}$</p>
+<p>所以先后两次从中不放回地各摸出一球，两次摸到的均为黑球的概率为$\frac{1}{15}$。</p>
+<p>（2）设事件$A$表示“第三次才摸到黑球”，则$A &#x3D; \overline{A_1}\overline{A_2}A_3$（即第一次和第二次未摸到黑球，第三次摸到黑球）。</p>
+<p>由题意知$P(\overline{A_1}) &#x3D; \frac{7}{10}$，$P(\overline{A_2}|\overline{A_1}) &#x3D; \frac{6}{9}$（第一次未摸到黑球后剩余 9 个球，6 个白球），$P(A_3|\overline{A_1}\overline{A_2}) &#x3D; \frac{3}{8}$（前两次未摸到黑球后剩余 8 个球，3 个黑球）。根据乘法公式，有：</p>
+<p>$P(A) &#x3D; P(\overline{A_1}\overline{A_2}A_3) &#x3D; P(\overline{A_1})P(\overline{A_2}|\overline{A_1})P(A_3|\overline{A_1}\overline{A_2}) &#x3D; \frac{7}{10} \times \frac{6}{9} \times \frac{3}{8} &#x3D; \frac{7}{40}$</p>
+<p>所以从中不放回地摸球，每次各摸一球，第三次才摸到黑球的概率为$\frac{7}{40}$。</p>
+<ol>
+<li><strong>教师活动</strong>：展示例 3，引导学生分析题目，设出事件，逐步讲解解题思路和步骤。</li>
+<li><strong>学生活动</strong>：认真听讲，理解题目，跟随教师步骤思考解题过程，记录关键步骤和思路。</li>
+<li><strong>设计意图</strong>：通过具体例题，让学生学会运用乘法公式解决实际概率问题，提高学生分析和解决问题的能力。</li>
+</ol>
+<h3 id="探究活动三：事件独立性的概念与性质"><a href="#探究活动三：事件独立性的概念与性质" class="headerlink" title="探究活动三：事件独立性的概念与性质"></a>探究活动三：事件独立性的概念与性质</h3><p>回顾事件独立性的概念：我们知道，如果事件$A$（或$B$）是否发生对事件$B$（或$A$）发生的概率没有影响，这样的两个事件就叫作相互独立事件。例如，在试验“连续抛掷一枚均匀的骰子两次，观察每次出现的点数”中，若事件$A$表示“第一次掷出 1 点”，事件$B$表示“第二次掷出 1 点”，则事件$A$与$B$即为相互独立事件。</p>
+<p>不仅如此，结合古典概型，我们还得出两个相互独立事件同时发生的概率，等于这两个事件发生的概率的积，即$P(AB) &#x3D; P(A)P(B)$。</p>
+<ol>
+<li><strong>教师活动</strong>：回顾事件独立性概念，举例说明，推导相互独立事件同时发生的概率公式。</li>
+<li><strong>学生活动</strong>：回顾旧知，理解概念，通过例子加深对独立性的认识，推导概率公式。</li>
+<li><strong>设计意图</strong>：强化学生对事件独立性概念的理解，推导概率公式，为后续学习做铺垫。</li>
+</ol>
+<h3 id="探究活动四：独立性与条件概率的关系"><a href="#探究活动四：独立性与条件概率的关系" class="headerlink" title="探究活动四：独立性与条件概率的关系"></a>探究活动四：独立性与条件概率的关系</h3><p>下面我们从条件概率的角度进行分析。</p>
+<p>由条件概率的定义$P(B|A) &#x3D; \frac{P(AB)}{P(A)}$（其中$P(A) &gt; 0$），得$P(AB) &#x3D; P(B|A)P(A)$。</p>
+<p>若事件$A$与事件$B$相互独立，即事件$A$（或$B$）是否发生对事件$B$（或$A$）发生的概率没有影响，则$P(B|A) &#x3D; P(B)$，从而$P(AB) &#x3D; P(A)P(B)$。</p>
+<p>反之，若$P(AB) &#x3D; P(A)P(B)$，且$P(A) &gt; 0$，则$P(B|A) &#x3D; \frac{P(AB)}{P(A)} &#x3D; \frac{P(A)P(B)}{P(A)} &#x3D; P(B)$，即事件$A$发生与否不影响事件$B$发生的概率；同理，若$P(B) &gt; 0$，则$P(A|B) &#x3D; P(A)$，即事件$B$发生与否不影响事件$A$发生的概率。因此，事件$A$与事件$B$相互独立的充要条件是$P(AB) &#x3D; P(A)P(B)$。</p>
+<ol>
+<li><strong>教师活动</strong>：引导学生从条件概率角度分析独立性，推导相互独立的充要条件。</li>
+<li><strong>学生活动</strong>：跟随教师思路，进行推导，理解相互独立的充要条件。</li>
+<li><strong>设计意图</strong>：让学生从不同角度理解事件独立性，深入掌握独立性与条件概率的关系。</li>
+</ol>
+<h3 id="探究活动五：例题解析（新例题）"><a href="#探究活动五：例题解析（新例题）" class="headerlink" title="探究活动五：例题解析（新例题）"></a>探究活动五：例题解析（新例题）</h3><p>例 口袋中有 4 个黑球和 3 个白球，这 7 个球除颜色外完全相同，连摸两次，每次摸一个球。记事件$A$表示“第一次摸得黑球”，事件$B$表示“第二次摸得黑球”。在放回摸球和不放回摸球两种情况下，事件$A$与事件$B$是否独立？</p>
+<ol>
+<li><strong>教师活动</strong>：展示例题，引导学生分析放回和不放回两种情况，计算概率，判断事件独立性。</li>
+<li><strong>学生活动</strong>：分析题目，计算不同情况下的概率，根据充要条件判断事件独立性。</li>
+<li><strong>设计意图</strong>：通过实际例题，让学生运用所学知识判断事件独立性，提高学生综合运用能力。</li>
+</ol>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><p>教师给出类似的摸球或抽奖等概率问题，如：口袋中有 2 个红球和 3 个蓝球，先后两次摸球，分别在放回和不放回情况下，求特定事件发生的概率及判断事件独立性。</p>
+<ol>
+<li><strong>教师活动</strong>：布置课堂练习，巡视学生做题情况，及时给予指导。</li>
+<li><strong>学生活动</strong>：独立完成课堂练习，有问题及时向教师请教。</li>
+<li><strong>设计意图</strong>：巩固课堂所学知识，及时反馈学生学习情况，便于教师调整教学策略。</li>
+</ol>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ol>
+<li><p>口袋中有 5 个黄球和 5 个绿球，每次摸一个球，摸两次。分别计算放回和不放回时，两次都摸到黄球的概率，并判断“第一次摸到黄球”和“第二次摸到黄球”这两个事件是否独立。</p>
+</li>
+<li><p>一个盒子里有 4 个正品和 2 个次品，从中不放回地抽取两次，每次抽一个。求第一次抽到正品且第二次抽到次品的概率，以及判断“第一次抽到正品”和“第二次抽到次品”这两个事件是否独立。</p>
+</li>
+<li><p><strong>教师活动</strong>：布置课后作业，要求学生认真完成，下节课检查。</p>
+</li>
+<li><p><strong>学生活动</strong>：课后完成作业，巩固课堂知识。</p>
+</li>
+<li><p><strong>设计意图</strong>：让学生进一步巩固课堂所学知识，培养学生自主学习和解决问题的能力。</p>
+</li>
+</ol>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2026/01/26/6.1.1%20%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E7%9A%84%E6%A6%82%E5%BF%B5/">6.1.1 条件概率的概念</a>
+            
+            
+            <a class="next" rel="next" href="/2026/01/26/6.1.3%20%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F/">6.1.3</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

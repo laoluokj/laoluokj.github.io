@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>6.4.2 超几何分布 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">6.4.2 超几何分布</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 26, 2026&nbsp;&nbsp;15:17:19</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>结合高中数学核心素养，通过“实例分析—抽象概括—应用巩固”的过程，让学生经历超几何分布的形成过程：<strong>数学抽象</strong>上，从“取次品”实例抽象出超几何分布的一般模型；<strong>逻辑推理</strong>与<strong>数学运算</strong>上，能用组合数推导超几何分布的概率公式$P(X&#x3D;k)&#x3D;\frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}$；<strong>数据分析</strong>上，会判断随机变量是否服从超几何分布，理解参数$N,M,n$的意义，提升用概率模型解决实际问题的能力。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>北师大版教材以“10件产品取次品”的具体实例切入，先计算随机变量$X$的分布列，再抽象概括超几何分布的一般定义，注重“特殊→一般”的认知逻辑；通过“思考交流”环节巩固概念，符合学生从具体到抽象的认知规律，突出概率模型的应用性。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生已掌握组合数的计算，但对“从两类元素中抽取”的概率模型不熟悉，抽象概括能力和逻辑推理能力有待提升；对$k$的取值范围（$\max(0,n-(N-M))\leq k\leq\min(n,M)$）的理解易出现混淆，需借助具体例子降低难度。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ul>
+<li>超几何分布的定义及概率公式；</li>
+<li>判断随机变量是否服从超几何分布。</li>
+</ul>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ul>
+<li>理解超几何分布中$k$的取值范围（$\max(0,n-(N-M))$到$\min(n,M)$）；</li>
+<li>超几何分布模型的实际应用。</li>
+</ul>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用“实例引导+问题驱动”法，结合讲练结合，从具体实例到抽象定义，逐步突破难点。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究具体实例的分布列，合作交流概括超几何分布的特征，通过“思考交流”巩固概念，落实“从做中学”。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>PPT（含实例分析、公式推导）、课堂练习纸（思考交流题目）。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>超几何分布的核心定义是什么？</li>
+<li>概率公式$P(X&#x3D;k)&#x3D;\frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}$中，参数$N,M,n$分别表示什么？</li>
+<li>判断一个随机变量是否服从超几何分布的关键是什么？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以“取次品”实例切入，直观易懂，学生参与度高；通过“思考交流”及时巩固概念，大部分学生能判断超几何分布。<strong>不足之处</strong>：对$k$的取值范围（$\max(0,n-(N-M))\leq k\leq\min(n,M)$）的讲解较抽象，部分学生仍混淆$k$的最小值。<strong>改进设想</strong>：增加“100件产品取85件”的具体例子，用数轴图示标注$k$的取值范围，直观呈现“至少取5件次品”的逻辑，辅助学生理解。</p>
+<h1 id="6-4-2-超几何分布教学设计"><a href="#6-4-2-超几何分布教学设计" class="headerlink" title="6.4.2 超几何分布教学设计"></a>6.4.2 超几何分布教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如抽奖箱里有 10 个球，3 个红球是中奖球，抽 4 个球，想知道中奖情况吗？这就和超几何分布有关。</p>
+<ol>
+<li><strong>教师活动</strong>：展示抽奖箱模型，提出抽奖问题，引导学生思考。</li>
+<li><strong>学生活动</strong>：倾听问题，积极思考可能的中奖结果及计算方法。</li>
+<li><strong>设计意图</strong>：以生活中常见的抽奖情景引入，激发学生的学习兴趣和好奇心，自然引出超几何分布的概念。</li>
+</ol>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：实例分析"><a href="#探究活动一：实例分析" class="headerlink" title="探究活动一：实例分析"></a>探究活动一：实例分析</h3><p>已知在 10 件产品中有 4 件次品，现从这 10 件产品中任取 3 件，用 $X$ 表示取得次品的件数，试写出 $X$ 的分布列。</p>
+<p>首先，从这 10 件产品中任取 3 件，共有 $C_{10}^3$ 种取法，每一种取法都是等可能的。</p>
+<p>已知在 10 件产品中有 4 件次品，故 $X$ 的可能取值为 0，1，2，3。</p>
+<p>当 $X &#x3D; 0$ 时，表示“任取的 3 件产品中不含次品”，即从 4 件次品中取出 0 件，再从 6 件正品中取出 3 件，共有 $C_4^0C_6^3$ 种取法，所以事件 ${X &#x3D; 0}$ 的概率为 $P(X &#x3D; 0)&#x3D;\frac{C_4^0C_6^3}{C_{10}^3}$。</p>
+<p>当 $X &#x3D; 1$ 时，表示“任取的 3 件产品中恰有 1 件次品”，即从 4 件次品中取出 1 件，再从 6 件正品中取出 2 件，共有 $C_4^1C_6^2$ 种取法，所以事件 ${X &#x3D; 1}$ 的概率为 $P(X &#x3D; 1)&#x3D;\frac{C_4^1C_6^2}{C_{10}^3}&#x3D;\frac{4\times15}{120}&#x3D;\frac{1}{2}$。</p>
+<p>同理可得：<br>当 $X &#x3D; 2$ 时，共有 $C_4^2C_6^1$ 种取法，$P(X &#x3D; 2)&#x3D;\frac{C_4^2C_6^1}{C_{10}^3}&#x3D;\frac{36}{120}&#x3D;\frac{3}{10}$。<br>当 $X &#x3D; 3$ 时，共有 $C_4^3C_6^0$ 种取法，$P(X &#x3D; 3)&#x3D;\frac{C_4^3C_6^0}{C_{10}^3}&#x3D;\frac{4}{120}&#x3D;\frac{1}{30}$。</p>
+<p>事实上，当 $X &#x3D; k(k &#x3D; 0,1,2,3)$ 时，表示“任取的 3 件产品中恰有 $k$ 件次品”，即从 4 件次品中取出 $k$ 件，再从 6 件正品中取出 $(3 - k)$ 件，共有 $C_4^kC_6^{3 - k}$ 种取法，所以事件 ${X &#x3D; k}$ 的概率为 $P(X &#x3D; k)&#x3D;\frac{C_4^kC_6^{3 - k}}{C_{10}^3}(k &#x3D; 0,1,2,3)$。</p>
+<p>因此，随机变量 $X$ 的分布列如表 6 - 22:</p>
+<table>
+<thead>
+<tr>
+<th>$X$</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$P$</td>
+<td>$\frac{C_4^0C_6^3}{C_{10}^3}$</td>
+<td>$\frac{C_4^1C_6^2}{C_{10}^3}$</td>
+<td>$\frac{C_4^2C_6^1}{C_{10}^3}$</td>
+<td>$\frac{C_4^3C_6^0}{C_{10}^3}$</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><strong>教师活动</strong>：提出产品抽取问题，引导学生分析 $X$ 的取值情况，逐步推导不同取值时的概率公式，列出分布列。</li>
+<li><strong>学生活动</strong>：思考问题，跟随教师的引导，计算不同情况下的组合数和概率，理解分布列的构建过程。</li>
+<li><strong>设计意图</strong>：通过具体的产品抽取实例，让学生亲身经历随机变量分布列的推导过程，为抽象概括超几何分布的概念奠定基础。</li>
+</ol>
+<h3 id="探究活动二：抽象概括"><a href="#探究活动二：抽象概括" class="headerlink" title="探究活动二：抽象概括"></a>探究活动二：抽象概括</h3><p>一般地，设有 $N$ 件产品，其中有 $M(M &lt; N)$ 件次品。从中任取 $n(n\leq N)$ 件产品，用 $X$ 表示取出的 $n$ 件产品中次品的件数，那么 $P(X &#x3D; k)&#x3D;\frac{C_M^kC_{N - M}^{n - k}}{C_N^n}$，其中 $k$ 的范围是 $\max(0,n-(N - M))\leq k\leq\min(n,M)$，且 $N\geq M$，$M,N\in N$。</p>
+<p>公式中的 $k$ 可以取的最小值为 $\max(0,n-(N - M))$，而不一定是 0。例如，有 100 件产品，其中有 20 件次品，从中任取 85 件产品，此时 $n &#x3D; 85$，$N &#x3D; 100$，$M &#x3D; 20$，$n-(N - M)&#x3D;85-(100 - 20)&#x3D;5$，所以至少要取到 5 件次品，而不是 0 件。</p>
+<p>若一个随机变量 $X$ 的分布列由上式确定，则称随机变量 $X$ 服从参数为 $N$，$M$，$n$ 的超几何分布。</p>
+<ol>
+<li><strong>教师活动</strong>：引导学生从具体实例中抽象出一般的数学模型，讲解超几何分布的公式、参数及 $k$ 的取值范围，通过实例说明 $k$ 取值的特殊性。</li>
+<li><strong>学生活动</strong>：对比实例与抽象公式，理解超几何分布的概念，思考 $k$ 取值范围的意义。</li>
+<li><strong>设计意图</strong>：培养学生的抽象概括能力，让学生从具体到一般，深入理解超几何分布的本质特征。</li>
+</ol>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><ol>
+<li><strong>教师活动</strong>：提出以下两个问题，巡视学生的解答情况，适时给予指导，最后进行点评和总结。<ul>
+<li>下列随机变量 $X$ 是否服从超几何分布？如果服从超几何分布，其参数 $N$，$M$，$n$ 分别是多少？<ul>
+<li>一个班共有学生若干，其中女生 20 人，现从中任选 7 人，用 $X$ 表示选出的女生人数。</li>
+<li>从一副扑克牌（去掉大、小王，共 52 张）中取出 10 张牌，用 $X$ 表示取出的红桃的张数。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>学生活动</strong>：独立思考问题，判断随机变量是否服从超几何分布，并确定相应的参数，完成后与同学交流讨论。</li>
+<li><strong>设计意图</strong>：通过课堂练习，及时巩固学生对超几何分布概念的理解和应用能力，培养学生的分析和判断能力。</li>
+</ol>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><ol>
+<li><p>盒子里有 8 个白球，2 个黑球，从中随机抽取 3 个球，用 $Y$ 表示抽到黑球的个数，求 $Y$ 的分布列。</p>
+</li>
+<li><p>某班级有 40 名学生，其中 15 名是共青团员，现从中任选 10 名学生，用 $Z$ 表示选出的共青团员的人数，判断 $Z$ 是否服从超几何分布，若是，求出其参数。</p>
+</li>
+<li><p><strong>教师活动</strong>：布置课后作业，要求学生独立完成，下节课检查作业完成情况并进行讲解。</p>
+</li>
+<li><p><strong>学生活动</strong>：认真完成课后作业，巩固课堂所学知识。</p>
+</li>
+<li><p><strong>设计意图</strong>：通过课后练习，进一步加深学生对超几何分布的理解和掌握，提高学生运用知识解决实际问题的能力。</p>
+</li>
+</ol>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2026/01/26/6.4.1%20%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83/">6.4.1 二项分布</a>
+            
+            
+            <a class="next" rel="next" href="/2026/01/26/6.4.3%20%E7%BB%83%E4%B9%A0%E8%AF%BE/">6.4.3 练习课</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

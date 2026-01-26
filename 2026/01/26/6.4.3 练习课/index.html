@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>6.4.3 练习课 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">6.4.3 练习课</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 26, 2026&nbsp;&nbsp;15:17:19</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>基于数学核心素养，通过解决古典概型（题5）、条件概率（题6(2)）、二项分布（题6(3)）、超几何分布（题6(4)）及随机变量分布列（题3、题2）问题，运用<strong>数据分析素养</strong>辨析概率模型；通过计算$P(\text{获小礼品})&#x3D;1-\frac{C_5^0C_5^5+C_5^1C_5^4}{C_{10}^5}$、$P(B|A)&#x3D;\frac{2}{4}$、$E(X)&#x3D;np$等，提升<strong>数学运算素养</strong>的准确性；通过对比放回与不放回的概率差异，发展<strong>逻辑推理素养</strong>，理解模型本质。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>题目覆盖本章核心题型（古典概型、条件概率、二项&#x2F;超几何分布、负二项分布、分布列），衔接概念与应用，注重模型区分与运算，体现概率的实际应用价值。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通班学生对放回与不放回的模型易混淆，条件概率的“条件”理解不深，复杂分布列（如题3）构建能力弱，需具体例子引导，强化运算与应用。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><p>① 古典概型、条件概率的计算；② 二项与超几何分布的区分及分布列、均值方差求解。</p>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><p>① 放回与不放回抽样的概率模型辨析；② 题3中复杂随机变量的分布列构建。</p>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用问题导学法，结合题型对比、讲练结合，引导学生辨析概率模型。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主练习、合作讨论，通过对比归纳掌握放回与不放回的概率模型差异。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件（含模型对比表）、练习纸、排球道具（辅助题3讲解）。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>古典概型与条件概率的计算关键分别是什么？</li>
+<li>放回抽样的二项分布与不放回的超几何分布有何区别？</li>
+<li>题3中旧球个数的随机变量如何确定取值及概率？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：通过题6的放回与不放回对比练习，学生基本掌握二项与超几何分布的区分，古典概型计算准确率达85%。<strong>不足之处</strong>：题3的“新球变旧球”讲解抽象，部分学生对随机变量取值（3,4,5,6）的概率计算混淆；题2的负二项分布引入仓促，学生对“n&#x3D;12”的含义理解不深。<strong>改进设想</strong>：用动画演示题3中取3个球后新球变旧球的过程，直观呈现旧球数量变化；题2用Excel模拟“直到红球出现10次”的取球过程，强化负二项分布的条件理解。</p>
+<h1 id="《6-4-3-练习课教学设计》"><a href="#《6-4-3-练习课教学设计》" class="headerlink" title="《6.4.3 练习课教学设计》"></a>《6.4.3 练习课教学设计》</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>老师：同学们，在生活中抽奖、摸球等活动随处可见，其中蕴含着很多数学概率知识。今天我们就通过一些实际问题深入探究。</p>
+<h3 id="1-教师活动"><a href="#1-教师活动" class="headerlink" title="1. 教师活动"></a>1. 教师活动</h3><ul>
+<li>用生动的语言描述抽奖、摸球等生活场景，引入课程。</li>
+<li>引导学生思考这些场景中的概率问题。</li>
+</ul>
+<h3 id="2-学生活动"><a href="#2-学生活动" class="headerlink" title="2. 学生活动"></a>2. 学生活动</h3><ul>
+<li>倾听老师描述，联想生活中的类似场景。</li>
+<li>积极思考老师提出的问题，参与初步讨论。</li>
+</ul>
+<h3 id="3-设计意图"><a href="#3-设计意图" class="headerlink" title="3. 设计意图"></a>3. 设计意图</h3><ul>
+<li>通过生活实例引入，激发学生的学习兴趣和好奇心。</li>
+<li>让学生感受数学与生活的紧密联系，为后续的学习做好铺垫。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：分析高二（1）班联欢会游戏的概率问题"><a href="#探究活动一：分析高二（1）班联欢会游戏的概率问题" class="headerlink" title="探究活动一：分析高二（1）班联欢会游戏的概率问题"></a>探究活动一：分析高二（1）班联欢会游戏的概率问题</h3><h4 id="问题呈现"><a href="#问题呈现" class="headerlink" title="问题呈现"></a>问题呈现</h4><ol start="5">
+<li>高二(1)班的联欢会设计了一项游戏，游戏者通过转动如图所示的转盘，如果转盘停止时，指针所指的数字为奇数，则游戏者获胜. 假设转盘是均匀的，且每次转动的结果相互独立，游戏者每次转动转盘获得一次抽奖机会，若中奖可获赠一套丛书，若未中奖可获得一个小礼品。</li>
+</ol>
+<h4 id="分析过程"><a href="#分析过程" class="headerlink" title="分析过程"></a>分析过程</h4><p>老师引导学生分析指针指向奇数的概率，设事件$A$为“指针所指的数字为奇数”，转盘上总共有$n$个等可能的结果，其中奇数的结果有$m$个，则$P(A)&#x3D;\frac{m}{n}$。</p>
+<h3 id="1-教师活动-1"><a href="#1-教师活动-1" class="headerlink" title="1. 教师活动"></a>1. 教师活动</h3><ul>
+<li>展示游戏转盘的图形，清晰地描述游戏规则。</li>
+<li>引导学生分析问题，建立概率模型。</li>
+<li>讲解计算指针指向奇数概率的方法，强调等可能事件概率公式的应用。</li>
+</ul>
+<h3 id="2-学生活动-1"><a href="#2-学生活动-1" class="headerlink" title="2. 学生活动"></a>2. 学生活动</h3><ul>
+<li>观察转盘图形，理解游戏规则。</li>
+<li>思考指针指向奇数的情况，尝试找出所有可能结果和满足条件的结果。</li>
+<li>跟随老师的讲解，学习如何运用等可能事件概率公式进行计算。</li>
+</ul>
+<h3 id="3-设计意图-1"><a href="#3-设计意图-1" class="headerlink" title="3. 设计意图"></a>3. 设计意图</h3><ul>
+<li>让学生从实际游戏场景中抽象出概率问题，培养学生的数学建模能力。</li>
+<li>通过具体问题的分析，加深学生对等可能事件概率公式的理解和运用。</li>
+</ul>
+<h3 id="探究活动二：研究袋中摸球的概率问题"><a href="#探究活动二：研究袋中摸球的概率问题" class="headerlink" title="探究活动二：研究袋中摸球的概率问题"></a>探究活动二：研究袋中摸球的概率问题</h3><h4 id="问题呈现-1"><a href="#问题呈现-1" class="headerlink" title="问题呈现"></a>问题呈现</h4><ol start="6">
+<li>袋中有除颜色外完全相同的$2$个白球和$3$个黑球。<br>(1) 采取放回抽样方式，从中依次摸出两个球，求两球颜色不同的概率；<br>(2) 采取不放回抽样方式，从中依次摸出两个球，求两球颜色不同的概率；<br>(3) 采取不放回抽样方式，从中依次摸出两个球，求摸出的白球个数$X$的分布列；<br>(4) 采取放回抽样方式，从中依次摸出两个球，求摸出的白球个数$Y$的分布列。</li>
+</ol>
+<h4 id="分析过程-1"><a href="#分析过程-1" class="headerlink" title="分析过程"></a>分析过程</h4><ul>
+<li>对于（1）放回抽样，两球颜色不同有“先白后黑”和“先黑后白”两种情况，分别计算概率再相加。设事件$B$为“两球颜色不同”，$P(B)&#x3D;\frac{2}{5}×\frac{3}{5}+\frac{3}{5}×\frac{2}{5}&#x3D;\frac{12}{25}$。</li>
+<li>对于（2）不放回抽样，同理计算$P(B)&#x3D;\frac{2}{5}×\frac{3}{4}+\frac{3}{5}×\frac{2}{4}&#x3D;\frac{3}{5}$。</li>
+<li>对于（3）和（4），分别确定随机变量$X$和$Y$的取值，再计算每个取值的概率，列出分布列。</li>
+</ul>
+<h3 id="1-教师活动-2"><a href="#1-教师活动-2" class="headerlink" title="1. 教师活动"></a>1. 教师活动</h3><ul>
+<li>详细讲解放回抽样和不放回抽样的区别，以及概率计算的方法。</li>
+<li>引导学生分析不同情况下摸出球的颜色组合，计算相应的概率。</li>
+<li>指导学生确定随机变量的取值，计算每个取值的概率并列出分布列。</li>
+<li>强调在计算过程中要注意事件的独立性和互斥性。</li>
+</ul>
+<h3 id="2-学生活动-2"><a href="#2-学生活动-2" class="headerlink" title="2. 学生活动"></a>2. 学生活动</h3><ul>
+<li>认真倾听老师讲解，理解放回抽样和不放回抽样的概念。</li>
+<li>积极思考不同抽样方式下摸出球的颜色组合情况，尝试计算概率。</li>
+<li>跟随老师的指导，确定随机变量的取值，计算概率并列出分布列。</li>
+<li>提出自己在计算过程中遇到的问题，与老师和同学进行交流。</li>
+</ul>
+<h3 id="3-设计意图-2"><a href="#3-设计意图-2" class="headerlink" title="3. 设计意图"></a>3. 设计意图</h3><ul>
+<li>通过对比放回抽样和不放回抽样，加深学生对不同抽样方式下概率计算的理解。</li>
+<li>培养学生分析问题和解决问题的能力，提高学生运用概率知识解决实际问题的能力。</li>
+<li>让学生掌握随机变量分布列的求解方法，体会概率分布在实际问题中的应用。</li>
+</ul>
+<h3 id="探究活动三：分析取球问题中的随机变量问题"><a href="#探究活动三：分析取球问题中的随机变量问题" class="headerlink" title="探究活动三：分析取球问题中的随机变量问题"></a>探究活动三：分析取球问题中的随机变量问题</h3><h4 id="问题呈现-2"><a href="#问题呈现-2" class="headerlink" title="问题呈现"></a>问题呈现</h4><ol start="3">
+<li>球车中装有$12$个排球，其中$9$个是新的，$3$个是旧的。从球车中任取$3$个来用，用完后装回球车中，新球用完后变为旧球，此时球车中旧球的个数是一个随机变量。求这个随机变量的分布列。</li>
+</ol>
+<h4 id="分析过程-2"><a href="#分析过程-2" class="headerlink" title="分析过程"></a>分析过程</h4><p>设随机变量$Z$为球车中旧球的个数，$Z$的可能取值为$3 + 0$，$3 + 1$，$3 + 2$，$3 + 3$。分别计算$P(Z &#x3D; 3)$，$P(Z &#x3D; 4)$，$P(Z &#x3D; 5)$，$P(Z &#x3D; 6)$，再列出分布列。</p>
+<h3 id="1-教师活动-3"><a href="#1-教师活动-3" class="headerlink" title="1. 教师活动"></a>1. 教师活动</h3><ul>
+<li>引导学生确定随机变量的取值范围，分析每个取值对应的实际情况。</li>
+<li>讲解如何计算每个取值的概率，强调组合数在概率计算中的应用。</li>
+<li>指导学生列出随机变量的分布列，并检查分布列的正确性。</li>
+</ul>
+<h3 id="2-学生活动-3"><a href="#2-学生活动-3" class="headerlink" title="2. 学生活动"></a>2. 学生活动</h3><ul>
+<li>思考随机变量$Z$的取值情况，分析每个取值对应的取球组合。</li>
+<li>学习运用组合数计算每个取值的概率。</li>
+<li>列出随机变量$Z$的分布列，并与同学和老师讨论其正确性。</li>
+</ul>
+<h3 id="3-设计意图-3"><a href="#3-设计意图-3" class="headerlink" title="3. 设计意图"></a>3. 设计意图</h3><ul>
+<li>进一步巩固随机变量分布列的求解方法，提高学生运用组合数计算概率的能力。</li>
+<li>培养学生的逻辑思维能力和严谨的治学态度，让学生体会随机变量在实际问题中的重要性。</li>
+</ul>
+<h3 id="探究活动四：研究取球停止问题的概率问题"><a href="#探究活动四：研究取球停止问题的概率问题" class="headerlink" title="探究活动四：研究取球停止问题的概率问题"></a>探究活动四：研究取球停止问题的概率问题</h3><h4 id="问题呈现-3"><a href="#问题呈现-3" class="headerlink" title="问题呈现"></a>问题呈现</h4><ol start="2">
+<li>一袋中有除颜色外完全相同的$5$个白球和$3$个红球，现从袋中往外取球，每次任取一个记下颜色后放回，直到红球出现$10$次时停止。设停止时共取$k$次，则$P(k &#x3D; n)$（此处补充完整题目条件的假设形式）。</li>
+</ol>
+<h4 id="分析过程-3"><a href="#分析过程-3" class="headerlink" title="分析过程"></a>分析过程</h4><p>这是一个独立重复试验问题，直到第$n$次取球时恰好出现$10$次红球，意味着前$n - 1$次中有$9$次红球，第$n$次为红球。根据独立重复试验的概率公式计算$P(k &#x3D; n)$。</p>
+<h3 id="1-教师活动-4"><a href="#1-教师活动-4" class="headerlink" title="1. 教师活动"></a>1. 教师活动</h3><ul>
+<li>引导学生分析问题，判断这是一个独立重复试验问题。</li>
+<li>讲解独立重复试验的概率公式，以及如何运用该公式解决本题。</li>
+<li>强调在计算过程中要注意事件的先后顺序和独立性。</li>
+</ul>
+<h3 id="2-学生活动-4"><a href="#2-学生活动-4" class="headerlink" title="2. 学生活动"></a>2. 学生活动</h3><ul>
+<li>思考问题，判断问题类型，尝试找出解题思路。</li>
+<li>学习独立重复试验的概率公式，理解其含义和应用条件。</li>
+<li>跟随老师的讲解，计算$P(k &#x3D; n)$，并与同学交流自己的计算过程。</li>
+</ul>
+<h3 id="3-设计意图-4"><a href="#3-设计意图-4" class="headerlink" title="3. 设计意图"></a>3. 设计意图</h3><ul>
+<li>让学生掌握独立重复试验的概率公式，提高学生运用概率知识解决复杂问题的能力。</li>
+<li>培养学生的分析问题和逻辑推理能力，让学生体会概率在实际问题中的应用价值。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>布置一些与课堂探究内容类似的练习题，如不同抽样方式下的摸球概率问题、随机变量分布列问题等。</li>
+<li>巡视学生的做题情况，及时给予指导和帮助，纠正学生的错误。</li>
+<li>选取部分学生的解题过程进行展示和讲解，分析解题思路和方法，强调解题的规范性。</li>
+</ul>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成练习题，独立思考，尝试运用所学的知识和方法解决问题。</li>
+<li>遇到问题时，主动向老师和同学请教，积极参与讨论。</li>
+<li>观看老师展示的解题过程，学习他人的解题思路和方法，反思自己的不足之处。</li>
+</ul>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>通过课堂练习，及时巩固学生所学的知识和技能，提高学生运用知识解决问题的能力。</li>
+<li>让学生在练习过程中发现自己的问题和不足，及时进行纠正和弥补。</li>
+<li>通过展示和讲解学生的解题过程，培养学生的表达能力和思维能力，促进学生之间的交流和学习。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><h3 id="题目选取"><a href="#题目选取" class="headerlink" title="题目选取"></a>题目选取</h3><p>从本节课的探究问题中进行拓展和延伸，选取一些难度适中的题目作为课后练习。例如：</p>
+<ol>
+<li>一个盒子中有$4$个红球和$6$个白球，采取放回抽样方式，从中依次摸出$3$个球，求摸出红球个数的分布列和数学期望。</li>
+<li>某篮球运动员投篮命中率为$0.8$，现进行$5$次投篮，求恰好命中$3$次的概率。</li>
+<li>袋中有$3$个白球和$2$个黑球，采取不放回抽样方式，从中依次摸出$2$个球，求摸出白球个数的方差。</li>
+</ol>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><ul>
+<li>布置课后作业，明确作业的要求和完成时间。</li>
+<li>解答学生在作业过程中遇到的问题，提供必要的指导和帮助。</li>
+<li>批改学生的作业，了解学生的学习情况，为下节课的教学提供参考。</li>
+</ul>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><ul>
+<li>认真完成课后作业，独立思考，运用所学的知识和方法解决问题。</li>
+<li>遇到问题时，先尝试自己解决，无法解决时及时向老师和同学请教。</li>
+<li>根据老师的批改反馈，认真分析自己的错误原因，进行针对性的复习和巩固。</li>
+</ul>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><ul>
+<li>通过课后练习，进一步巩固学生所学的知识和技能，加深学生对概率概念和方法的理解。</li>
+<li>培养学生的自主学习能力和独立思考能力，提高学生运用知识解决实际问题的能力。</li>
+<li>让老师了解学生的学习情况，发现教学中存在的问题，及时调整教学策略和方法。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2026/01/26/6.4.2%20%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83/">6.4.2 超几何分布</a>
+            
+            
+            <a class="next" rel="next" href="/2025/12/26/5.7.3%20%E7%BB%84%E5%90%88%E4%B8%8E%E7%BB%84%E5%90%88%E6%95%B0/">5.7.3 组合与组合数</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

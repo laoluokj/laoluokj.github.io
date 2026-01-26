@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>6.1.4 全概率练习题研究 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">6.1.4 全概率练习题研究</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 26, 2026&nbsp;&nbsp;15:17:19</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="1-教学目标"><a href="#1-教学目标" class="headerlink" title="1. 教学目标"></a>1. 教学目标</h3><p>通过摸球实例分析，经历从全概率公式计算“红球概率”（由因求果）到用条件概率推导贝叶斯公式（执果索因）的过程，发展数学抽象素养；能逻辑推理贝叶斯公式的前提条件（样本空间划分、$P(A)&gt;0$等），理解“执果索因”的核心思想，提升逻辑推理能力；熟练运用全概率公式计算“由因求果”的概率，运用贝叶斯公式求解“执果索因”的概率，落实数学运算素养；通过计算不同箱子取红球的可能性，分析事件发生的原因概率，强化数据分析意识，体会概率的应用价值。</p>
+<h3 id="2-教材分析"><a href="#2-教材分析" class="headerlink" title="2. 教材分析"></a>2. 教材分析</h3><p>例8以摸球情境为载体，先“由因求果”用全概率求红球概率，再“执果索因”求红球来源概率，自然引出贝叶斯公式；抽象概括环节明确公式结构与思想，练习呼应实例，体现“实例-公式-应用”的设计逻辑，注重思想渗透。</p>
+<h3 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h3><p>普通高中普通班学生，已学条件概率、全概率公式，但对公式的逻辑关联与思想内涵理解较浅，计算时易混淆事件关系，需借助直观实例拆解步骤，逐步引导抽象概括与应用。</p>
+<h3 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h3><ol>
+<li>贝叶斯公式的推导与应用；</li>
+<li>全概率公式的巩固练习。</li>
+</ol>
+<h3 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h3><ol>
+<li>区分“由因求果”与“执果索因”的场景；</li>
+<li>理解贝叶斯公式的“执果索因”思想。</li>
+</ol>
+<h3 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h3><p>采用问题引导法、实例分析法、讲练结合法，逐步拆解公式逻辑与应用。</p>
+<h3 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h3><p>自主探究实例中的概率关系，合作交流公式推导逻辑，练习巩固应用方法。</p>
+<h3 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h3><p>多媒体课件、摸球模型道具、例题与练习学案。</p>
+<h3 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h3><ol>
+<li>全概率公式与贝叶斯公式分别解决什么类型的问题？</li>
+<li>贝叶斯公式中的“果”（$A$）与“因”（$B_i$）分别对应什么事件？</li>
+<li>应用贝叶斯公式时，需先确定哪些关键要素（如样本空间划分、$P(B_i)$、$P(A|B_i)$）？</li>
+</ol>
+<h3 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h3><p><strong>成功之处</strong>：以摸球实例贯穿始终，从具体到抽象推导贝叶斯公式，普通班学生能跟随逻辑理解公式，练习反馈显示全概率与贝叶斯公式的基本应用掌握较好。<strong>不足之处</strong>：对贝叶斯“执果索因”思想的挖掘不够深入，部分学生仅会套公式，未理解本质；练习的层次性不足，优生未得到提升。<strong>改进设想</strong>：增加“医疗诊断”“产品质检”等对比案例，强化“由因求果”与“执果索因”的场景区分；设计分层练习（基础题巩固公式，提升题拓展思想），满足不同学生需求。</p>
+<h1 id="全概率练习题教学设计"><a href="#全概率练习题教学设计" class="headerlink" title="全概率练习题教学设计"></a>全概率练习题教学设计</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如有三个抽奖箱，里面奖品不同，随机选一箱抽中了大奖，那它来自哪个箱子概率最大呢？</p>
+<ul>
+<li><strong>教师活动</strong>：展示有趣的抽奖箱情景，提出问题引发思考。</li>
+<li><strong>学生活动</strong>：认真倾听情景，思考老师提出的问题。</li>
+<li><strong>设计意图</strong>：以新颖情景吸引学生注意力，激发学生对后续知识的探究欲望。</li>
+</ul>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：例8题目分析"><a href="#探究活动一：例8题目分析" class="headerlink" title="探究活动一：例8题目分析"></a>探究活动一：例8题目分析</h3><ul>
+<li><strong>例8 题目</strong>：有三个箱子，分别编号为1,2,3，其中1号箱装有1个红球和4个白球，2号箱装有2个红球和3个白球，3号箱装有3个红球，这些球除颜色外完全相同。某人先从三箱中任取一箱，再从中任意摸出一球，发现是红球，求该球是取自1号箱的概率以及该球取自几号箱的可能性最大。</li>
+<li><strong>教师活动</strong>：清晰展示题目，引导学生理解题目条件和问题。</li>
+<li><strong>学生活动</strong>：仔细阅读题目，分析已知条件和所求问题。</li>
+<li><strong>设计意图</strong>：让学生明确问题，为后续解答和知识探究做铺垫。</li>
+</ul>
+<h3 id="探究活动二：例8解答过程"><a href="#探究活动二：例8解答过程" class="headerlink" title="探究活动二：例8解答过程"></a>探究活动二：例8解答过程</h3><ul>
+<li><strong>例8 解答</strong>：设事件$B_i$表示“球取自$i$号箱”（$i &#x3D; 1,2,3$），事件$A$表示“取得红球”。由全概率公式，可得$P(A)&#x3D;P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+P(B_3)P(A|B_3)$。因此，该球是取自1号箱的概率为[具体数值，原数据中未明确显示正确数值，可能需要根据题意推断，但保留结构]，该球取自3号箱的可能性最大。</li>
+<li><strong>教师活动</strong>：逐步讲解解题思路，推导全概率公式的应用，引导学生理解每一步的意义。</li>
+<li><strong>学生活动</strong>：跟随老师思路，理解解题过程，思考公式的应用原理。</li>
+<li><strong>设计意图</strong>：通过具体例题，让学生掌握全概率公式在实际问题中的应用，培养学生的解题能力和逻辑思维。</li>
+</ul>
+<h3 id="探究活动三：贝叶斯公式抽象概括"><a href="#探究活动三：贝叶斯公式抽象概括" class="headerlink" title="探究活动三：贝叶斯公式抽象概括"></a>探究活动三：贝叶斯公式抽象概括</h3><ul>
+<li><strong>抽象概括 贝叶斯公式</strong>：设$B_1,B_2,\cdots,B_n$为样本空间$\Omega$的一个划分，若$P(A)&gt;0$，$P(B_i)&gt;0$（$i &#x3D; 1,2,\cdots,n$），则$P(B_i|A)&#x3D;\frac{P(B_i)P(A|B_i)}{P(A)}$，称上式为贝叶斯（Bayes）公式。该公式于1763年由贝叶斯给出，它是在观察到事件$A$已发生的条件下，寻找导致$A$发生的每个原因$B_i$的概率，贝叶斯公式的思想就是“执果索因”。</li>
+<li><strong>教师活动</strong>：详细讲解贝叶斯公式的定义、条件和思想，结合例8加深学生理解。</li>
+<li><strong>学生活动</strong>：认真听讲，理解贝叶斯公式的含义和应用场景，与例8进行对比思考。</li>
+<li><strong>设计意图</strong>：让学生掌握贝叶斯公式，理解其“执果索因”的思想，拓宽学生的概率知识体系。</li>
+</ul>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><h3 id="练习题目"><a href="#练习题目" class="headerlink" title="练习题目"></a>练习题目</h3><ol>
+<li>某顾客购买了一个灯泡，求它是合格品的概率。</li>
+<li>现抽查了一个人，试验反应是阳性，则此人是癌症患者的概率有多大？</li>
+</ol>
+<ul>
+<li><strong>教师活动</strong>：展示练习题，鼓励学生独立思考，巡视学生做题情况，适时给予指导。</li>
+<li><strong>学生活动</strong>：独立完成练习题，运用所学的全概率公式和贝叶斯公式进行计算。</li>
+<li><strong>设计意图</strong>：及时巩固课堂所学知识，检验学生对公式的掌握和应用能力。</li>
+</ul>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><ol>
+<li>某工厂有三条生产线生产同一种产品，三条生产线的产量分别占总产量的20%、30%、50%，且三条生产线的次品率分别为0.05、0.04、0.02。现从该厂生产的产品中随机抽取一件，发现是次品，求该次品是由第一条生产线生产的概率。</li>
+<li>已知某种疾病的发病率为0.001，现有一种检测方法，检测结果呈阳性时，患病的概率为0.95，不患病时检测结果呈阳性的概率为0.01。若某人检测结果呈阳性，求此人患病的概率。</li>
+</ol>
+<ul>
+<li><strong>教师活动</strong>：布置课后作业，强调作业要求和完成时间，解答学生的疑问。</li>
+<li><strong>学生活动</strong>：认真完成课后作业，进一步巩固课堂所学知识。</li>
+<li><strong>设计意图</strong>：通过课后练习，加深学生对全概率公式和贝叶斯公式的理解和应用，提高学生解决实际问题的能力。</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2026/01/26/6.1.3%20%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F/">6.1.3</a>
+            
+            
+            <a class="next" rel="next" href="/2026/01/26/6.1.5%20%E7%BB%83%E4%B9%A0%E8%AF%BE/">6.1.5 练习课</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

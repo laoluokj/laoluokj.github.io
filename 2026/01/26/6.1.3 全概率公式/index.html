@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="laoluokj">
+
+
+
+
+
+<title>6.1.3 | 高中数学备课</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">自由杂货铺27号</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">自由杂货铺27号</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">选择性必修一</a>
+                
+                <a class="menu-item" href="/category">category</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">6.1.3</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">laoluokj</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 26, 2026&nbsp;&nbsp;15:17:19</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="《6-1-3-全概率公式》教案"><a href="#《6-1-3-全概率公式》教案" class="headerlink" title="《6.1.3 全概率公式》教案"></a>《6.1.3 全概率公式》教案</h1><h2 id="1-教学目标（基于数学核心素养）"><a href="#1-教学目标（基于数学核心素养）" class="headerlink" title="1. 教学目标（基于数学核心素养）"></a>1. 教学目标（基于数学核心素养）</h2><ol>
+<li><strong>数学抽象与逻辑推理</strong>：通过“箱子取球”“元件次品”等实例，经历从<strong>互斥事件加法公式</strong>与<strong>乘法公式</strong>推导全概率公式的过程，抽象出公式的核心要素（“原因事件”划分、$P(B_i)P(A|B_i)$的加权和），体会演绎推理的严谨性与数学抽象的概括性；</li>
+<li><strong>数学运算与数据分析</strong>：能正确识别实际问题中的“结果事件”$A$与“原因事件”$B_i$，运用全概率公式计算复杂事件概率（如问题5、6及例6），提升条件概率与联合概率的运算能力，学会从数据中提取“原因权重”（如元件份额、次品包占比）并分析其对结果的影响；</li>
+<li><strong>数学建模</strong>：能将“结果由多互斥原因导致”的实际问题转化为全概率模型，理解公式中“加权平均”的实际意义（如不同箱子取球的概率是各箱子红球概率的加权平均），培养用概率思维解决实际问题的意识。</li>
+</ol>
+<h2 id="2-教材分析（北师大版新版教材）"><a href="#2-教材分析（北师大版新版教材）" class="headerlink" title="2. 教材分析（北师大版新版教材）"></a>2. 教材分析（北师大版新版教材）</h2><p>本节是“概率”章节的核心内容，<strong>承上启下</strong>：上接“条件概率”“互斥事件概率”等前置知识，下为“贝叶斯公式”奠定基础。教材采用**“具体实例—抽象概括—实践应用”**的编排逻辑，体现“从感性到理性”的认知规律：</p>
+<ol>
+<li><strong>实例铺垫</strong>：以“问题5（箱子取球）”“问题6（元件次品）”为载体，引导学生用已学知识解决具体问题，直观感受“结果由多互斥原因导致”的场景；</li>
+<li><strong>抽象概括</strong>：从实例中提炼全概率公式的一般形式$P(A)&#x3D;\sum_{i&#x3D;1}^n P(B_i)P(A|B_i)$，明确“原因事件”$B_i$的划分条件（两两互斥、覆盖样本空间$\Omega$、$P(B_i)&gt;0$），解读公式为“各原因下条件概率的加权平均”；</li>
+<li><strong>应用深化</strong>：通过“例6（采购拒绝概率）”拓展至“需用组合数计算条件概率”的复杂场景，强化公式的通用性与实际价值。</li>
+</ol>
+<p>教材注重<strong>数学与生活的联结</strong>，通过贴近学生认知的实例降低抽象难度，符合北师大版“重过程、重应用”的编写理念。</p>
+<h2 id="3-学情分析"><a href="#3-学情分析" class="headerlink" title="3. 学情分析"></a>3. 学情分析</h2><p>授课对象为<strong>普通高中普通班学生</strong>，具有以下特征：</p>
+<ol>
+<li><strong>知识基础</strong>：已掌握条件概率（$P(A|B)&#x3D;\frac{P(AB)}{P(B)}$）、互斥事件加法公式（$P(A\cup B)&#x3D;P(A)+P(B)$），但对“事件分解”的思想应用不熟练；</li>
+<li><strong>能力特点</strong>：形象思维占优，抽象思维有待提升，易忽略“原因事件划分”的严谨性（如互斥性、完备性）；</li>
+<li><strong>学习风格</strong>：偏好“直观化、生活化”的问题，对纯理论推导兴趣不高，需通过具体情境激发参与感。</li>
+</ol>
+<h2 id="4-教学重点"><a href="#4-教学重点" class="headerlink" title="4. 教学重点"></a>4. 教学重点</h2><ol>
+<li>全概率公式的<strong>本质理解</strong>（“原因事件划分”“加权平均”的核心意义）；</li>
+<li>全概率公式的<strong>正确应用</strong>（识别$A$与$B_i$、计算$P(B_i)$与$P(A|B_i)$）。</li>
+</ol>
+<h2 id="5-教学难点"><a href="#5-教学难点" class="headerlink" title="5. 教学难点"></a>5. 教学难点</h2><ol>
+<li><strong>样本空间的有效划分</strong>（“原因事件”$B_i$需满足：①两两互斥；②覆盖$\Omega$；③$P(B_i)&gt;0$）；</li>
+<li>复杂问题中<strong>事件的对应关系</strong>（如例6中“拒绝购买”与“含4个次品&#x2F;1个次品的包”的关联）。</li>
+</ol>
+<h2 id="6-教法"><a href="#6-教法" class="headerlink" title="6. 教法"></a>6. 教法</h2><p><strong>问题导向探究法+直观演示法</strong>：以“问题5→问题6→公式推导→例6”为主线，通过追问（如“为什么要分箱子计算？”“各箱子的概率起什么作用？”）引导学生自主推导；用多媒体展示“箱子取球流程”“元件数据表格”，强化直观认知。</p>
+<h2 id="7-学法"><a href="#7-学法" class="headerlink" title="7. 学法"></a>7. 学法</h2><p><strong>自主探究+合作交流</strong>：通过“独立推导公式→小组分析实例→全班归纳总结”的流程，让学生在“做中学”，提升对公式的理解与应用能力。</p>
+<h2 id="8-教学准备"><a href="#8-教学准备" class="headerlink" title="8. 教学准备"></a>8. 教学准备</h2><p>多媒体课件（含实例图示、公式推导流程）、实例练习卡片（如“超市进货次品率问题”）。</p>
+<h2 id="9-课堂小结"><a href="#9-课堂小结" class="headerlink" title="9. 课堂小结"></a>9. 课堂小结</h2><p>通过以下问题梳理核心内容：</p>
+<ol>
+<li>全概率公式适用于解决<strong>什么类型的问题</strong>？（结果由多个互斥“原因”导致的复杂事件概率）</li>
+<li>应用全概率公式时，“原因事件”$B_i$需满足<strong>哪些条件</strong>？（两两互斥、覆盖样本空间、概率大于0）</li>
+<li>全概率公式中的“加权平均”如何理解？（“权重”是$P(B_i)$（原因发生的概率），“数据”是$P(A|B_i)$（该原因下结果发生的概率））</li>
+</ol>
+<h2 id="10-教学反思"><a href="#10-教学反思" class="headerlink" title="10. 教学反思"></a>10. 教学反思</h2><h3 id="成功之处"><a href="#成功之处" class="headerlink" title="成功之处"></a>成功之处</h3><ol>
+<li><strong>实例设计有效</strong>：问题5、6贴近生活，学生能快速代入，顺利完成从“具体到抽象”的过渡；</li>
+<li><strong>过程性引导到位</strong>：通过“分步推导”（加法公式→乘法公式→全概率公式），多数学生能理解公式的来龙去脉；</li>
+<li><strong>例6拆解合理</strong>：将“拒绝购买”转化为“对立事件（全为好的）”，降低了组合数计算的难度，提升了解题信心。</li>
+</ol>
+<h3 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h3><ol>
+<li><strong>划分条件强化不足</strong>：部分学生仍出现“原因事件重叠”的错误（如将“含4个次品的包”与“含1个次品的包”视为非互斥）；</li>
+<li><strong>个体差异关注不够</strong>：基础弱的学生对“组合数计算条件概率”（如$P(全为好的|含4个次品)&#x3D;\frac{C_6^3}{C_{10}^3}$）掌握不牢，导致例6解题断层；</li>
+<li><strong>互动广度有限</strong>：课堂互动集中在少数积极学生，未能覆盖全体。</li>
+</ol>
+<h3 id="改进设想"><a href="#改进设想" class="headerlink" title="改进设想"></a>改进设想</h3><ol>
+<li><strong>增加辨析环节</strong>：展示2-3个错误案例（如“原因事件不互斥”“未覆盖全集”），让学生修正，强化划分条件；</li>
+<li><strong>提前铺垫组合数</strong>：例6前补充“从$n$个元件中抽$k$个全为好的概率”的小练习，降低难度；</li>
+<li><strong>设计小组互助</strong>：4-5人一组，让基础好的学生帮助基础弱的学生，提升参与度；</li>
+<li><strong>分层作业</strong>：基础层（公式直接应用）、提升层（自主划分原因事件），满足不同需求。</li>
+</ol>
+<h1 id="1-3-全概率公式"><a href="#1-3-全概率公式" class="headerlink" title="1.3 全概率公式"></a>1.3 全概率公式</h1><h2 id="一、情景引入"><a href="#一、情景引入" class="headerlink" title="一、情景引入"></a>一、情景引入</h2><p>同学们，假如你去抽奖，有三个不同的抽奖箱，每个箱子中奖概率不同，随机选一个箱子抽，想知道中奖概率咋算吗？</p>
+<h3 id="教师活动"><a href="#教师活动" class="headerlink" title="教师活动"></a>教师活动</h3><p>通过讲述抽奖的情景，向学生提出问题，引导学生思考。</p>
+<h3 id="学生活动"><a href="#学生活动" class="headerlink" title="学生活动"></a>学生活动</h3><p>倾听教师描述的情景，积极思考如何计算中奖概率。</p>
+<h3 id="设计意图"><a href="#设计意图" class="headerlink" title="设计意图"></a>设计意图</h3><p>以生活中常见的抽奖情景引入，激发学生的学习兴趣和好奇心，为引出全概率公式做铺垫。</p>
+<h2 id="二、新知探究"><a href="#二、新知探究" class="headerlink" title="二、新知探究"></a>二、新知探究</h2><h3 id="探究活动一：问题-5-分析"><a href="#探究活动一：问题-5-分析" class="headerlink" title="探究活动一：问题 5 分析"></a>探究活动一：问题 5 分析</h3><p>问题 5：有三个箱子，分别编号为 1，2，3，其中 1 号箱装有 1 个红球和 4 个白球，2 号箱装有 2 个红球和 3 个白球，3 号箱装有 3 个红球，这些球除颜色外完全相同。某人先从三箱中任取一箱，再从中任意摸出一球，求取得红球的概率。<br>分析：设事件 $B_i$ 表示“球取自 $i$ 号箱”（$i &#x3D; 1,2,3$），事件 $A$ 表示“取得红球”。其中 $B_1,B_2,B_3$ 两两互斥，$A$ 发生总是伴随着 $B_1,B_2,B_3$ 之一同时发生，即 $A &#x3D; B_1A\cup B_2A\cup B_3A$，且 $B_1A,B_2A,B_3A$ 两两互斥。运用互斥事件概率的加法公式得到 $P(A)&#x3D;P(B_1A)+P(B_2A)+P(B_3A)$，再对求和中的每一项运用乘法公式得 $P(A)&#x3D;P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+P(B_3)P(A|B_3)$。</p>
+<h3 id="教师活动-1"><a href="#教师活动-1" class="headerlink" title="教师活动"></a>教师活动</h3><p>展示问题 5，引导学生分析问题，逐步设出事件，分析事件之间的关系，推导概率公式。</p>
+<h3 id="学生活动-1"><a href="#学生活动-1" class="headerlink" title="学生活动"></a>学生活动</h3><p>认真思考教师提出的问题，跟随教师的思路，理解事件的设定和关系，参与公式的推导。</p>
+<h3 id="设计意图-1"><a href="#设计意图-1" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过具体的摸球问题，让学生初步感受如何将复杂的概率问题分解为多个简单的条件概率问题，为全概率公式的引出做准备。</p>
+<h3 id="探究活动二：问题-6-分析"><a href="#探究活动二：问题-6-分析" class="headerlink" title="探究活动二：问题 6 分析"></a>探究活动二：问题 6 分析</h3><p>问题 6：某电子设备制造厂所用的元件是由三家元件制造厂提供的，根据以往的记录有如下数据：</p>
+<table>
+<thead>
+<tr>
+<th>元件制造厂</th>
+<th>次品率</th>
+<th>提供元件的份额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.02</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.01</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.03</td>
+<td>0.05</td>
+</tr>
+</tbody>
+</table>
+
+<p>设这三家元件制造厂的元件在仓库中是均匀混合的，且无区别的标志，在仓库中随机地取一只元件，求它是次品的概率。<br>分析：设事件 $B_i$ 表示“所取到的产品是由第 $i$ 家元件制造厂提供的”（$i &#x3D; 1,2,3$），事件 $A$ 表示“取到的是一件次品”。其中 $B_1,B_2,B_3$ 两两互斥，$A$ 发生总是伴随着 $B_1,B_2,B_3$ 之一同时发生，即 $A &#x3D; B_1A\cup B_2A\cup B_3A$，且 $B_1A,B_2A,B_3A$ 两两互斥。运用互斥事件概率的加法公式和乘法公式，得 $P(A)&#x3D;P(B_1A)+P(B_2A)+P(B_3A)&#x3D;P(B_1)P(A|B_1)+P(B_2)P(A|B_2)+P(B_3)P(A|B_3)&#x3D;0.15\times0.02 + 0.80\times0.01 + 0.05\times0.03 &#x3D; 0.0125$。</p>
+<h3 id="教师活动-2"><a href="#教师活动-2" class="headerlink" title="教师活动"></a>教师活动</h3><p>展示问题 6，引导学生仿照问题 5 的分析方法，设出事件，分析关系，计算概率。</p>
+<h3 id="学生活动-2"><a href="#学生活动-2" class="headerlink" title="学生活动"></a>学生活动</h3><p>独立思考，尝试按照问题 5 的思路解决问题 6，与教师的讲解进行对比，加深理解。</p>
+<h3 id="设计意图-2"><a href="#设计意图-2" class="headerlink" title="设计意图"></a>设计意图</h3><p>通过不同类型的实际问题，让学生进一步熟悉将复杂概率问题转化为条件概率问题求解的方法，为抽象概括全概率公式积累经验。</p>
+<h3 id="探究活动三：抽象概括全概率公式"><a href="#探究活动三：抽象概括全概率公式" class="headerlink" title="探究活动三：抽象概括全概率公式"></a>探究活动三：抽象概括全概率公式</h3><p>从上述两个问题可以看出，某一事件 $A$ 的发生有各种可能的原因，若 $A$ 是由原因 $B_i$（$i &#x3D; 1,2,\cdots,n$）所引起，则 $A$ 发生的概率是 $P(AB_i)&#x3D;P(B_i)P(A|B_i)$，由于每一个原因都可能导致 $A$ 发生，且各原因涵盖所有可能的情形并彼此互斥，故事件 $A$ 发生的概率是各原因引起 $A$ 发生概率的总和，即 $P(A)&#x3D;\sum_{i &#x3D; 1}^{n}P(B_i)P(A|B_i)$。<br>抽象概括：设 $B_1,B_2,\cdots,B_n$ 为样本空间 $\Omega$ 的一个划分，若 $P(B_i)&gt;0$（$i &#x3D; 1,2,\cdots,n$），则对任意事件 $A$ 有 $P(A)&#x3D;\sum_{i &#x3D; 1}^{n}P(B_i)P(A|B_i)$。称上式为全概率公式。<br>如果我们把 $B_i$ 看成导致事件 $A$ 发生的各种可能“原因”，那么，全概率公式告诉我们，事件 $A$ 发生的概率恰好是事件 $A$ 在这些“原因”下发生的条件概率的平均。</p>
+<h3 id="教师活动-3"><a href="#教师活动-3" class="headerlink" title="教师活动"></a>教师活动</h3><p>引导学生对比两个问题的解题过程，总结规律，抽象概括出全概率公式，解释公式的含义。</p>
+<h3 id="学生活动-3"><a href="#学生活动-3" class="headerlink" title="学生活动"></a>学生活动</h3><p>积极思考，参与总结规律的过程，理解全概率公式的推导和含义。</p>
+<h3 id="设计意图-3"><a href="#设计意图-3" class="headerlink" title="设计意图"></a>设计意图</h3><p>培养学生的归纳总结能力，让学生从具体问题中抽象出一般的数学公式，加深对全概率公式的理解和记忆。</p>
+<h2 id="三、课堂练习"><a href="#三、课堂练习" class="headerlink" title="三、课堂练习"></a>三、课堂练习</h2><p>教师活动：给出类似的概率问题，如：有两个盒子，甲盒中有 2 个红球和 3 个白球，乙盒中有 3 个红球和 2 个白球。先随机选一个盒子，再从该盒子中摸出一个球，求摸到红球的概率。让学生独立完成，巡视学生的做题情况，及时给予指导。<br>学生活动：认真读题，按照全概率公式的思路进行解题，遇到问题向教师请教。<br>设计意图：通过课堂练习，让学生巩固所学的全概率公式，提高运用公式解决实际问题的能力。</p>
+<h2 id="四、课后练习"><a href="#四、课后练习" class="headerlink" title="四、课后练习"></a>四、课后练习</h2><p>例 6：采购员要购买某一电容元件一包（10 个），他的采购方法是：从一包中随机抽查 3 个，如这 3 个元件都是好的，他才买下这一包。假定含有 4 个次品的包数占 30%，而其余包中各含 1 个次品，求采购员随机挑选一包拒绝购买的概率。<br>教师活动：布置课后作业，提醒学生运用全概率公式进行求解，要求学生写出详细的解题过程。<br>学生活动：课后认真完成作业，独立思考，运用全概率公式解决问题。<br>设计意图：通过课后练习，让学生进一步熟练掌握全概率公式的应用，加深对知识的理解和掌握。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>laoluokj</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2026/01/26/6.1.2%20%E4%B9%98%E6%B3%95%E5%85%AC%E5%BC%8F%E4%B8%8E%E4%BA%8B%E4%BB%B6%E7%8B%AC%E7%AB%8B%E6%80%A7/">6.1.2 乘法公式与事件独立性</a>
+            
+            
+            <a class="next" rel="next" href="/2026/01/26/6.1.4%20%E5%85%A8%E6%A6%82%E7%8E%87%E7%BB%83%E4%B9%A0%E9%A2%98%E7%A0%94%E7%A9%B6/">6.1.4 全概率练习题研究</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© laoluokj | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
